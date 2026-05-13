@@ -1,0 +1,4 @@
+interface:
+  display_name: "Changelog Automation"
+  short_description: "Generating or maintaining release changelogs from merged work, including version scope, grouped changes, breaking-change notes, formatting consistency, and verification checks."
+  default_prompt: "Generate or maintaining release changelogs from merged work, including version scope, grouped changes, breaking-change notes, formatting consistency, and verification checks."

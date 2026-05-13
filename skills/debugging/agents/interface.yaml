@@ -1,0 +1,4 @@
+interface:
+  display_name: "Debugging"
+  short_description: "A systematic debugging approach is needed, using hypothesis-driven investigation, evidence gathering, reproduction quality, and safe narrowing instead of random fixes or shallow..."
+  default_prompt: "Debug systematically, using hypothesis-driven investigation, evidence gathering, reproduction quality, and safe narrowing instead of random fixes or shallow."

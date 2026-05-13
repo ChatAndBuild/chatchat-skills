@@ -1,0 +1,4 @@
+interface:
+  display_name: "Analytics Events"
+  short_description: "Keeping analytics instrumentation accurate, consistent, and release-ready across event definitions, tracking plans, schemas, implementation, QA, and governance."
+  default_prompt: "Keep analytics instrumentation accurate, consistent, and release-ready across event definitions, tracking plans, schemas, implementation, QA, and governance."

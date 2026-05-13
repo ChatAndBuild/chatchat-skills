@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Testing"
+  short_description: "Writing, running, debugging, or extending BAP-578 Non-Fungible Agent tests, including infrastructure setup, function coverage, edge cases, upgrades, gas profiling, and Hardhat..."
+  default_prompt: "Write, running, debugging, or extending BAP-578 Non-Fungible Agent tests, including infrastructure setup, function coverage, edge cases, upgrades, gas profiling, and Hardhat."

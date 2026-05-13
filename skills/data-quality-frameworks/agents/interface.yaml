@@ -1,0 +1,4 @@
+interface:
+  display_name: "Data Quality Frameworks"
+  short_description: "Designing production data quality checks, validation rules, anomaly detection, freshness tests, lineage-aware controls, and governance for data pipelines."
+  default_prompt: "Design production data quality checks, validation rules, anomaly detection, freshness tests, lineage-aware controls, and governance for data pipelines."

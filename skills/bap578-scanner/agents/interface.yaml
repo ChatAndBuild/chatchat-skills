@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 On-Chain Scanner"
+  short_description: "Reading, verifying, scanning, querying, indexing, or monitoring BAP-578 agent data directly from BNB Chain, including metadata, event history, vault integrity, and bulk RPC..."
+  default_prompt: "Read, verifying, scanning, querying, indexing, or monitoring BAP-578 agent data directly from BNB Chain, including metadata, event history, vault integrity, and bulk RPC."

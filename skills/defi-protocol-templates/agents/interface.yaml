@@ -1,0 +1,4 @@
+interface:
+  display_name: "DeFi Protocol Templates"
+  short_description: "Implementing DeFi protocol templates for staking, AMMs, governance, or lending systems with production-oriented contract structure and security considerations."
+  default_prompt: "Implement DeFi protocol templates for staking, AMMs, governance, or lending systems with production-oriented contract structure and security considerations."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Business & Monetization"
+  short_description: "Planning monetization, pricing, treasury flows, growth strategy, unit economics, go-to-market, or commercial sustainability for BAP-578 Non-Fungible Agents."
+  default_prompt: "Plan monetization, pricing, treasury flows, growth strategy, unit economics, go-to-market, or commercial sustainability for BAP-578 Non-Fungible Agents."

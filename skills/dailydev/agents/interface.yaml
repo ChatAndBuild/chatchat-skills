@@ -1,0 +1,4 @@
+interface:
+  display_name: "Daily.dev"
+  short_description: "Accessing current developer content from daily.dev, including popular or personalized feeds, community-validated articles, tech trend briefings, stack-based feeds, and..."
+  default_prompt: "Access current developer content from daily.dev, including popular or personalized feeds, community-validated articles, tech trend briefings, stack-based feeds, and."

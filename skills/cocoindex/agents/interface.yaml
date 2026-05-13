@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cocoindex"
+  short_description: "Building data indexing workflows with CocoIndex, including source ingestion, transformations, incremental updates, schema choices, and retrieval-oriented pipeline behavior."
+  default_prompt: "Build data indexing workflows with CocoIndex, including source ingestion, transformations, incremental updates, schema choices, and retrieval-oriented pipeline behavior."

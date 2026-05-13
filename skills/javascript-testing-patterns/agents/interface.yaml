@@ -1,0 +1,4 @@
+interface:
+  display_name: "JavaScript Testing Patterns"
+  short_description: "JavaScript-specific runtime behavior makes generic test advice too shallow, including async behavior, timers, modules, mocks, browser-like environments, and stateful edge cases."
+  default_prompt: "Write JavaScript tests for runtime behavior including, including async behavior, timers, modules, mocks, browser-like environments, and stateful edge cases."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Non-Fungible Agents"
+  short_description: "Users ask about BAP-578, Non-Fungible Agents, or hands-on engineering for the BAP-578 reference implementation on BNB Chain, including identity, memory, learning proofs, vaults, AI..."
+  default_prompt: "Explain or work on BAP-578, Non-Fungible Agents, or hands-on engineering for the BAP-578 reference implementation on BNB Chain, including identity, memory, learning proofs, vaults, AI."

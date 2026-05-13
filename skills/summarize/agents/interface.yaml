@@ -1,0 +1,4 @@
+interface:
+  display_name: "Summarize"
+  short_description: "Summarizing URLs, local files, podcasts, YouTube links, videos, or transcripts, including link overviews, best-effort transcript extraction, and summarize.sh workflows."
+  default_prompt: "Summarize URLs, local files, podcasts, YouTube links, videos, or transcripts, including link overviews, best-effort transcript extraction, and summarize.sh workflows."

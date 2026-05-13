@@ -1,0 +1,4 @@
+interface:
+  display_name: "E2E Testing Patterns"
+  short_description: "Building or refactoring end-to-end test suites that cover critical user journeys with stable selectors, controlled test data, reliable waits, and clear failure triage."
+  default_prompt: "Build or refactoring end-to-end test suites that cover critical user journeys with stable selectors, controlled test data, reliable waits, and clear failure triage."

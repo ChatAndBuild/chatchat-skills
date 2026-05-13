@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Degradation"
+  short_description: "Diagnosing context-failure patterns in long agent workflows, including lost-in-middle, context poisoning, distraction, clash, degraded outputs, and context-engineering mitigations."
+  default_prompt: "Diagnose context-failure patterns in long agent workflows, including lost-in-middle, context poisoning, distraction, clash, degraded outputs, and context-engineering mitigations."

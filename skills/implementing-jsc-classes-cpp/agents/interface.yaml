@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementing JSC Classes C++"
+  short_description: "Implementing JavaScriptCore-backed classes in C++, including bindings, lifetime management, method exposure, property behavior, and runtime correctness."
+  default_prompt: "Implement JavaScriptCore-backed classes in C++, including bindings, lifetime management, method exposure, property behavior, and runtime correctness."

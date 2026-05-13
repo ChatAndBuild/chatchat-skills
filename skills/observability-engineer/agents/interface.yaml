@@ -1,0 +1,4 @@
+interface:
+  display_name: "Observability Engineer"
+  short_description: "Designing observability for services with logs, metrics, traces, alert thresholds, dashboards, SLO signals, and actionable incident-response context."
+  default_prompt: "Design observability for services with logs, metrics, traces, alert thresholds, dashboards, SLO signals, and actionable incident-response context."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Docker Expert"
+  short_description: "Containerizing services or debugging Docker workflows, including production Dockerfiles, Compose setups, reproducible builds, secure defaults, image size, caching, and runtime..."
+  default_prompt: "Containerize services or debugging Docker workflows, including production Dockerfiles, Compose setups, reproducible builds, secure defaults, image size, caching, and runtime."

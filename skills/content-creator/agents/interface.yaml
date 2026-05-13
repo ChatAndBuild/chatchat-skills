@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Creator"
+  short_description: "Creating audience-focused blog posts, social posts, newsletters, marketing copy, hooks, outlines, and calls to action."
+  default_prompt: "Create audience-focused blog posts, social posts, newsletters, marketing copy, hooks, outlines, and calls to action."

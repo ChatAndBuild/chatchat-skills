@@ -1,0 +1,4 @@
+interface:
+  display_name: "Youtube Downloader"
+  short_description: "Downloading YouTube video or audio, choosing quality or formats such as mp4, webm, mkv, or mp3, saving media locally, or troubleshooting YouTube download options."
+  default_prompt: "Download YouTube video or audio, choose quality or formats such as mp4, webm, mkv, or mp3, save media locally, or troubleshoot YouTube download options."

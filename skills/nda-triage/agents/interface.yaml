@@ -1,0 +1,4 @@
+interface:
+  display_name: "Nda Triage"
+  short_description: "Screening incoming NDAs and classifying clauses or whole agreements as standard, needs review, or significant risk based on practical legal triage signals."
+  default_prompt: "Screen incoming NDAs and classifying clauses or whole agreements as standard, needs review, or significant risk based on practical legal triage signals."

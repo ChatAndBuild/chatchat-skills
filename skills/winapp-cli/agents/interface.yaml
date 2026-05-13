@@ -1,0 +1,4 @@
+interface:
+  display_name: "WinApp CLI"
+  short_description: "Using the winapp CLI to initialize Windows app projects, generate manifests or certificates, build packages, create MSIX releases, sign artifacts, or deploy Windows applications."
+  default_prompt: "Use the winapp CLI to initialize Windows app projects, generate manifests or certificates, build packages, create MSIX releases, sign artifacts, or deploy Windows applications."

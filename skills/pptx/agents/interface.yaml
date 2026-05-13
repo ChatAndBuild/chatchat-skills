@@ -1,0 +1,4 @@
+interface:
+  display_name: "Pptx"
+  short_description: "A PowerPoint .pptx file, slide deck, presentation, pitch deck, template, speaker notes, slide text, comments, or deck conversion is an input or requested output."
+  default_prompt: "Work with a PowerPoint .pptx file, slide deck, presentation, pitch deck, template, speaker notes, slide text, comments, or deck conversion is an input or requested output."

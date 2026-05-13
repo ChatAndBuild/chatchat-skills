@@ -1,0 +1,4 @@
+interface:
+  display_name: "CDC"
+  short_description: "Designing or implementing change data capture, including source logs, event ordering, snapshots, schema changes, downstream consumers, and replay-safe data pipelines."
+  default_prompt: "Design or implementing change data capture, including source logs, event ordering, snapshots, schema changes, downstream consumers, and replay-safe data pipelines."

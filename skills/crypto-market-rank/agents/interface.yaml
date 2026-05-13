@@ -1,0 +1,4 @@
+interface:
+  display_name: "Crypto Market Rank"
+  short_description: "Retrieving or interpreting crypto market rankings and leaderboards for trending tokens, social hype, smart-money inflow, meme ranks, or top-trader PnL."
+  default_prompt: "Retrieve or interpreting crypto market rankings and leaderboards for trending tokens, social hype, smart-money inflow, meme ranks, or top-trader PnL."

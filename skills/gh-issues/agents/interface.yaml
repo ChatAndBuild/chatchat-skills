@@ -1,0 +1,4 @@
+interface:
+  display_name: "GH Issues"
+  short_description: "Managing GitHub issues with structured triage, prioritization, assignment, labels, status tracking, duplicates, and actionable next steps."
+  default_prompt: "Manage GitHub issues with structured triage, prioritization, assignment, labels, status tracking, duplicates, and actionable next steps."

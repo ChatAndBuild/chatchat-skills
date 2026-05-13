@@ -1,0 +1,4 @@
+interface:
+  display_name: "Contract Review"
+  short_description: "Reviewing contracts against an organization-specific negotiation playbook, flagging deviations, summarizing risk, and drafting redline or fallback language."
+  default_prompt: "Review contracts against an organization-specific negotiation playbook, flagging deviations, summarizing risk, and drafting redline or fallback language."

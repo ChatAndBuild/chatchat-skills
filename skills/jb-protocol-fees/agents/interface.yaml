@@ -1,0 +1,4 @@
+interface:
+  display_name: "JB Protocol Fees"
+  short_description: "Working with Juicebox V5 or Revnet protocol fees, including NANA fees, Revnet cash-out fees, REV loans, variable loan fees, and related UI integration."
+  default_prompt: "Work with Juicebox V5 or Revnet protocol fees, including NANA fees, Revnet cash-out fees, REV loans, variable loan fees, and related UI integration."

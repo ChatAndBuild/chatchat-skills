@@ -1,0 +1,4 @@
+interface:
+  display_name: "Objectpool"
+  short_description: "Implementing low-allocation .NET patterns with Span, ArrayPool, ObjectPool, pooling lifecycles, memory reuse, or allocation-sensitive performance work."
+  default_prompt: "Implement low-allocation .NET patterns with Span, ArrayPool, ObjectPool, pooling lifecycles, memory reuse, or allocation-sensitive performance work."

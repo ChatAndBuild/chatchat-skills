@@ -1,0 +1,4 @@
+interface:
+  display_name: "GeoPandas"
+  short_description: "Working with GeoPandas geospatial workflows, including CRS handling, joins, overlays, geometry cleanup, spatial indexing, file formats, and map-ready data preparation."
+  default_prompt: "Work with GeoPandas geospatial workflows, including CRS handling, joins, overlays, geometry cleanup, spatial indexing, file formats, and map-ready data preparation."

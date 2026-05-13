@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Performance Analyzer"
+  short_description: "Analyzing AI agent performance with latency, success rate, cost, quality, throughput, and failure signals to identify bottlenecks and improvement opportunities."
+  default_prompt: "Analyze AI agent performance with latency, success rate, cost, quality, throughput, and failure signals to identify bottlenecks and improvement opportunities."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dietitian"
+  short_description: "Creating structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific diet protocols for nutrition planning."
+  default_prompt: "Create structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific diet protocols for nutrition planning."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Optimizing Database Connection Pool"
+  short_description: "Reasoning about database connection-pool sizing and behavior before changing configuration, including workload-aware limits, timeouts, leak detection, saturation, and failure..."
+  default_prompt: "Reason about database connection-pool sizing and behavior before changing configuration, including workload-aware limits, timeouts, leak detection, saturation, and failure."

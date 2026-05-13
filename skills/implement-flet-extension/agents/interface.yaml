@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement Flet Extension"
+  short_description: "Designing or implementing Flet extensions, including extension APIs, platform behavior, packaging, examples, and integration with Flet applications."
+  default_prompt: "Design or implementing Flet extensions, including extension APIs, platform behavior, packaging, examples, and integration with Flet applications."

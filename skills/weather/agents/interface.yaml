@@ -1,0 +1,4 @@
+interface:
+  display_name: "Weather"
+  short_description: "Retrieving current weather or forecasts through wttr.in or Open-Meteo, including location-based conditions, forecast summaries, and lightweight weather lookup workflows."
+  default_prompt: "Retrieve current weather or forecasts through wttr.in or Open-Meteo, including location-based conditions, forecast summaries, and lightweight weather lookup workflows."

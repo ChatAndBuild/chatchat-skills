@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parenting"
+  short_description: "Giving parenting guidance on age-appropriate behavior support, family routines, communication strategies, child context, burnout, and avoiding common advice pitfalls."
+  default_prompt: "Give parenting guidance on age-appropriate behavior support, family routines, communication strategies, child context, burnout, and avoiding common advice pitfalls."

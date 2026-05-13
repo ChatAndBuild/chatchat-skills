@@ -1,0 +1,4 @@
+interface:
+  display_name: "Idapython"
+  short_description: "Automating reverse-engineering workflows in IDA with IDAPython, including analysis scripts, renaming, pattern extraction, navigation, and repeatable binary-inspection tasks."
+  default_prompt: "Automate reverse-engineering workflows in IDA with IDAPython, including analysis scripts, renaming, pattern extraction, navigation, and repeatable binary-inspection tasks."

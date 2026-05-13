@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airbnb Search"
+  short_description: "Comparing Airbnb-style accommodation options or short-term stays, using prices, ratings, locations, availability context, direct links, and recommendation tradeoffs."
+  default_prompt: "Compare Airbnb-style accommodation options or short-term stays, using prices, ratings, locations, availability context, direct links, and recommendation tradeoffs."

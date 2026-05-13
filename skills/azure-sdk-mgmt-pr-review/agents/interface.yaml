@@ -1,0 +1,4 @@
+interface:
+  display_name: "Azure Sdk Mgmt Pr Review"
+  short_description: "Reviewing Azure SDK management-plane pull requests for API compatibility, naming conventions, generated-code expectations, breaking changes, and SDK quality standards."
+  default_prompt: "Review Azure SDK management-plane pull requests for API compatibility, naming conventions, generated-code expectations, breaking changes, and SDK quality standards."

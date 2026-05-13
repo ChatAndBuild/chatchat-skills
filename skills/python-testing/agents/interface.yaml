@@ -1,0 +1,4 @@
+interface:
+  display_name: "Python Testing"
+  short_description: "Designing Python tests that are clear, maintainable, and sensitive to Python-specific failure patterns such as fixtures, parametrization, side effects, exceptions, and stateful..."
+  default_prompt: "Design Python tests that are clear, maintainable, and sensitive to Python-specific failure patterns such as fixtures, parametrization, side effects, exceptions, and stateful."

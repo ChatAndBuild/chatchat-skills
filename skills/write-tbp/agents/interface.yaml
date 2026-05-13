@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Tbp"
+  short_description: "Drafting technical blog posts about tldraw features, implementation details, engineering decisions, demos, release context, or product-facing technical narratives."
+  default_prompt: "Draft technical blog posts about tldraw features, implementation details, engineering decisions, demos, release context, or product-facing technical narratives."

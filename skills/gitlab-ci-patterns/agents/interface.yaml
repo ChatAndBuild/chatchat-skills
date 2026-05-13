@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitLab CI Patterns"
+  short_description: "Applying reliable GitLab CI pipeline patterns for faster feedback, safer deploys, maintainable configuration, caching, stages, rules, and runner behavior."
+  default_prompt: "Apply reliable GitLab CI pipeline patterns for faster feedback, safer deploys, maintainable configuration, caching, stages, rules, and runner behavior."

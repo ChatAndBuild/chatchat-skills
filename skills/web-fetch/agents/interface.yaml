@@ -1,0 +1,4 @@
+interface:
+  display_name: "Web Fetch"
+  short_description: "Fetching readable web page content from a URL without browser automation, especially for lightweight extraction, text cleanup, or summarization inputs."
+  default_prompt: "Fetch readable web page content from a URL without browser automation, especially for lightweight extraction, text cleanup, or summarization inputs."

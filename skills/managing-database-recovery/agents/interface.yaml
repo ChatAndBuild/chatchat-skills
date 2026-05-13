@@ -1,0 +1,4 @@
+interface:
+  display_name: "Managing Database Recovery"
+  short_description: "Designing or reviewing database recovery plans for data loss, corruption, or operational incidents, including backups, RPO/RTO, restore sequencing, and integrity checks."
+  default_prompt: "Design or reviewing database recovery plans for data loss, corruption, or operational incidents, including backups, RPO/RTO, restore sequencing, and integrity checks."

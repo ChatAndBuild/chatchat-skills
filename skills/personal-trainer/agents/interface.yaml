@@ -1,0 +1,4 @@
+interface:
+  display_name: "Personal Trainer"
+  short_description: "Designing workout programs, explaining exercises, tracking progress, adapting training based on feedback, or planning strength and conditioning routines."
+  default_prompt: "Design workout programs, explaining exercises, tracking progress, adapting training based on feedback, or planning strength and conditioning routines."

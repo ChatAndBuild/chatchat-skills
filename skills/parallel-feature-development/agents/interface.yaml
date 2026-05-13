@@ -1,0 +1,4 @@
+interface:
+  display_name: "Parallel Feature Development"
+  short_description: "Coordinating multiple concurrent features, stacked PRs, branch strategy, dependency sequencing, integration checkpoints, feature flags, or release timing without destabilizing..."
+  default_prompt: "Coordinate multiple concurrent features, stacked PRs, branch strategy, dependency sequencing, integration checkpoints, feature flags, or release timing without destabilizing."

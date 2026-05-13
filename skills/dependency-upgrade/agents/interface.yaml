@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dependency Upgrade"
+  short_description: "Upgrading dependencies with risk-aware batching, compatibility checks, lockfile review, migration notes, and verification steps for routine updates or major-version changes."
+  default_prompt: "Upgrade dependencies with risk-aware batching, compatibility checks, lockfile review, migration notes, and verification steps for routine updates or major-version changes."

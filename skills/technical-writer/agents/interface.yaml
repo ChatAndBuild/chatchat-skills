@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Writer"
+  short_description: "Writing or improving technical documentation, including READMEs, API references, tutorials, user guides, conceptual docs, examples, and developer-facing explanations."
+  default_prompt: "Write or improving technical documentation, including READMEs, API references, tutorials, user guides, conceptual docs, examples, and developer-facing explanations."

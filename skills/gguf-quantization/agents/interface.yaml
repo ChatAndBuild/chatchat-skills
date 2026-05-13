@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gguf Quantization"
+  short_description: "Planning or executing GGUF model quantization, including quantization type selection, accuracy checks, latency and memory tradeoffs, and deployment validation."
+  default_prompt: "Plan or executing GGUF model quantization, including quantization type selection, accuracy checks, latency and memory tradeoffs, and deployment validation."

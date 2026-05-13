@@ -1,0 +1,4 @@
+interface:
+  display_name: "AI Product"
+  short_description: "Planning, shipping, or improving AI products, including product strategy, user workflows, evaluation loops, model capability boundaries, UX risks, and release tradeoffs."
+  default_prompt: "Plan, shipping, or improving AI products, including product strategy, user workflows, evaluation loops, model capability boundaries, UX risks, and release tradeoffs."

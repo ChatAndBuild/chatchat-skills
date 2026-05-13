@@ -1,0 +1,4 @@
+interface:
+  display_name: "Code Review"
+  short_description: "Reviewing a code change for correctness, behavioral risk, maintainability, unclear contracts, missing verification, and findings-first feedback rather than style polish."
+  default_prompt: "Review a code change for correctness, behavioral risk, maintainability, unclear contracts, missing verification, and findings-first feedback rather than style polish."

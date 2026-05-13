@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coding Agent"
+  short_description: "Designing, evaluating, or improving coding agents, including task decomposition, tool use, repo navigation, verification loops, autonomy boundaries, and agent behavior quality."
+  default_prompt: "Design, evaluating, or improving coding agents, including task decomposition, tool use, repo navigation, verification loops, autonomy boundaries, and agent behavior quality."

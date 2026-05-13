@@ -1,0 +1,4 @@
+interface:
+  display_name: "Solidity Security"
+  short_description: "Auditing or hardening Solidity smart contracts against reentrancy, access-control flaws, arithmetic bugs, unsafe upgrades, oracle risks, fund-management failures, or common EVM..."
+  default_prompt: "Audit or hardening Solidity smart contracts against reentrancy, access-control flaws, arithmetic bugs, unsafe upgrades, oracle risks, fund-management failures, or common EVM."

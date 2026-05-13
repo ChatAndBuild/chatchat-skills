@@ -1,0 +1,4 @@
+interface:
+  display_name: "Stripe"
+  short_description: "Implementing Stripe payment flows, including Checkout, PaymentIntents, subscriptions, billing, webhooks, refunds, SCA, and PCI-conscious integration patterns."
+  default_prompt: "Implement Stripe payment flows, including Checkout, PaymentIntents, subscriptions, billing, webhooks, refunds, SCA, and PCI-conscious integration patterns."

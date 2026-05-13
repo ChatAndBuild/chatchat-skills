@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airflow DAG Patterns"
+  short_description: "Designing or reviewing Apache Airflow DAGs for scheduling, retries, task dependencies, idempotency, backfills, sensors, and production reliability."
+  default_prompt: "Design or reviewing Apache Airflow DAGs for scheduling, retries, task dependencies, idempotency, backfills, sensors, and production reliability."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Multi-Cloud Architecture"
+  short_description: "Designing or evaluating multi-cloud architectures, workload placement, shared control planes, failover patterns, vendor-risk tradeoffs, compliance constraints, or cross-cloud..."
+  default_prompt: "Design or evaluating multi-cloud architectures, workload placement, shared control planes, failover patterns, vendor-risk tradeoffs, compliance constraints, or cross-cloud."

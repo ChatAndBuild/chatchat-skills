@@ -1,0 +1,4 @@
+interface:
+  display_name: "Railway Deployment"
+  short_description: "Deploying to Railway, including environment checks, service configuration, health verification, rollout observation, logs, and rollback readiness."
+  default_prompt: "Deploy to Railway, including environment checks, service configuration, health verification, rollout observation, logs, and rollback readiness."

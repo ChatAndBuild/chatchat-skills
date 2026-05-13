@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning Agent"
+  short_description: "Generating project-aware unit tests through a research, planning, implementation, and verification pipeline that must fit the target language and repository conventions."
+  default_prompt: "Generate project-aware unit tests through a research, planning, implementation, and verification pipeline that must fit the target language and repository conventions."

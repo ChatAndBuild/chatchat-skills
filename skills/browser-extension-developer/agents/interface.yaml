@@ -1,0 +1,4 @@
+interface:
+  display_name: "Browser Extension Developer"
+  short_description: "Building or reviewing browser extensions that need extension-specific guidance for runtime boundaries, permissions, content scripts, background scripts, messaging, storage,..."
+  default_prompt: "Build or reviewing browser extensions that need extension-specific guidance for runtime boundaries, permissions, content scripts, background scripts, messaging, storage."

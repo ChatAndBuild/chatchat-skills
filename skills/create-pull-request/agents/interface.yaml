@@ -1,0 +1,4 @@
+interface:
+  display_name: "Create Pull Request"
+  short_description: "Preparing GitHub pull requests with clear summaries, scoped changes, test plans, reviewer context, risk notes, and links to relevant issues or evidence."
+  default_prompt: "Prepare GitHub pull requests with clear summaries, scoped changes, test plans, reviewer context, risk notes, and links to relevant issues or evidence."

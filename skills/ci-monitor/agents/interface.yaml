@@ -1,0 +1,4 @@
+interface:
+  display_name: "CI Monitor"
+  short_description: "Monitoring CI pipelines for failures, regressions, instability, flaky jobs, and ownership signals, then prioritizing fixes with clear evidence and next actions."
+  default_prompt: "Monitor CI pipelines for failures, regressions, instability, flaky jobs, and ownership signals, then prioritizing fixes with clear evidence and next actions."

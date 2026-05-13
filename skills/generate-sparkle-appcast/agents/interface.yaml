@@ -1,0 +1,4 @@
+interface:
+  display_name: "Generate Sparkle Appcast"
+  short_description: "Generating or validating Sparkle appcast metadata for macOS auto-updates, including signatures, versions, release notes, enclosure URLs, and update compatibility."
+  default_prompt: "Generate or validating Sparkle appcast metadata for macOS auto-updates, including signatures, versions, release notes, enclosure URLs, and update compatibility."

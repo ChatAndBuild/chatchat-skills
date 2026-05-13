@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quit Caffeine"
+  short_description: "Helping reduce caffeine gradually, manage withdrawal, replace the habit with lower-friction alternatives, protect sleep, and maintain energy during tapering."
+  default_prompt: "Help reduce caffeine gradually, manage withdrawal, replace the habit with lower-friction alternatives, protect sleep, and maintain energy during tapering."

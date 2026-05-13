@@ -1,0 +1,4 @@
+interface:
+  display_name: "Intimate Wellbeing"
+  short_description: "Providing respectful, non-explicit intimate wellbeing guidance focused on practical help, communication, stress, sleep, exercise, habits, medical red flags, relationship health, or..."
+  default_prompt: "Provide respectful, non-explicit intimate wellbeing guidance focused on practical help, communication, stress, sleep, exercise, habits, medical red flags, relationship health, or."

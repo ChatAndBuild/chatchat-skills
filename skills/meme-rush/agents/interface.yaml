@@ -1,0 +1,4 @@
+interface:
+  display_name: "Meme Rush"
+  short_description: "Tracking meme-token launches, hot narratives, migration status, holder counts, net inflow, and fast market filters around early token activity."
+  default_prompt: "Track meme-token launches, hot narratives, migration status, holder counts, net inflow, and fast market filters around early token activity."

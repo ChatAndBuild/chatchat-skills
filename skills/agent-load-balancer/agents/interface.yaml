@@ -1,0 +1,4 @@
+interface:
+  display_name: "Agent Load Balancer"
+  short_description: "Designing load balancing or traffic distribution for AI agents, including routing policies, reliability targets, latency control, throughput scaling, and demand-aware failover."
+  default_prompt: "Design load balancing or traffic distribution for AI agents, including routing policies, reliability targets, latency control, throughput scaling, and demand-aware failover."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Arm Cortex Expert"
+  short_description: "Designing or optimizing embedded firmware for ARM Cortex MCUs, including memory layout, timing, interrupts, peripherals, low-power behavior, and hardware-adjacent debugging."
+  default_prompt: "Design or optimizing embedded firmware for ARM Cortex MCUs, including memory layout, timing, interrupts, peripherals, low-power behavior, and hardware-adjacent debugging."

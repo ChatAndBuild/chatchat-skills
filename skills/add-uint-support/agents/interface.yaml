@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add UInt Support"
+  short_description: "Introducing unsigned integer handling into an existing codebase, covering parsing, validation, storage, serialization, APIs, arithmetic boundaries, and overflow compatibility..."
+  default_prompt: "Introduce unsigned integer handling into an existing codebase, covering parsing, validation, storage, serialization, APIs, arithmetic boundaries, and overflow compatibility."

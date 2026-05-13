@@ -1,0 +1,4 @@
+interface:
+  display_name: "Canva"
+  short_description: "Using the Canva Connect API to manage Canva designs, assets, exports, folders, and template-driven document or PDF automation workflows."
+  default_prompt: "Use the Canva Connect API to manage Canva designs, assets, exports, folders, and template-driven document or PDF automation workflows."

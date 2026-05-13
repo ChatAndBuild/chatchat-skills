@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hybrid Cloud Networking"
+  short_description: "Designing or troubleshooting hybrid cloud networking across on-prem and cloud environments, including secure connectivity, routing, VPN or Direct Connect style links, and traffic..."
+  default_prompt: "Design or troubleshooting hybrid cloud networking across on-prem and cloud environments, including secure connectivity, routing, VPN or Direct Connect style links, and traffic."

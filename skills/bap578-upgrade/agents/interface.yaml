@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Contract Upgrade"
+  short_description: "Planning, implementing, testing, or executing safe BAP-578 contract upgrades with the UUPS proxy pattern, including storage layout discipline, V2 implementations, deployment, and..."
+  default_prompt: "Plan, implementing, testing, or executing safe BAP-578 contract upgrades with the UUPS proxy pattern, including storage layout discipline, V2 implementations, deployment, and."

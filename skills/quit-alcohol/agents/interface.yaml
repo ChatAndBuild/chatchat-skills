@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quit Alcohol"
+  short_description: "Supporting alcohol reduction or sobriety with planning, craving management, trigger review, safer next steps, relapse prevention, and recovery milestones."
+  default_prompt: "Support alcohol reduction or sobriety with planning, craving management, trigger review, safer next steps, relapse prevention, and recovery milestones."

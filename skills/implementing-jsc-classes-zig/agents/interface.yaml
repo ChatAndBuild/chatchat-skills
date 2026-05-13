@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementing JSC Classes Zig"
+  short_description: "Implementing JavaScriptCore class bindings in Zig, including memory ownership, method exposure, property behavior, callbacks, and runtime safety."
+  default_prompt: "Implement JavaScriptCore class bindings in Zig, including memory ownership, method exposure, property behavior, callbacks, and runtime safety."

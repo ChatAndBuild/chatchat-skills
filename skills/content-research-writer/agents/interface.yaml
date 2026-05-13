@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Research Writer"
+  short_description: "Writing research-backed content that needs source discovery, citations, hooks, outlines, section-by-section iteration, or editorial feedback during drafting."
+  default_prompt: "Write research-backed content that needs source discovery, citations, hooks, outlines, section-by-section iteration, or editorial feedback during drafting."

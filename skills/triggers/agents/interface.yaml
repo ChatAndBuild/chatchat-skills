@@ -1,0 +1,4 @@
+interface:
+  display_name: "Triggers"
+  short_description: "Designing, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."
+  default_prompt: "Design, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."

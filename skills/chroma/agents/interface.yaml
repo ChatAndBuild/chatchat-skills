@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chroma"
+  short_description: "Applying Geniml-style genomic interval machine learning to BED files, including Region2Vec embeddings, scATAC-seq analysis, BEDspace-style workflows, or consensus peak analysis."
+  default_prompt: "Apply Geniml-style genomic interval machine learning to BED files, including Region2Vec embeddings, scATAC-seq analysis, BEDspace-style workflows, or consensus peak analysis."

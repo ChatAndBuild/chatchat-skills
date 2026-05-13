@@ -1,0 +1,4 @@
+interface:
+  display_name: "Guidelines Advisor"
+  short_description: "Reviewing smart contract architecture against Trail of Bits style best practices, including upgradeability, implementation quality, known pitfalls, testing, and codebase-level..."
+  default_prompt: "Review smart contract architecture against Trail of Bits style best practices, including upgradeability, implementation quality, known pitfalls, testing, and codebase-level."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Property Based Testing"
+  short_description: "Designing tests around invariants, generated inputs, shrinking, edge-case discovery, and regression checks instead of hand-picking every case one by one."
+  default_prompt: "Design tests around invariants, generated inputs, shrinking, edge-case discovery, and regression checks instead of hand-picking every case one by one."

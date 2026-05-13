@@ -1,0 +1,4 @@
+interface:
+  display_name: "Subagent-driven Development"
+  short_description: "Decomposing and coordinating multi-step implementation or DevOps work across focused subagents with explicit ownership, handoffs, validation, and final integration checks."
+  default_prompt: "Decompose and coordinate multi-step implementation or DevOps work across focused subagents with explicit ownership, handoffs, validation, and final integration checks."

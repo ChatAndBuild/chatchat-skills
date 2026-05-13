@@ -1,0 +1,4 @@
+interface:
+  display_name: "Yoga"
+  short_description: "Giving yoga guidance on pose alignment, sequencing, breathwork, modifications, props, level-appropriate practice planning, and safety-aware instruction."
+  default_prompt: "Give yoga guidance on pose alignment, sequencing, breathwork, modifications, props, level-appropriate practice planning, and safety-aware instruction."

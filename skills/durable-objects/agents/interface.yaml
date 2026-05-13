@@ -1,0 +1,4 @@
+interface:
+  display_name: "Durable Objects"
+  short_description: "Implementing or operating Cloudflare Durable Objects for strongly consistent coordination, stateful workflows, actor-style services, single-writer state, or low-latency edge logic."
+  default_prompt: "Implement or operating Cloudflare Durable Objects for strongly consistent coordination, stateful workflows, actor-style services, single-writer state, or low-latency edge logic."

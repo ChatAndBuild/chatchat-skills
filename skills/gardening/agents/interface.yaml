@@ -1,0 +1,4 @@
+interface:
+  display_name: "Gardening"
+  short_description: "Answering gardening questions about plant care, soil management, seasonal timing, pest control, pruning, propagation, or garden planning."
+  default_prompt: "Answer gardening questions about plant care, soil management, seasonal timing, pest control, pruning, propagation, or garden planning."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Entry Point Analyzer"
+  short_description: "Analyzing smart contract codebases to identify externally callable state-changing entry points, categorize access levels, exclude read-only functions, and produce structured audit..."
+  default_prompt: "Analyze smart contract codebases to identify externally callable state-changing entry points, categorize access levels, exclude read-only functions, and produce structured audit."

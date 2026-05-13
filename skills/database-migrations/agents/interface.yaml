@@ -1,0 +1,4 @@
+interface:
+  display_name: "Database Migrations"
+  short_description: "Planning safe schema or data migrations without assuming direct execution access, including rollout sequencing, backfills, compatibility windows, validation queries, and rollback..."
+  default_prompt: "Plan safe schema or data migrations without assuming direct execution access, including rollout sequencing, backfills, compatibility windows, validation queries, and rollback."

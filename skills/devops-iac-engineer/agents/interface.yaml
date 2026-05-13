@@ -1,0 +1,4 @@
+interface:
+  display_name: "DevOps IaC Engineer"
+  short_description: "Designing or reviewing Infrastructure as Code for reliability, security, drift control, modularity, environment promotion, and operational maintainability."
+  default_prompt: "Design or reviewing Infrastructure as Code for reliability, security, drift control, modularity, environment promotion, and operational maintainability."

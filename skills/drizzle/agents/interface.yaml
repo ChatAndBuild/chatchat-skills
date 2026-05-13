@@ -1,0 +1,4 @@
+interface:
+  display_name: "Drizzle"
+  short_description: "Using Drizzle ORM in data-backed applications, including schema definitions, migrations, typed queries, relations, transactions, and integration with application code."
+  default_prompt: "Use Drizzle ORM in data-backed applications, including schema definitions, migrations, typed queries, relations, transactions, and integration with application code."

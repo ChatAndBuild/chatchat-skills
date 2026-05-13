@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implementing Agent Modes"
+  short_description: "Adding mode-aware behavior to an AI agent, including explicit triggers, permissions, response contracts, and plan, ask, debug, or execute style interaction modes."
+  default_prompt: "Add mode-aware behavior to an AI agent, including explicit triggers, permissions, response contracts, and plan, ask, debug, or execute style interaction modes."

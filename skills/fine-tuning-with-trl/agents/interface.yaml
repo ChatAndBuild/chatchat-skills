@@ -1,0 +1,4 @@
+interface:
+  display_name: "Fine Tuning with TRL"
+  short_description: "Fine-tuning language models with TRL, including dataset formatting, SFT or preference training setup, trainer configuration, evaluation, and deployment tradeoffs."
+  default_prompt: "Fine-tune language models with TRL, including dataset formatting, SFT or preference training setup, trainer configuration, evaluation, and deployment tradeoffs."

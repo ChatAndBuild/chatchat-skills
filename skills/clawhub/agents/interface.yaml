@@ -1,0 +1,4 @@
+interface:
+  display_name: "ClawHub"
+  short_description: "Configuring, operating, or troubleshooting ClawHub integrations and workflow execution, including auth setup, trigger strategy, secure credentials, observability, recovery, and..."
+  default_prompt: "Configure, operating, or troubleshooting ClawHub integrations and workflow execution, including auth setup, trigger strategy, secure credentials, observability, recovery, and."

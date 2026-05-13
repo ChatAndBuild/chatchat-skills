@@ -1,0 +1,4 @@
+interface:
+  display_name: "Commit Helper"
+  short_description: "Turning actual code changes into focused commit plans or commit messages, splitting unrelated changes, applying Conventional Commits, or adding reviewer-ready scope and risk notes."
+  default_prompt: "Turn actual code changes into focused commit plans or commit messages, splitting unrelated changes, applying Conventional Commits, or adding reviewer-ready scope and risk notes."

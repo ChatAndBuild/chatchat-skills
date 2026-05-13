@@ -1,0 +1,4 @@
+interface:
+  display_name: "Syncable Entity Builder And Validator"
+  short_description: "Creating validation logic or migration action builders for syncable entities in Twenty, including entity shape, sync rules, migration actions, and validator behavior."
+  default_prompt: "Create validation logic or migration action builders for syncable entities in Twenty, including entity shape, sync rules, migration actions, and validator behavior."

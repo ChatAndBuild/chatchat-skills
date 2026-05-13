@@ -1,0 +1,4 @@
+interface:
+  display_name: "Management"
+  short_description: "Giving management guidance on team leadership, operating cadence, delegation, feedback, planning, organizational effectiveness, or manager decision-making."
+  default_prompt: "Give management guidance on team leadership, operating cadence, delegation, feedback, planning, organizational effectiveness, or manager decision-making."

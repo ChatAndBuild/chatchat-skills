@@ -1,0 +1,4 @@
+interface:
+  display_name: "Composio"
+  short_description: "Implementing app integrations with Composio, including tool configuration, auth flows, connected accounts, action execution, and integration reliability."
+  default_prompt: "Implement app integrations with Composio, including tool configuration, auth flows, connected accounts, action execution, and integration reliability."

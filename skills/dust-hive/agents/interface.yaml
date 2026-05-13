@@ -1,0 +1,4 @@
+interface:
+  display_name: "Dust Hive"
+  short_description: "Working in or reasoning about dust-hive development environments, including isolated Dust instances, port allocation, test execution, and repository-specific environment behavior."
+  default_prompt: "Work in or reason about dust-hive development environments, including isolated Dust instances, port allocation, test execution, and repository-specific environment behavior."

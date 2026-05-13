@@ -1,0 +1,4 @@
+interface:
+  display_name: "JB Pay Hook"
+  short_description: "Generating or evaluating custom Juicebox V5 pay hooks from natural-language specs, including IJBPayHook/IJBRulesetDataHook contracts, Foundry tests, and checks against..."
+  default_prompt: "Generate or evaluating custom Juicebox V5 pay hooks from natural-language specs, including IJBPayHook/IJBRulesetDataHook contracts, Foundry tests, and checks against."

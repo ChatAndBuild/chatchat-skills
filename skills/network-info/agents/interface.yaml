@@ -1,0 +1,4 @@
+interface:
+  display_name: "Network Info"
+  short_description: "Interpreting network facts during troubleshooting, including IPs, routes, interfaces, DNS, connectivity clues, failure boundaries, and which details matter before drawing..."
+  default_prompt: "Interpret network facts during troubleshooting, including IPs, routes, interfaces, DNS, connectivity clues, failure boundaries, and which details matter before drawing."

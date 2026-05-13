@@ -1,0 +1,4 @@
+interface:
+  display_name: "Continuous Learning"
+  short_description: "Designing continuous learning workflows for ML systems, including feedback loops, data refresh, evaluation gates, model updates, drift monitoring, and deployment controls."
+  default_prompt: "Design continuous learning workflows for ML systems, including feedback loops, data refresh, evaluation gates, model updates, drift monitoring, and deployment controls."

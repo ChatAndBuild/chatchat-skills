@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Design"
+  short_description: "Building or refining production-grade web UI such as pages, components, dashboards, landing pages, React views, HTML/CSS layouts, posters, or visual artifacts that need distinctive..."
+  default_prompt: "Build or refining production-grade web UI such as pages, components, dashboards, landing pages, React views, HTML/CSS layouts, posters, or visual artifacts that need distinctive."

@@ -71,6 +71,7 @@ jobs:
               "Data & AI"
               "Business"
               "Development"
+              "OpenAI"
               "Tools"
             )
             VALID=0
@@ -113,7 +114,7 @@ jobs:
 
             # Check instruction length (rough token estimate: ~4 chars per token)
             BODY_LENGTH=$(echo "$BODY" | wc -c)
-            MAX_CHARS=16000  # ~4000 tokens
+            MAX_CHARS=24000  # ~6000 tokens
             if [ "$BODY_LENGTH" -gt "$MAX_CHARS" ]; then
               echo "::error file=$file::Instructions too long ($BODY_LENGTH chars, max $MAX_CHARS)"
               ERRORS=$((ERRORS + 1))

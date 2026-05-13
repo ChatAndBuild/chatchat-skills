@@ -1,0 +1,4 @@
+interface:
+  display_name: "Distributed Tracing"
+  short_description: "Instrumenting distributed systems with traces that expose latency, errors, dependency bottlenecks, service boundaries, and incident diagnostics."
+  default_prompt: "Instrument distributed systems with traces that expose latency, errors, dependency bottlenecks, service boundaries, and incident diagnostics."

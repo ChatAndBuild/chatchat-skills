@@ -1,0 +1,4 @@
+interface:
+  display_name: "Workout Logger"
+  short_description: "Turning messy workout information into clear logs, comparing user-provided sessions, surfacing trends or likely PRs, and suggesting realistic next-session steps."
+  default_prompt: "Turn messy workout information into clear logs, comparing user-provided sessions, surfacing trends or likely PRs, and suggesting realistic next-session steps."

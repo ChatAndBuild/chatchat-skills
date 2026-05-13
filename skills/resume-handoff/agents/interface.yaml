@@ -1,0 +1,4 @@
+interface:
+  display_name: "Resume Handoff"
+  short_description: "Creating or loading AI session handoffs, saving context before pausing, nearing context limits, resuming complex work, or preserving decisions, files changed, blockers, and next..."
+  default_prompt: "Create or loading AI session handoffs, saving context before pausing, nearing context limits, resuming complex work, or preserving decisions, files changed, blockers, and next."

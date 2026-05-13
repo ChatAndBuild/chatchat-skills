@@ -1,0 +1,4 @@
+interface:
+  display_name: "Planning With Files"
+  short_description: "Complex work needs persistent markdown planning files as working memory, including task plans, notes, deliverables, checkpoint updates, and file-backed execution loops."
+  default_prompt: "Use persistent planning files for complex work that needs persistent markdown planning files as working memory, including task plans, notes, deliverables, checkpoint updates, and file-backed execution loops."

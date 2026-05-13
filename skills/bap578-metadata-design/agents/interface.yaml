@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Metadata & Persona Design"
+  short_description: "Crafting BAP-578 AgentMetadata identity data, including personas, experience fields, vault schemas, voice profiles, metadata URIs, vault integrity, and rich verifiable agent..."
+  default_prompt: "Craft BAP-578 AgentMetadata identity data, including personas, experience fields, vault schemas, voice profiles, metadata URIs, vault integrity, and rich verifiable agent."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Script PostgreSQL"
+  short_description: "Drafting or reviewing PostgreSQL SQL scripts with PostgreSQL-aware syntax, safe sequencing, transactional expectations, migration logic, and reviewable rollout risk."
+  default_prompt: "Draft or reviewing PostgreSQL SQL scripts with PostgreSQL-aware syntax, safe sequencing, transactional expectations, migration logic, and reviewable rollout risk."

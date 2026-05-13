@@ -1,0 +1,4 @@
+interface:
+  display_name: "Invoice Organizer"
+  short_description: "Organizing invoices and receipts for tax preparation by extracting key fields, normalizing filenames, grouping records, and producing accountant-ready CSV output."
+  default_prompt: "Organize invoices and receipts for tax preparation by extracting key fields, normalizing filenames, grouping records, and producing accountant-ready CSV output."

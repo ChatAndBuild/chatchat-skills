@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Analytics & Indexing"
+  short_description: "Defining metrics, building indexers, creating dashboards, or generating reports for BAP-578 Non-Fungible Agents from minting, vault funding, treasury, engagement, and event data."
+  default_prompt: "Define metrics, building indexers, creating dashboards, or generating reports for BAP-578 Non-Fungible Agents from minting, vault funding, treasury, engagement, and event data."

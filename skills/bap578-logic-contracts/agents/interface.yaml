@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Logic Contracts"
+  short_description: "Designing, building, deploying, binding, or reviewing logic contracts that define autonomous on-chain behavior for BAP-578 Non-Fungible Agents."
+  default_prompt: "Design, building, deploying, binding, or reviewing logic contracts that define autonomous on-chain behavior for BAP-578 Non-Fungible Agents."

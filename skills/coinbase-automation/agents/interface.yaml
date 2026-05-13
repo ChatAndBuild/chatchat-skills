@@ -1,0 +1,4 @@
+interface:
+  display_name: "Coinbase Automation"
+  short_description: "Automating browser wallet workflows for AI agents across wallets such as MetaMask, Rabby, Phantom, Trust Wallet, OKX, or Coinbase, including EVM, Solana, guardrails, spend limits,..."
+  default_prompt: "Automate browser wallet workflows for AI agents across wallets such as MetaMask, Rabby, Phantom, Trust Wallet, OKX, or Coinbase, including EVM, Solana, guardrails, spend limits."

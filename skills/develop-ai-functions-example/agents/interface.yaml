@@ -1,0 +1,4 @@
+interface:
+  display_name: "Develop AI Functions Example"
+  short_description: "Designing or implementing AI function and tool interfaces with clear schemas, deterministic behavior, safe error handling, and examples for assistants or agent workflows."
+  default_prompt: "Design or implementing AI function and tool interfaces with clear schemas, deterministic behavior, safe error handling, and examples for assistants or agent workflows."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Address Info"
+  short_description: "Querying on-chain wallet addresses for active token positions, balances, token metadata, prices, 24-hour change, holding quantities, and portfolio summaries across supported..."
+  default_prompt: "Query on-chain wallet addresses for active token positions, balances, token metadata, prices, 24-hour change, holding quantities, and portfolio summaries across supported."

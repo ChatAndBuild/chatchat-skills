@@ -1,0 +1,4 @@
+interface:
+  display_name: "Mutation Testing"
+  short_description: "Planning or executing mutation testing to evaluate whether a test suite catches meaningful defects, especially when coverage is high but confidence is low."
+  default_prompt: "Plan or executing mutation testing to evaluate whether a test suite catches meaningful defects, especially when coverage is high but confidence is low."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Sandbox SDK"
+  short_description: "Building secure code-execution systems with a Sandbox SDK, including sandbox lifecycle, command execution, file operations, code interpreters, preview URLs, and untrusted-code..."
+  default_prompt: "Build secure code-execution systems with a Sandbox SDK, including sandbox lifecycle, command execution, file operations, code interpreters, preview URLs, and untrusted-code."

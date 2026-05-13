@@ -1,0 +1,4 @@
+interface:
+  display_name: "Endurance Coach"
+  short_description: "Creating personalized triathlon, marathon, ultra-endurance, or long-distance training plans with periodization, recovery, intensity zones, and race-specific preparation."
+  default_prompt: "Create personalized triathlon, marathon, ultra-endurance, or long-distance training plans with periodization, recovery, intensity zones, and race-specific preparation."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shopify"
+  short_description: "Building Shopify apps, themes, checkout/admin/POS extensions, Shopify Functions, Liquid templates, Polaris UIs, GraphQL Admin API integrations, webhooks, billing, or metafields."
+  default_prompt: "Build Shopify apps, themes, checkout/admin/POS extensions, Shopify Functions, Liquid templates, Polaris UIs, GraphQL Admin API integrations, webhooks, billing, or metafields."

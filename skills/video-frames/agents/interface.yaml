@@ -1,0 +1,4 @@
+interface:
+  display_name: "Video Frames"
+  short_description: "Extracting frames, thumbnails, clips, timestamps, or short video segments from media files with ffmpeg."
+  default_prompt: "Extract frames, thumbnails, clips, timestamps, or short video segments from media files with ffmpeg."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Editor"
+  short_description: "Editing or proofreading prose for clarity, grammar, style, readability, tone, structure, or publication readiness."
+  default_prompt: "Edit or proofread prose for clarity, grammar, style, readability, tone, structure, or publication readiness."

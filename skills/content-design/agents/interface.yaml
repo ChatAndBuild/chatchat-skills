@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Design"
+  short_description: "Writing, reviewing, or auditing product UI copy such as button labels, error messages, tooltips, empty states, modal copy, placeholders, confirmation dialogs, onboarding text, or..."
+  default_prompt: "Write, reviewing, or auditing product UI copy such as button labels, error messages, tooltips, empty states, modal copy, placeholders, confirmation dialogs, onboarding text, or."

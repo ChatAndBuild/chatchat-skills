@@ -1,0 +1,4 @@
+interface:
+  display_name: "Migrate Frontend Forms"
+  short_description: "Migrating frontend forms, form libraries, validation schemas, submission flows, or accessibility behavior while minimizing regressions in production systems."
+  default_prompt: "Migrate frontend forms, form libraries, validation schemas, submission flows, or accessibility behavior while minimizing regressions in production systems."

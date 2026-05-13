@@ -1,0 +1,4 @@
+interface:
+  display_name: "Turborepo Caching"
+  short_description: "Configuring or debugging Turborepo local and remote caching, including task outputs, cache keys, CI reproducibility, cache misses, and developer build performance."
+  default_prompt: "Configure or debugging Turborepo local and remote caching, including task outputs, cache keys, CI reproducibility, cache misses, and developer build performance."

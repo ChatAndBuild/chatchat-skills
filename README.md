@@ -38,31 +38,34 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed instructions on how to creat
 skills/
   prep-meeting/
     SKILL.md
-  contract-review/
+    scripts/
+    references/
+  react-performance/
     SKILL.md
-  draft-reply/
-    SKILL.md
+    assets/
   ...
 index.json          # Auto-generated manifest (do not edit manually)
 ```
+
+Each skill directory lives directly under `skills/`. Support folders such as `scripts/`, `references/`, and `assets/` belong to that skill and are not indexed separately.
 
 ## Categories
 
 Each skill declares a `category` in its frontmatter. Categories help users browse the Skills Store and should reflect the user-facing purpose of the skill.
 
 Common categories you’ll see:
-- Productivity
-- Communication
-- Business
 - Lifestyle
-- Content & Media
-- Development
-- Data & AI
+- Blockchain
+- Databases
 - Research
+- Content & Media
 - Documentation
-- Design
-- DevOps
 - Testing & Security
+- DevOps
+- Data & AI
+- Business
+- Development
+- OpenAI
 - Tools
 
 Use the most specific, user-friendly category that matches the skill’s primary intent. If a skill spans multiple domains, pick the category users would most likely search.

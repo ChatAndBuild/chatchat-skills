@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cirq"
+  short_description: "Building, simulating, or executing quantum circuits with Cirq, including VQE, QAOA, noise modeling, circuit construction, and quantum workflow guidance."
+  default_prompt: "Build, simulating, or executing quantum circuits with Cirq, including VQE, QAOA, noise modeling, circuit construction, and quantum workflow guidance."

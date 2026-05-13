@@ -1,0 +1,4 @@
+interface:
+  display_name: "Update Release Notes"
+  short_description: "Release notes must explain what changed, who is affected, what readers should do next, and any user-facing impact, migration concern, rollout caveat, or risk area."
+  default_prompt: "Write release notes that explain what changed, who is affected, what readers should do next, and any user-facing impact, migration concern, rollout caveat, or risk area."

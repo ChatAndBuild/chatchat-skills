@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Web3 for BAP-578"
+  short_description: "Integrating BAP-578 smart contract reads or writes into a Next.js or React frontend, including wallet connection, chain setup, ABI wiring, hooks, minting flows, and..."
+  default_prompt: "Integrate BAP-578 smart contract reads or writes into a Next.js or React frontend, including wallet connection, chain setup, ABI wiring, hooks, minting flows, and."

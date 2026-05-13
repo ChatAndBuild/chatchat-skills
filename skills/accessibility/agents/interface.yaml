@@ -1,0 +1,4 @@
+interface:
+  display_name: "Accessibility"
+  short_description: "Implementing or reviewing VS Code accessibility surfaces, including help dialogs, accessible views, verbosity settings, accessibility signals, ARIA alerts, keyboard navigation,..."
+  default_prompt: "Implement or review VS Code accessibility surfaces, including help dialogs, accessible views, verbosity settings, accessibility signals, ARIA alerts, keyboard navigation."

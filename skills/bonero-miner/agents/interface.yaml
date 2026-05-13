@@ -1,0 +1,4 @@
+interface:
+  display_name: "Bonero Miner"
+  short_description: "Setting up or troubleshooting Bonero mining, wallets, daemons, RandomX CPU mining, or Monero-style private cryptocurrency workflows for AI agents."
+  default_prompt: "Set up or troubleshooting Bonero mining, wallets, daemons, RandomX CPU mining, or Monero-style private cryptocurrency workflows for AI agents."

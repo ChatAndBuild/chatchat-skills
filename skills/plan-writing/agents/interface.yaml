@@ -1,0 +1,4 @@
+interface:
+  display_name: "Plan Writing"
+  short_description: "Turning a complex task into a structured execution plan with clear steps, dependencies, assumptions, risks, verification, and progress-tracking criteria."
+  default_prompt: "Turn a complex task into a structured execution plan with clear steps, dependencies, assumptions, risks, verification, and progress-tracking criteria."

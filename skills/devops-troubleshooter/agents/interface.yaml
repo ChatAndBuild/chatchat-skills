@@ -1,0 +1,4 @@
+interface:
+  display_name: "DevOps Troubleshooter"
+  short_description: "Troubleshooting DevOps failures across CI/CD, infrastructure, runtime services, and deployment pipelines with evidence-driven incident triage and remediation steps."
+  default_prompt: "Troubleshoot DevOps failures across CI/CD, infrastructure, runtime services, and deployment pipelines with evidence-driven incident triage and remediation steps."

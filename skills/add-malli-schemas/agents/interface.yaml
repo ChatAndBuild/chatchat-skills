@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Malli Schemas"
+  short_description: "Introducing or evolving Malli schemas in Clojure codebases, combining schema design, validation coverage, migration safety, and clear contract documentation."
+  default_prompt: "Introduce or evolving Malli schemas in Clojure codebases, combining schema design, validation coverage, migration safety, and clear contract documentation."

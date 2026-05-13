@@ -1,0 +1,4 @@
+interface:
+  display_name: "Eval Harness"
+  short_description: "Building or running evaluation harnesses, including datasets, scorers, baselines, regression tracking, model comparisons, and reproducible evaluation workflows."
+  default_prompt: "Build or running evaluation harnesses, including datasets, scorers, baselines, regression tracking, model comparisons, and reproducible evaluation workflows."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "C++ Testing"
+  short_description: "Designing C++ tests where memory ownership, lifetime, undefined behavior, boundary conditions, concurrency, isolation seams, or deterministic behavior matter."
+  default_prompt: "Design C++ tests where memory ownership, lifetime, undefined behavior, boundary conditions, concurrency, isolation seams, or deterministic behavior matter."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Golang Patterns"
+  short_description: "Implementing or reviewing Go code that needs idiomatic concurrency, error handling, interface design, package structure, service patterns, readability, correctness, or..."
+  default_prompt: "Implement or review Go code that needs idiomatic concurrency, error handling, interface design, package structure, service patterns, readability, correctness, or."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evaluating Code Models"
+  short_description: "Evaluating code-generation or code-understanding models with benchmark design, task suites, scoring rubrics, failure analysis, and regression tracking."
+  default_prompt: "Evaluate code-generation or code-understanding models with benchmark design, task suites, scoring rubrics, failure analysis, and regression tracking."

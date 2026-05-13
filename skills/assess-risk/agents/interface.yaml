@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assess Risk"
+  short_description: "Reviewing Apache ShardingSphere pull requests for root-cause fixes, side effects, regression risk, merge readiness, and committer-tone change requests."
+  default_prompt: "Review Apache ShardingSphere pull requests for root-cause fixes, side effects, regression risk, merge readiness, and committer-tone change requests."

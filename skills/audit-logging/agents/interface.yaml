@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Logging"
+  short_description: "Implementing database audit logging, change tracking, compliance trails, trigger-based logs, app-level audit events, or CDC-backed history tables."
+  default_prompt: "Implement database audit logging, change tracking, compliance trails, trigger-based logs, app-level audit events, or CDC-backed history tables."

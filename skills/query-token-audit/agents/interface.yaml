@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Token Audit"
+  short_description: "Checking token security before swaps or trades, including honeypot risk, scam indicators, malicious contract functions, dangerous ownership settings, unusual taxes, and..."
+  default_prompt: "Check token security before swaps or trades, including honeypot risk, scam indicators, malicious contract functions, dangerous ownership settings, unusual taxes, and."

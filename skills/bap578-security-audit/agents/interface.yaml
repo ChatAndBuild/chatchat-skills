@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Security Audit"
+  short_description: "Auditing, hardening, or verifying the security posture of BAP-578 Non-Fungible Agent deployments, including threat models, NFA-specific vulnerabilities, and remediation guidance."
+  default_prompt: "Audit, hardening, or verifying the security posture of BAP-578 Non-Fungible Agent deployments, including threat models, NFA-specific vulnerabilities, and remediation guidance."

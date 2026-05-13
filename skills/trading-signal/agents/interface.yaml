@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trading Signal"
+  short_description: "Retrieving or interpreting on-chain smart-money trading signals, including buy or sell direction, trigger price, current price, max gain, exit rate, and token tags."
+  default_prompt: "Retrieve or interpreting on-chain smart-money trading signals, including buy or sell direction, trigger price, current price, max gain, exit rate, and token tags."

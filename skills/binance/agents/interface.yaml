@@ -1,0 +1,4 @@
+interface:
+  display_name: "Binance"
+  short_description: "Building, evaluating, or tuning a Polymarket BTC 1h Up/Down trading strategy that uses Binance market data as the resolution or pricing anchor."
+  default_prompt: "Build, evaluating, or tuning a Polymarket BTC 1h Up/Down trading strategy that uses Binance market data as the resolution or pricing anchor."

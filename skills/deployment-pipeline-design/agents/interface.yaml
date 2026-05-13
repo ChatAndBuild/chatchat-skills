@@ -1,0 +1,4 @@
+interface:
+  display_name: "Deployment Pipeline Design"
+  short_description: "Designing deployment pipelines with safe promotion stages, quality gates, environment consistency, rollout strategy, rollback paths, and release verification."
+  default_prompt: "Design deployment pipelines with safe promotion stages, quality gates, environment consistency, rollout strategy, rollback paths, and release verification."

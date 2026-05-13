@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Deployment"
+  short_description: "Deploying, verifying, configuring, or validating BAP-578 Non-Fungible Agent contracts on BNB Chain testnet or mainnet, from environment setup through post-deployment checks."
+  default_prompt: "Deploy, verifying, configuring, or validating BAP-578 Non-Fungible Agent contracts on BNB Chain testnet or mainnet, from environment setup through post-deployment checks."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "A/B Test Setup"
+  short_description: "Setting up, improving, or auditing analytics measurement for experiments, conversion tracking, event instrumentation, funnel analysis, or A/B test readiness."
+  default_prompt: "Set up, improve, or audit analytics measurement for experiments, conversion tracking, event instrumentation, funnel analysis, or A/B test readiness."

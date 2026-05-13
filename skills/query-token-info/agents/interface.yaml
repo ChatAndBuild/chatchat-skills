@@ -1,0 +1,4 @@
+interface:
+  display_name: "Query Token Info"
+  short_description: "Searching or researching tokens by keyword, contract address, or chain, including metadata, social links, real-time market data, holder/liquidity signals, and K-line candlestick..."
+  default_prompt: "Search or researching tokens by keyword, contract address, or chain, including metadata, social links, real-time market data, holder/liquidity signals, and K-line candlestick."

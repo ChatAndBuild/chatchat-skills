@@ -1,0 +1,4 @@
+interface:
+  display_name: "dbt Transformation Patterns"
+  short_description: "Designing dbt projects, models, staging layers, marts, tests, documentation, naming conventions, incremental models, and transformation structure."
+  default_prompt: "Design dbt projects, models, staging layers, marts, tests, documentation, naming conventions, incremental models, and transformation structure."

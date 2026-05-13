@@ -1,0 +1,4 @@
+interface:
+  display_name: "BAP-578 Agent Economy"
+  short_description: "Designing, modeling, or operating BAP-578 agent economies where NFAs transact, collaborate, compete, provide services, handle funding, build reputation, or align incentives."
+  default_prompt: "Design, modeling, or operating BAP-578 agent economies where NFAs transact, collaborate, compete, provide services, handle funding, build reputation, or align incentives."

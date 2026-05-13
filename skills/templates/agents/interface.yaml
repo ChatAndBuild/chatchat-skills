@@ -1,0 +1,4 @@
+interface:
+  display_name: "Templates"
+  short_description: "Creating or maintaining reusable infrastructure, CI/CD, service, or pipeline templates with governance, versioning, rollout consistency, and environment provisioning."
+  default_prompt: "Create or maintaining reusable infrastructure, CI/CD, service, or pipeline templates with governance, versioning, rollout consistency, and environment provisioning."

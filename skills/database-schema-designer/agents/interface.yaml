@@ -1,0 +1,4 @@
+interface:
+  display_name: "Database Schema Designer"
+  short_description: "Designing database schemas for data and AI systems, including entities, relationships, keys, constraints, indexes, and query or analytics access patterns."
+  default_prompt: "Design database schemas for data and AI systems, including entities, relationships, keys, constraints, indexes, and query or analytics access patterns."

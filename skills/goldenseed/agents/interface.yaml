@@ -1,0 +1,4 @@
+interface:
+  display_name: "Goldenseed"
+  short_description: "Deterministic entropy streams are needed for reproducible tests, procedural generation, hash verification, or statistically balanced random-like sequences where cryptographic..."
+  default_prompt: "Create deterministic entropy streams for for reproducible tests, procedural generation, hash verification, or statistically balanced random-like sequences where cryptographic."

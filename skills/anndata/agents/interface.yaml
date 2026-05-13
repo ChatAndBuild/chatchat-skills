@@ -1,0 +1,4 @@
+interface:
+  display_name: "AnnData"
+  short_description: "Working with AnnData in scalable single-cell workflows, including backed mode, layers, obs/var metadata, sparse matrices, batch processing, and Scanpy-style pipelines."
+  default_prompt: "Work with AnnData in scalable single-cell workflows, including backed mode, layers, obs/var metadata, sparse matrices, batch processing, and Scanpy-style pipelines."

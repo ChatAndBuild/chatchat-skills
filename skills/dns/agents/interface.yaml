@@ -1,0 +1,4 @@
+interface:
+  display_name: "DNS"
+  short_description: "Understanding or troubleshooting DNS behavior across records, delegation, caching, propagation, resolution paths, and common domain misconfigurations."
+  default_prompt: "Understand or troubleshooting DNS behavior across records, delegation, caching, propagation, resolution paths, and common domain misconfigurations."

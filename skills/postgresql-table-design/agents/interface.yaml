@@ -1,0 +1,4 @@
+interface:
+  display_name: "PostgreSQL Table Design"
+  short_description: "Reasoning about individual PostgreSQL tables and nearby relationships, including keys, constraints, column types, normalization, query-aware indexes, and migration-ready schema..."
+  default_prompt: "Reason about individual PostgreSQL tables and nearby relationships, including keys, constraints, column types, normalization, query-aware indexes, and migration-ready schema."

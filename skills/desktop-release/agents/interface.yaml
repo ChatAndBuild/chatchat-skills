@@ -1,0 +1,4 @@
+interface:
+  display_name: "Desktop Release"
+  short_description: "Planning or executing desktop application releases, including repeatable builds, signing, packaging, release candidates, rollout checks, and cross-platform production readiness."
+  default_prompt: "Plan or executing desktop application releases, including repeatable builds, signing, packaging, release candidates, rollout checks, and cross-platform production readiness."

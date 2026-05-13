@@ -1,0 +1,4 @@
+interface:
+  display_name: "GitHub Automation"
+  short_description: "Automating GitHub workflows for issues, pull requests, labels, releases, repository hygiene, or operational guardrails around GitHub actions and repository maintenance."
+  default_prompt: "Automate GitHub workflows for issues, pull requests, labels, releases, repository hygiene, or operational guardrails around GitHub actions and repository maintenance."

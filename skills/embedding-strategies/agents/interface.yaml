@@ -1,0 +1,4 @@
+interface:
+  display_name: "Embedding Strategies"
+  short_description: "Selecting, evaluating, or operating embedding strategies, including model choice, chunking, vector dimensions, metadata, retrieval quality, and cost or latency tradeoffs."
+  default_prompt: "Select, evaluating, or operating embedding strategies, including model choice, chunking, vector dimensions, metadata, retrieval quality, and cost or latency tradeoffs."

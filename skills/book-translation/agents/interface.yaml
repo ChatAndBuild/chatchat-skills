@@ -1,0 +1,4 @@
+interface:
+  display_name: "Book Translation"
+  short_description: "Translating a book, chapter, or long-form document into another language while preserving structure, formatting, terminology consistency, and document continuity."
+  default_prompt: "Translate a book, chapter, or long-form document into another language while preserving structure, formatting, terminology consistency, and document continuity."

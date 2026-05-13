@@ -1,0 +1,4 @@
+interface:
+  display_name: "Context Driven Development"
+  short_description: "Implementing or maintaining project context as a managed artifact alongside code, especially Conductor setup, context documents, team onboarding, and consistent AI-assisted..."
+  default_prompt: "Implement or maintaining project context as a managed artifact alongside code, especially Conductor setup, context documents, team onboarding, and consistent AI-assisted."

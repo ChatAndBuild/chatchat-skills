@@ -15,20 +15,20 @@ A skill is a set of natural language instructions that guide an AI agent's behav
 
 ## Skill File Format
 
-Each skill lives in its own directory: `skills/{skill-id}/SKILL.md`
+Each skill lives in its own directory directly under `skills/`, with a `SKILL.md` entrypoint. Support folders such as `scripts/`, `references/`, and `assets/` belong to that skill and are not indexed separately:
+
+- `skills/{skill-id}/SKILL.md`
+- `skills/{skill-id}/references/{supporting-file}`
+- `skills/{skill-id}/scripts/{supporting-script}`
 
 ```markdown
 ---
 id: your-skill-id
 name: Your Skill Name
 description: A concise description of what this skill does (shown to the LLM).
-category: productivity
+category: Development
 author: your-github-username
 version: 1.0.0
-requires: []
-examples:
-  - Example usage prompt 1
-  - Example usage prompt 2
 ---
 
 Your skill instructions go here. Write in natural language.
@@ -41,10 +41,10 @@ Include any specific formatting, steps, or constraints.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| `id` | string | Unique identifier (lowercase, hyphens). Must match the directory name. |
+| `id` | string | Unique identifier (lowercase, hyphens). Must match the skill directory name. |
 | `name` | string | Human-readable display name |
 | `description` | string | What the skill does (max 200 chars). This is shown to the LLM as the tool description. |
-| `category` | string | One of: `productivity`, `development`, `communication`, `writing`, `research`, `other` |
+| `category` | string | One of the supported Skills Store categories listed below. |
 
 ### Optional Frontmatter Fields
 
@@ -52,26 +52,31 @@ Include any specific formatting, steps, or constraints.
 |-------|------|-------------|
 | `author` | string | Your GitHub username |
 | `version` | string | Semantic version (default: 1.0.0) |
-| `requires` | array | Input requirements: `document`, `text`, `thread` |
-| `examples` | array | Example prompts that would trigger this skill |
 
 ### Categories
 
-- **productivity** -- Task management, planning, organization
-- **development** -- Coding, debugging, code review, DevOps
-- **communication** -- Email drafting, messaging, social media
-- **writing** -- Content creation, editing, summarization
-- **research** -- Data analysis, fact-checking, literature review
-- **other** -- Everything else
+- **Lifestyle**
+- **Blockchain**
+- **Databases**
+- **Research**
+- **Content & Media**
+- **Documentation**
+- **Testing & Security**
+- **DevOps**
+- **Data & AI**
+- **Business**
+- **Development**
+- **OpenAI**
+- **Tools**
 
 ## Guidelines
 
 1. **Keep instructions clear and specific** -- The LLM needs to understand exactly what to do
 2. **Don't include prompt injection** -- Instructions must not attempt to override system prompts
 3. **Don't reference external URLs** -- Skills should be self-contained
-4. **Keep instructions under 4000 tokens** -- Shorter is better for performance
+4. **Keep instructions under 6000 tokens** -- Shorter is better for performance
 5. **Test your skill** -- Make sure the instructions produce good results
-6. **Include examples** -- Help users understand when to use your skill
+6. **Make the description trigger-focused** -- Start with "Use this skill when..." and describe the user intent that should activate it.
 
 ## Review Process
 

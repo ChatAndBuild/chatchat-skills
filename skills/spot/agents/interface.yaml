@@ -1,0 +1,4 @@
+interface:
+  display_name: "Spot"
+  short_description: "Making Binance Spot API requests, signing authenticated calls, choosing testnet versus mainnet endpoints, handling API keys and secrets, or working with Spot market data and..."
+  default_prompt: "Make Binance Spot API requests, signing authenticated calls, choosing testnet versus mainnet endpoints, handling API keys and secrets, or working with Spot market data and."

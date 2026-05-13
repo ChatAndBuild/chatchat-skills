@@ -1,0 +1,4 @@
+interface:
+  display_name: "Quit Smoking"
+  short_description: "Supporting cigarette or nicotine cessation with craving support, practical replacement strategies, trigger planning, smoke-free routines, relapse prevention, and recovery guidance."
+  default_prompt: "Support cigarette or nicotine cessation with craving support, practical replacement strategies, trigger planning, smoke-free routines, relapse prevention, and recovery guidance."

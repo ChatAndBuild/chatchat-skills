@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Script MySQL"
+  short_description: "Drafting or reviewing MySQL SQL scripts in a way that makes engine behavior, locking risk, compatibility, rollout sequencing, and reviewability visible."
+  default_prompt: "Draft or reviewing MySQL SQL scripts in a way that makes engine behavior, locking risk, compatibility, rollout sequencing, and reviewability visible."

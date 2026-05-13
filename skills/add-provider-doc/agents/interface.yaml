@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Provider Doc"
+  short_description: "Producing provider documentation that must be accurate, actionable, and support-friendly, including setup, usage, limits, troubleshooting, and release-ready structure."
+  default_prompt: "Produce provider documentation that is accurate, actionable, and support-friendly, including setup, usage, limits, troubleshooting, and release-ready structure."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Content Hash Cache Pattern"
+  short_description: "Implementing content-hash caching for AI or data systems, including cache keys, invalidation, reproducibility, artifact reuse, and avoiding stale outputs."
+  default_prompt: "Implement content-hash caching for AI or data systems, including cache keys, invalidation, reproducibility, artifact reuse, and avoiding stale outputs."

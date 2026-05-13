@@ -1,0 +1,4 @@
+interface:
+  display_name: "Incident Response"
+  short_description: "Leading or structuring incident response, including triage, containment, communications, recovery, severity assessment, timelines, and post-incident follow-up."
+  default_prompt: "Lead or structuring incident response, including triage, containment, communications, recovery, severity assessment, timelines, and post-incident follow-up."
