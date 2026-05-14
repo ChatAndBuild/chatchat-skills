@@ -1,0 +1,4 @@
+interface:
+  display_name: "Theme Factory"
+  short_description: "Apply curated color and font themes to slides, documents, reports, landing pages, and other artifacts."
+  default_prompt: "Apply a curated color and font theme to a slide deck, document, report, landing page, or other artifact."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "MCP Builder"
+  short_description: "Build high-quality MCP servers with well-designed tools, schemas, transports, tests, and evaluations."
+  default_prompt: "Build a high-quality MCP server with well-designed tools, schemas, transports, tests, and evaluations."

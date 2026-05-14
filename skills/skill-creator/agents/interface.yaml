@@ -1,0 +1,4 @@
+interface:
+  display_name: "Skill Creator"
+  short_description: "Create, edit, evaluate, benchmark, improve, and optimize agent skills and their trigger descriptions."
+  default_prompt: "Create, edit, evaluate, benchmark, improve, or optimize an agent skill and its trigger description."

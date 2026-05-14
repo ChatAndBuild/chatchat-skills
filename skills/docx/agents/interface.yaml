@@ -1,4 +1,4 @@
 interface:
-  display_name: "Docx"
-  short_description: "Creating, reading, editing, formatting, merging, converting, inspecting, or generating Word .docx documents with headings, tables, page numbers, letterheads, or other document..."
-  default_prompt: "Create, reading, editing, formatting, merging, converting, inspecting, or generating Word .docx documents with headings, tables, page numbers, letterheads, or other document."
+  display_name: "DOCX"
+  short_description: "Create, read, edit, format, review, convert, or manipulate Word document files."
+  default_prompt: "Create, read, edit, format, review, convert, or manipulate this Word document file."

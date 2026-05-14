@@ -1,4 +1,4 @@
 interface:
   display_name: "XLSX"
-  short_description: "Creating, editing, or auditing .xlsx spreadsheets, especially financial models, formulas, formatting, workbook structure, validation, and zero-error spreadsheet outputs."
-  default_prompt: "Create, editing, or auditing .xlsx spreadsheets, especially financial models, formulas, formatting, workbook structure, validation, and zero-error spreadsheet outputs."
+  short_description: "Create, read, edit, fix, clean, format, chart, or convert spreadsheet files."
+  default_prompt: "Create, read, edit, fix, clean, format, chart, or convert this spreadsheet file."

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Mcp Scripts"
-  short_description: "Operating the Unity Editor through MCP tools and resources, including resource-first workflows, GameObject operations, script edits, console checks, screenshots, and reusable Unity..."
-  default_prompt: "Operate the Unity Editor through MCP tools and resources, including resource-first workflows, GameObject operations, script edits, console checks, screenshots, and reusable Unity."

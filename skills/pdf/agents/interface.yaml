@@ -1,4 +1,4 @@
 interface:
-  display_name: "pdf"
-  short_description: "Tasks involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as..."
-  default_prompt: "Work on tasks that involve reading, creating, or reviewing PDF files where rendering and layout matter; prefer visual checks by rendering pages (Poppler) and use Python tools such as."
+  display_name: "PDF"
+  short_description: "Read, extract, merge, split, rotate, watermark, create, fill, secure, OCR, or convert PDF files."
+  default_prompt: "Read, extract, merge, split, rotate, watermark, create, fill, secure, OCR, or convert this PDF file."

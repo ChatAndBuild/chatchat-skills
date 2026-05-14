@@ -1,0 +1,4 @@
+interface:
+  display_name: "Webapp Testing"
+  short_description: "Test local web applications with Playwright, browser screenshots, logs, selectors, and server lifecycle helpers."
+  default_prompt: "Test this local web application with Playwright, browser screenshots, logs, selectors, and server lifecycle helpers."

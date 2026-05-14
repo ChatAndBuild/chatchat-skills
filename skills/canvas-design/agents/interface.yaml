@@ -1,0 +1,4 @@
+interface:
+  display_name: "Canvas Design"
+  short_description: "Create original static visual art, posters, designs, PNGs, and PDFs from a design philosophy."
+  default_prompt: "Create an original static visual design, poster, PNG, or PDF from a clear design philosophy."

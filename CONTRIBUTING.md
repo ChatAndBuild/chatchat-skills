@@ -67,6 +67,7 @@ Include any specific formatting, steps, or constraints.
 - **Business**
 - **Development**
 - **OpenAI**
+- **Anthropic**
 - **Tools**
 
 ## Guidelines

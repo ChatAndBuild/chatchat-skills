@@ -1,4 +1,0 @@
-interface:
-  display_name: "Authoring Skills"
-  short_description: "Creating or modifying agent skills, especially SKILL.md frontmatter, trigger descriptions, naming conventions, skill versus AGENTS.md boundaries, and local skill structure."
-  default_prompt: "Create or modifying agent skills, especially SKILL.md frontmatter, trigger descriptions, naming conventions, skill versus AGENTS.md boundaries, and local skill structure."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Doc Co-Authoring"
+  short_description: "Guide collaborative documentation, proposals, specs, and decision docs through context gathering, drafting, refinement, and reader testing."
+  default_prompt: "Help me co-author a document, proposal, spec, or decision doc through context gathering, section-by-section drafting, refinement, and reader testing."

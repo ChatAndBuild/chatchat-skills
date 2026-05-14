@@ -1,0 +1,4 @@
+interface:
+  display_name: "Slack GIF Creator"
+  short_description: "Create polished animated GIFs optimized for Slack emoji and message sharing."
+  default_prompt: "Create a polished animated GIF optimized for Slack emoji or message sharing."

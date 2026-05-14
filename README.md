@@ -66,6 +66,7 @@ Common categories you’ll see:
 - Business
 - Development
 - OpenAI
+- Anthropic
 - Tools
 
 Use the most specific, user-friendly category that matches the skill’s primary intent. If a skill spans multiple domains, pick the category users would most likely search.
