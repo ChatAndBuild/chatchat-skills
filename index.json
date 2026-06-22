@@ -4,20 +4,8 @@
     "description": "Use this skill when setting up, improving, or auditing analytics measurement for experiments, conversion tracking, event instrumentation, funnel analysis, or A/B test readiness."
   },
   {
-    "name": "Accessibility",
-    "description": "Use this skill when implementing or reviewing VS Code accessibility surfaces, including help dialogs, accessible views, verbosity settings, accessibility signals, ARIA alerts, keyboard navigation, labels, and roles."
-  },
-  {
-    "name": "Add Malli Schemas",
-    "description": "Use this skill when introducing or evolving Malli schemas in Clojure codebases, combining schema design, validation coverage, migration safety, and clear contract documentation."
-  },
-  {
     "name": "Add Provider Doc",
     "description": "Use this skill when producing provider documentation that must be accurate, actionable, and support-friendly, including setup, usage, limits, troubleshooting, and release-ready structure."
-  },
-  {
-    "name": "Add UInt Support",
-    "description": "Use this skill when introducing unsigned integer handling into an existing codebase, covering parsing, validation, storage, serialization, APIs, arithmetic boundaries, and overflow compatibility risks."
   },
   {
     "name": "Agent Load Balancer",
@@ -26,14 +14,6 @@
   {
     "name": "Agent Performance Analyzer",
     "description": "Use this skill when analyzing AI agent performance with latency, success rate, cost, quality, throughput, and failure signals to identify bottlenecks and improvement opportunities."
-  },
-  {
-    "name": "AI Product",
-    "description": "Use this skill when planning, shipping, or improving AI products, including product strategy, user workflows, evaluation loops, model capability boundaries, UX risks, and release tradeoffs."
-  },
-  {
-    "name": "Airbnb Search",
-    "description": "Use this skill when comparing Airbnb-style accommodation options or short-term stays, using prices, ratings, locations, availability context, direct links, and recommendation tradeoffs."
   },
   {
     "name": "Airflow DAG Patterns",
@@ -48,20 +28,8 @@
     "description": "Use this skill when keeping analytics instrumentation accurate, consistent, and release-ready across event definitions, tracking plans, schemas, implementation, QA, and governance."
   },
   {
-    "name": "AnnData",
-    "description": "Use this skill when working with AnnData in scalable single-cell workflows, including backed mode, layers, obs/var metadata, sparse matrices, batch processing, and Scanpy-style pipelines."
-  },
-  {
-    "name": "Arm Cortex Expert",
-    "description": "Use this skill when designing or optimizing embedded firmware for ARM Cortex MCUs, including memory layout, timing, interrupts, peripherals, low-power behavior, and hardware-adjacent debugging."
-  },
-  {
-    "name": "Assess Risk",
-    "description": "Use this skill when reviewing Apache ShardingSphere pull requests for root-cause fixes, side effects, regression risk, merge readiness, and committer-tone change requests."
-  },
-  {
-    "name": "Audit Logging",
-    "description": "Use this skill when implementing database audit logging, change tracking, compliance trails, trigger-based logs, app-level audit events, or CDC-backed history tables."
+    "name": "Automation Triggers",
+    "description": "Use this skill when designing, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."
   },
   {
     "name": "Azure Sdk Mgmt Pr Review",
@@ -112,10 +80,6 @@
     "description": "Use this skill when writing, running, debugging, or extending BAP-578 Non-Fungible Agent tests, including infrastructure setup, function coverage, edge cases, upgrades, gas profiling, and Hardhat workflows."
   },
   {
-    "name": "Binance",
-    "description": "Use this skill when building, evaluating, or tuning a Polymarket BTC 1h Up/Down trading strategy that uses Binance market data as the resolution or pricing anchor."
-  },
-  {
     "name": "Bonero Miner",
     "description": "Use this skill when setting up or troubleshooting Bonero mining, wallets, daemons, RandomX CPU mining, or Monero-style private cryptocurrency workflows for AI agents."
   },
@@ -128,44 +92,20 @@
     "description": "Use this skill when building or reviewing browser extensions that need extension-specific guidance for runtime boundaries, permissions, content scripts, background scripts, messaging, storage, security, or distribution."
   },
   {
-    "name": "C++ Testing",
-    "description": "Use this skill when designing C++ tests where memory ownership, lifetime, undefined behavior, boundary conditions, concurrency, isolation seams, or deterministic behavior matter."
-  },
-  {
     "name": "Cairo Vulnerability Scanner",
     "description": "Use this skill when scanning Cairo or StarkNet smart contracts for StarkNet-specific vulnerabilities such as felt252 arithmetic overflow, L1-L2 messaging flaws, address conversion bugs, or signature replay."
-  },
-  {
-    "name": "Canva",
-    "description": "Use this skill when using the Canva Connect API to manage Canva designs, assets, exports, folders, and template-driven document or PDF automation workflows."
   },
   {
     "name": "canvas-design",
     "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations."
   },
   {
-    "name": "CDC",
-    "description": "Use this skill when designing or implementing change data capture, including source logs, event ordering, snapshots, schema changes, downstream consumers, and replay-safe data pipelines."
-  },
-  {
     "name": "Changelog Automation",
     "description": "Use this skill when generating or maintaining release changelogs from merged work, including version scope, grouped changes, breaking-change notes, formatting consistency, and verification checks."
   },
   {
-    "name": "Chroma",
-    "description": "Use this skill when applying Geniml-style genomic interval machine learning to BED files, including Region2Vec embeddings, scATAC-seq analysis, BEDspace-style workflows, or consensus peak analysis."
-  },
-  {
     "name": "CI Monitor",
     "description": "Use this skill when monitoring CI pipelines for failures, regressions, instability, flaky jobs, and ownership signals, then prioritizing fixes with clear evidence and next actions."
-  },
-  {
-    "name": "Cirq",
-    "description": "Use this skill when building, simulating, or executing quantum circuits with Cirq, including VQE, QAOA, noise modeling, circuit construction, and quantum workflow guidance."
-  },
-  {
-    "name": "ClawHub",
-    "description": "Use this skill when configuring, operating, or troubleshooting ClawHub integrations and workflow execution, including auth setup, trigger strategy, secure credentials, observability, recovery, and implementation checklists."
   },
   {
     "name": "cli-creator",
@@ -176,108 +116,24 @@
     "description": "Deploy applications and infrastructure to Cloudflare using Workers, Pages, and related platform services. Use when the user asks to deploy, host, publish, or set up a project on Cloudflare."
   },
   {
-    "name": "Cocoindex",
-    "description": "Use this skill when building data indexing workflows with CocoIndex, including source ingestion, transformations, incremental updates, schema choices, and retrieval-oriented pipeline behavior."
-  },
-  {
-    "name": "Code Review",
-    "description": "Use this skill when reviewing a code change for correctness, behavioral risk, maintainability, unclear contracts, missing verification, and findings-first feedback rather than style polish."
-  },
-  {
-    "name": "Coding Agent",
-    "description": "Use this skill when designing, evaluating, or improving coding agents, including task decomposition, tool use, repo navigation, verification loops, autonomy boundaries, and agent behavior quality."
-  },
-  {
-    "name": "Coinbase Automation",
-    "description": "Use this skill when automating browser wallet workflows for AI agents across wallets such as MetaMask, Rabby, Phantom, Trust Wallet, OKX, or Coinbase, including EVM, Solana, guardrails, spend limits, chain allowlists, and approvals."
-  },
-  {
     "name": "Commit Helper",
     "description": "Use this skill when turning actual code changes into focused commit plans or commit messages, splitting unrelated changes, applying Conventional Commits, or adding reviewer-ready scope and risk notes."
-  },
-  {
-    "name": "Composio",
-    "description": "Use this skill when implementing app integrations with Composio, including tool configuration, auth flows, connected accounts, action execution, and integration reliability."
   },
   {
     "name": "Content Creator",
     "description": "Use this skill when creating audience-focused blog posts, social posts, newsletters, marketing copy, hooks, outlines, and calls to action."
   },
   {
-    "name": "Content Design",
-    "description": "Use this skill when writing, reviewing, or auditing product UI copy such as button labels, error messages, tooltips, empty states, modal copy, placeholders, confirmation dialogs, onboarding text, or i18n strings."
-  },
-  {
-    "name": "Content Hash Cache Pattern",
-    "description": "Use this skill when implementing content-hash caching for AI or data systems, including cache keys, invalidation, reproducibility, artifact reuse, and avoiding stale outputs."
-  },
-  {
-    "name": "Content Research Writer",
-    "description": "Use this skill when writing research-backed content that needs source discovery, citations, hooks, outlines, section-by-section iteration, or editorial feedback during drafting."
-  },
-  {
-    "name": "Context Degradation",
-    "description": "Use this skill when diagnosing context-failure patterns in long agent workflows, including lost-in-middle, context poisoning, distraction, clash, degraded outputs, and context-engineering mitigations."
-  },
-  {
-    "name": "Context Driven Development",
-    "description": "Use this skill when implementing or maintaining project context as a managed artifact alongside code, especially Conductor setup, context documents, team onboarding, and consistent AI-assisted development workflows."
-  },
-  {
-    "name": "Continuous Learning",
-    "description": "Use this skill when designing continuous learning workflows for ML systems, including feedback loops, data refresh, evaluation gates, model updates, drift monitoring, and deployment controls."
-  },
-  {
     "name": "Contract Review",
     "description": "Use this skill when reviewing contracts against an organization-specific negotiation playbook, flagging deviations, summarizing risk, and drafting redline or fallback language."
-  },
-  {
-    "name": "Cosmos Vulnerability Scanner",
-    "description": "Use this skill when scanning Cosmos SDK chains or modules for consensus-critical vulnerabilities such as non-determinism, incorrect signers, ABCI panics, rounding errors, or unsafe state transitions."
   },
   {
     "name": "Create Pull Request",
     "description": "Use this skill when preparing GitHub pull requests with clear summaries, scoped changes, test plans, reviewer context, risk notes, and links to relevant issues or evidence."
   },
   {
-    "name": "Crypto Market Rank",
-    "description": "Use this skill when retrieving or interpreting crypto market rankings and leaderboards for trending tokens, social hype, smart-money inflow, meme ranks, or top-trader PnL."
-  },
-  {
-    "name": "Daily.dev",
-    "description": "Use this skill when accessing current developer content from daily.dev, including popular or personalized feeds, community-validated articles, tech trend briefings, stack-based feeds, and API-token-safe workflows."
-  },
-  {
-    "name": "Data Quality Frameworks",
-    "description": "Use this skill when designing production data quality checks, validation rules, anomaly detection, freshness tests, lineage-aware controls, and governance for data pipelines."
-  },
-  {
-    "name": "Database Migrations",
-    "description": "Use this skill when planning safe schema or data migrations without assuming direct execution access, including rollout sequencing, backfills, compatibility windows, validation queries, and rollback awareness."
-  },
-  {
-    "name": "Database Schema Designer",
-    "description": "Use this skill when designing database schemas for data and AI systems, including entities, relationships, keys, constraints, indexes, and query or analytics access patterns."
-  },
-  {
-    "name": "dbt Transformation Patterns",
-    "description": "Use this skill when designing dbt projects, models, staging layers, marts, tests, documentation, naming conventions, incremental models, and transformation structure."
-  },
-  {
-    "name": "Debugging",
-    "description": "Use this skill when a systematic debugging approach is needed, using hypothesis-driven investigation, evidence gathering, reproduction quality, and safe narrowing instead of random fixes or shallow symptom chasing."
-  },
-  {
-    "name": "DeFi Protocol Templates",
-    "description": "Use this skill when implementing DeFi protocol templates for staking, AMMs, governance, or lending systems with production-oriented contract structure and security considerations."
-  },
-  {
     "name": "Dependency Upgrade",
     "description": "Use this skill when upgrading dependencies with risk-aware batching, compatibility checks, lockfile review, migration notes, and verification steps for routine updates or major-version changes."
-  },
-  {
-    "name": "Deployment Patterns",
-    "description": "Use this skill when deploying data or AI systems to production, including artifact promotion, environment parity, model/data dependencies, rollback, monitoring, and release safety."
   },
   {
     "name": "Deployment Pipeline Design",
@@ -288,28 +144,12 @@
     "description": "Use this skill when planning or executing desktop application releases, including repeatable builds, signing, packaging, release candidates, rollout checks, and cross-platform production readiness."
   },
   {
-    "name": "Develop AI Functions Example",
-    "description": "Use this skill when designing or implementing AI function and tool interfaces with clear schemas, deterministic behavior, safe error handling, and examples for assistants or agent workflows."
-  },
-  {
     "name": "DevOps IaC Engineer",
     "description": "Use this skill when designing or reviewing Infrastructure as Code for reliability, security, drift control, modularity, environment promotion, and operational maintainability."
   },
   {
     "name": "DevOps Troubleshooter",
     "description": "Use this skill when troubleshooting DevOps failures across CI/CD, infrastructure, runtime services, and deployment pipelines with evidence-driven incident triage and remediation steps."
-  },
-  {
-    "name": "Nutrition Planning",
-    "description": "Use this skill when creating structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific nutrition plans."
-  },
-  {
-    "name": "Distributed Tracing",
-    "description": "Use this skill when instrumenting distributed systems with traces that expose latency, errors, dependency bottlenecks, service boundaries, and incident diagnostics."
-  },
-  {
-    "name": "DNS",
-    "description": "Use this skill when understanding or troubleshooting DNS behavior across records, delegation, caching, propagation, resolution paths, and common domain misconfigurations."
   },
   {
     "name": "doc-coauthoring",
@@ -324,44 +164,8 @@
     "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation."
   },
   {
-    "name": "Drizzle",
-    "description": "Use this skill when using Drizzle ORM in data-backed applications, including schema definitions, migrations, typed queries, relations, transactions, and integration with application code."
-  },
-  {
-    "name": "Durable Objects",
-    "description": "Use this skill when implementing or operating Cloudflare Durable Objects for strongly consistent coordination, stateful workflows, actor-style services, single-writer state, or low-latency edge logic."
-  },
-  {
-    "name": "Dust Hive",
-    "description": "Use this skill when working in or reasoning about dust-hive development environments, including isolated Dust instances, port allocation, test execution, and repository-specific environment behavior."
-  },
-  {
-    "name": "E2E Testing Patterns",
-    "description": "Use this skill when building or refactoring end-to-end test suites that cover critical user journeys with stable selectors, controlled test data, reliable waits, and clear failure triage."
-  },
-  {
-    "name": "Editor",
-    "description": "Use this skill when editing or proofreading prose for clarity, grammar, style, readability, tone, structure, or publication readiness."
-  },
-  {
-    "name": "Embedding Strategies",
-    "description": "Use this skill when selecting, evaluating, or operating embedding strategies, including model choice, chunking, vector dimensions, metadata, retrieval quality, and cost or latency tradeoffs."
-  },
-  {
     "name": "Endurance Coach",
     "description": "Use this skill when creating personalized triathlon, marathon, ultra-endurance, or long-distance training plans with periodization, recovery, intensity zones, and race-specific preparation."
-  },
-  {
-    "name": "Entry Point Analyzer",
-    "description": "Use this skill when analyzing smart contract codebases to identify externally callable state-changing entry points, categorize access levels, exclude read-only functions, and produce structured audit findings."
-  },
-  {
-    "name": "Eval Harness",
-    "description": "Use this skill when building or running evaluation harnesses, including datasets, scorers, baselines, regression tracking, model comparisons, and reproducible evaluation workflows."
-  },
-  {
-    "name": "Evaluating Code Models",
-    "description": "Use this skill when evaluating code-generation or code-understanding models with benchmark design, task suites, scoring rubrics, failure analysis, and regression tracking."
   },
   {
     "name": "figma",
@@ -396,10 +200,6 @@
     "description": "**MANDATORY prerequisite** — you MUST invoke this skill BEFORE every `use_figma` tool call. NEVER call `use_figma` directly without loading this skill first. Skipping it causes common, hard-to-debug failures. Trigger whenever the user wants to perform a write action or a unique read action that requires JavaScript execution in the Figma file context — e.g. create/edit/delete nodes, set up variables or tokens, build components and variants, modify auto-layout or fills, bind variables to properties, or inspect file structure programmatically."
   },
   {
-    "name": "Fine Tuning with TRL",
-    "description": "Use this skill when fine-tuning language models with TRL, including dataset formatting, SFT or preference training setup, trainer configuration, evaluation, and deployment tradeoffs."
-  },
-  {
     "name": "Frontend Web3 for BAP-578",
     "description": "Use this skill when integrating BAP-578 smart contract reads or writes into a Next.js or React frontend, including wallet connection, chain setup, ABI wiring, hooks, minting flows, and agent-management UI."
   },
@@ -410,18 +210,6 @@
   {
     "name": "Gardening",
     "description": "Use this skill when answering gardening questions about plant care, soil management, seasonal timing, pest control, pruning, propagation, or garden planning."
-  },
-  {
-    "name": "Generate Sparkle Appcast",
-    "description": "Use this skill when generating or validating Sparkle appcast metadata for macOS auto-updates, including signatures, versions, release notes, enclosure URLs, and update compatibility."
-  },
-  {
-    "name": "GeoPandas",
-    "description": "Use this skill when working with GeoPandas geospatial workflows, including CRS handling, joins, overlays, geometry cleanup, spatial indexing, file formats, and map-ready data preparation."
-  },
-  {
-    "name": "Gguf Quantization",
-    "description": "Use this skill when planning or executing GGUF model quantization, including quantization type selection, accuracy checks, latency and memory tradeoffs, and deployment validation."
   },
   {
     "name": "GH Issues",
@@ -440,48 +228,20 @@
     "description": "Use this skill when automating GitHub workflows for issues, pull requests, labels, releases, repository hygiene, or operational guardrails around GitHub actions and repository maintenance."
   },
   {
-    "name": "GitLab CI Patterns",
-    "description": "Use this skill when applying reliable GitLab CI pipeline patterns for faster feedback, safer deploys, maintainable configuration, caching, stages, rules, and runner behavior."
-  },
-  {
     "name": "Golang Patterns",
     "description": "Use this skill when implementing or reviewing Go code that needs idiomatic concurrency, error handling, interface design, package structure, service patterns, readability, correctness, or maintainability."
-  },
-  {
-    "name": "Goldenseed",
-    "description": "Use this skill when deterministic entropy streams are needed for reproducible tests, procedural generation, hash verification, or statistically balanced random-like sequences where cryptographic security is not required."
-  },
-  {
-    "name": "Guidelines Advisor",
-    "description": "Use this skill when reviewing smart contract architecture against Trail of Bits style best practices, including upgradeability, implementation quality, known pitfalls, testing, and codebase-level design risks."
   },
   {
     "name": "Hybrid Cloud Networking",
     "description": "Use this skill when designing or troubleshooting hybrid cloud networking across on-prem and cloud environments, including secure connectivity, routing, VPN or Direct Connect style links, and traffic diagnostics."
   },
   {
-    "name": "Idapython",
-    "description": "Use this skill when automating reverse-engineering workflows in IDA with IDAPython, including analysis scripts, renaming, pattern extraction, navigation, and repeatable binary-inspection tasks."
-  },
-  {
     "name": "Image Generation",
     "description": "Use this skill when generating or editing raster images for project assets, mockups, photos, illustrations, textures, sprites, transparent-background cutouts, or visual variants where bitmap output is more appropriate than repo-native SVG, vector, HTML, CSS, or canvas work."
   },
   {
-    "name": "Implement Flet Extension",
-    "description": "Use this skill when designing or implementing Flet extensions, including extension APIs, platform behavior, packaging, examples, and integration with Flet applications."
-  },
-  {
     "name": "Implementing Agent Modes",
     "description": "Use this skill when adding mode-aware behavior to an AI agent, including explicit triggers, permissions, response contracts, and plan, ask, debug, or execute style interaction modes."
-  },
-  {
-    "name": "Implementing JSC Classes C++",
-    "description": "Use this skill when implementing JavaScriptCore-backed classes in C++, including bindings, lifetime management, method exposure, property behavior, and runtime correctness."
-  },
-  {
-    "name": "Implementing JSC Classes Zig",
-    "description": "Use this skill when implementing JavaScriptCore class bindings in Zig, including memory ownership, method exposure, property behavior, callbacks, and runtime safety."
   },
   {
     "name": "Incident Response",
@@ -500,18 +260,6 @@
     "description": "Use this skill when organizing invoices and receipts for tax preparation by extracting key fields, normalizing filenames, grouping records, and producing accountant-ready CSV output."
   },
   {
-    "name": "JavaScript Testing Patterns",
-    "description": "Use this skill when JavaScript-specific runtime behavior makes generic test advice too shallow, including async behavior, timers, modules, mocks, browser-like environments, and stateful edge cases."
-  },
-  {
-    "name": "JB Pay Hook",
-    "description": "Use this skill when generating or evaluating custom Juicebox V5 pay hooks from natural-language specs, including IJBPayHook/IJBRulesetDataHook contracts, Foundry tests, and checks against off-the-shelf hook options."
-  },
-  {
-    "name": "JB Protocol Fees",
-    "description": "Use this skill when working with Juicebox V5 or Revnet protocol fees, including NANA fees, Revnet cash-out fees, REV loans, variable loan fees, and related UI integration."
-  },
-  {
     "name": "jupyter-notebook",
     "description": "Use when the user asks to create, scaffold, or edit Jupyter notebooks (`.ipynb`) for experiments, explorations, or tutorials; prefer the bundled templates and run the helper script `new_notebook.py` to generate a clean starting notebook."
   },
@@ -520,20 +268,12 @@
     "description": "Use this skill when giving management guidance on team leadership, operating cadence, delegation, feedback, planning, organizational effectiveness, or manager decision-making."
   },
   {
-    "name": "Managing Database Recovery",
-    "description": "Use this skill when designing or reviewing database recovery plans for data loss, corruption, or operational incidents, including backups, RPO/RTO, restore sequencing, and integrity checks."
-  },
-  {
     "name": "mcp-builder",
     "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK)."
   },
   {
     "name": "Meme Rush",
     "description": "Use this skill when tracking meme-token launches, hot narratives, migration status, holder counts, net inflow, and fast market filters around early token activity."
-  },
-  {
-    "name": "Migrate Frontend Forms",
-    "description": "Use this skill when migrating frontend forms, form libraries, validation schemas, submission flows, or accessibility behavior while minimizing regressions in production systems."
   },
   {
     "name": "Multi-Cloud Architecture",
@@ -552,10 +292,6 @@
     "description": "Deploy web projects to Netlify using the Netlify CLI (`npx netlify`). Use when the user asks to deploy, host, publish, or link a site/repo on Netlify, including preview and production deploys."
   },
   {
-    "name": "Network Info",
-    "description": "Use this skill when interpreting network facts during troubleshooting, including IPs, routes, interfaces, DNS, connectivity clues, failure boundaries, and which details matter before drawing conclusions."
-  },
-  {
     "name": "notion-knowledge-capture",
     "description": "Capture conversations and decisions into structured Notion pages; use when turning chats/notes into wiki entries, how-tos, decisions, or FAQs with proper linking."
   },
@@ -572,8 +308,8 @@
     "description": "Turn Notion specs into implementation plans, tasks, and progress tracking; use when implementing PRDs/feature specs and creating Notion plans + tasks from them."
   },
   {
-    "name": "Objectpool",
-    "description": "Use this skill when implementing low-allocation .NET patterns with Span, ArrayPool, ObjectPool, pooling lifecycles, memory reuse, or allocation-sensitive performance work."
+    "name": "Nutrition Planning",
+    "description": "Use this skill when creating structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific nutrition plans."
   },
   {
     "name": "Observability Engineer",
@@ -582,10 +318,6 @@
   {
     "name": "openai-docs",
     "description": "Use when the user asks how to build with OpenAI products or APIs and needs up-to-date official documentation with citations, help choosing the latest model for a use case, or model upgrade and prompt-upgrade guidance; prioritize OpenAI docs MCP tools, use bundled references only as helper context, and restrict any fallback browsing to official OpenAI domains."
-  },
-  {
-    "name": "Optimizing Database Connection Pool",
-    "description": "Use this skill when reasoning about database connection-pool sizing and behavior before changing configuration, including workload-aware limits, timeouts, leak detection, saturation, and failure modes."
   },
   {
     "name": "Parallel Feature Development",
@@ -604,32 +336,12 @@
     "description": "Use this skill when designing workout programs, explaining exercises, tracking progress, adapting training based on feedback, or planning strength and conditioning routines."
   },
   {
-    "name": "Plan Writing",
-    "description": "Use this skill when turning a complex task into a structured execution plan with clear steps, dependencies, assumptions, risks, verification, and progress-tracking criteria."
-  },
-  {
-    "name": "Planning Agent",
-    "description": "Use this skill when generating project-aware unit tests through a research, planning, implementation, and verification pipeline that must fit the target language and repository conventions."
-  },
-  {
-    "name": "Planning With Files",
-    "description": "Use this skill when complex work needs persistent markdown planning files as working memory, including task plans, notes, deliverables, checkpoint updates, and file-backed execution loops."
-  },
-  {
     "name": "PostgreSQL Table Design",
     "description": "Use this skill when reasoning about individual PostgreSQL tables and nearby relationships, including keys, constraints, column types, normalization, query-aware indexes, and migration-ready schema decisions."
   },
   {
     "name": "pptx",
     "description": "Use this skill any time a .pptx file is involved in any way — as input, output, or both. This includes: creating slide decks, pitch decks, or presentations; reading, parsing, or extracting text from any .pptx file (even if the extracted content will be used elsewhere, like in an email or summary); editing, modifying, or updating existing presentations; combining or splitting slide files; working with templates, layouts, speaker notes, or comments. Trigger whenever the user mentions \"deck,\" \"slides,\" \"presentation,\" or references a .pptx filename, regardless of what they plan to do with the content afterward. If a .pptx file needs to be opened, created, or touched, use this skill."
-  },
-  {
-    "name": "Property Based Testing",
-    "description": "Use this skill when designing tests around invariants, generated inputs, shrinking, edge-case discovery, and regression checks instead of hand-picking every case one by one."
-  },
-  {
-    "name": "Python Testing",
-    "description": "Use this skill when designing Python tests that are clear, maintainable, and sensitive to Python-specific failure patterns such as fixtures, parametrization, side effects, exceptions, and stateful runtime behavior."
   },
   {
     "name": "Query Address Info",
@@ -668,10 +380,6 @@
     "description": "Use this skill when creating or loading AI session handoffs, saving context before pausing, nearing context limits, resuming complex work, or preserving decisions, files changed, blockers, and next steps."
   },
   {
-    "name": "Sandbox SDK",
-    "description": "Use this skill when building secure code-execution systems with a Sandbox SDK, including sandbox lifecycle, command execution, file operations, code interpreters, preview URLs, and untrusted-code boundaries."
-  },
-  {
     "name": "screenshot",
     "description": "Use when the user explicitly asks for a desktop or system screenshot (full screen, specific app or window, or a pixel region), or when tool-specific capture capabilities are unavailable and an OS-level capture is needed."
   },
@@ -692,20 +400,12 @@
     "description": "Use when the user asks to inspect Sentry issues or events, summarize recent production errors, or pull basic Sentry health data via the Sentry CLI; perform read-only queries using the `sentry` command."
   },
   {
-    "name": "Shopify",
-    "description": "Use this skill when building Shopify apps, themes, checkout/admin/POS extensions, Shopify Functions, Liquid templates, Polaris UIs, GraphQL Admin API integrations, webhooks, billing, or metafields."
-  },
-  {
     "name": "skill-creator",
     "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
   },
   {
     "name": "slack-gif-creator",
     "description": "Knowledge and utilities for creating animated GIFs optimized for Slack. Provides constraints, validation tools, and animation concepts. Use when users request animated GIFs for Slack like \"make me a GIF of X doing Y for Slack."
-  },
-  {
-    "name": "Solidity Security",
-    "description": "Use this skill when auditing or hardening Solidity smart contracts against reentrancy, access-control flaws, arithmetic bugs, unsafe upgrades, oracle risks, fund-management failures, or common EVM vulnerabilities."
   },
   {
     "name": "speech",
@@ -716,24 +416,12 @@
     "description": "Use this skill when making Binance Spot API requests, signing authenticated calls, choosing testnet versus mainnet endpoints, handling API keys and secrets, or working with Spot market data and orders."
   },
   {
-    "name": "Stripe",
-    "description": "Use this skill when implementing Stripe payment flows, including Checkout, PaymentIntents, subscriptions, billing, webhooks, refunds, SCA, and PCI-conscious integration patterns."
+    "name": "SQL Migration Scripts",
+    "description": "Use this skill when drafting or reviewing MySQL or PostgreSQL migration scripts, schema changes, data backfills, index changes, permission updates, or operational SQL where locking, transactions, compatibility, rollout sequencing, validation, and rollback risk matter."
   },
   {
     "name": "Subagent-driven Development",
     "description": "Use this skill when decomposing and coordinating multi-step implementation or DevOps work across focused subagents with explicit ownership, handoffs, validation, and final integration checks."
-  },
-  {
-    "name": "Summarize",
-    "description": "Use this skill when summarizing URLs, local files, podcasts, YouTube links, videos, or transcripts, including link overviews, best-effort transcript extraction, and summarize.sh workflows."
-  },
-  {
-    "name": "Syncable Entity Builder And Validator",
-    "description": "Use this skill when creating validation logic or migration action builders for syncable entities in Twenty, including entity shape, sync rules, migration actions, and validator behavior."
-  },
-  {
-    "name": "Technical Writer",
-    "description": "Use this skill when writing or improving technical documentation, including READMEs, API references, tutorials, user guides, conceptual docs, examples, and developer-facing explanations."
   },
   {
     "name": "Template Governance",
@@ -744,10 +432,6 @@
     "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly."
   },
   {
-    "name": "Ton Vulnerability Scanner",
-    "description": "Use this skill when scanning TON smart contracts for TON-specific vulnerabilities such as integer-as-boolean misuse, fake Jetton contracts, or forwarding TON without gas checks."
-  },
-  {
     "name": "Trading Signal",
     "description": "Use this skill when retrieving or interpreting on-chain smart-money trading signals, including buy or sell direction, trigger price, current price, max gain, exit rate, and token tags."
   },
@@ -756,48 +440,16 @@
     "description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings."
   },
   {
-    "name": "Automation Triggers",
-    "description": "Use this skill when designing, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."
-  },
-  {
     "name": "Turborepo Caching",
     "description": "Use this skill when configuring or debugging Turborepo local and remote caching, including task outputs, cache keys, CI reproducibility, cache misses, and developer build performance."
-  },
-  {
-    "name": "Update Release Notes",
-    "description": "Use this skill when release notes must explain what changed, who is affected, what readers should do next, and any user-facing impact, migration concern, rollout caveat, or risk area."
-  },
-  {
-    "name": "Video Frames",
-    "description": "Use this skill when extracting frames, thumbnails, clips, timestamps, or short video segments from media files with ffmpeg."
-  },
-  {
-    "name": "Weather",
-    "description": "Use this skill when retrieving current weather or forecasts through wttr.in or Open-Meteo, including location-based conditions, forecast summaries, and lightweight weather lookup workflows."
-  },
-  {
-    "name": "Web Fetch",
-    "description": "Use this skill when fetching readable web page content from a URL without browser automation, especially for lightweight extraction, text cleanup, or summarization inputs."
   },
   {
     "name": "webapp-testing",
     "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs."
   },
   {
-    "name": "WinApp CLI",
-    "description": "Use this skill when using the winapp CLI to initialize Windows app projects, generate manifests or certificates, build packages, create MSIX releases, sign artifacts, or deploy Windows applications."
-  },
-  {
     "name": "Workout Logger",
     "description": "Use this skill when turning messy workout information into clear logs, comparing user-provided sessions, surfacing trends or likely PRs, and suggesting realistic next-session steps."
-  },
-  {
-    "name": "SQL Migration Scripts",
-    "description": "Use this skill when drafting or reviewing MySQL or PostgreSQL migration scripts, schema changes, data backfills, index changes, permission updates, or operational SQL where locking, transactions, compatibility, rollout sequencing, validation, and rollback risk matter."
-  },
-  {
-    "name": "Write Tbp",
-    "description": "Use this skill when drafting technical blog posts about tldraw features, implementation details, engineering decisions, demos, release context, or product-facing technical narratives."
   },
   {
     "name": "xlsx",
@@ -810,9 +462,5 @@
   {
     "name": "Yoga",
     "description": "Use this skill when giving yoga guidance on pose alignment, sequencing, breathwork, modifications, props, level-appropriate practice planning, and safety-aware instruction."
-  },
-  {
-    "name": "Youtube Downloader",
-    "description": "Use this skill when downloading YouTube video or audio, choosing quality or formats such as mp4, webm, mkv, or mp3, saving media locally, or troubleshooting YouTube download options."
   }
 ]
