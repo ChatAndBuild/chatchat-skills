@@ -300,8 +300,8 @@
     "description": "Use this skill when troubleshooting DevOps failures across CI/CD, infrastructure, runtime services, and deployment pipelines with evidence-driven incident triage and remediation steps."
   },
   {
-    "name": "Dietitian",
-    "description": "Use this skill when creating structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific diet protocols for nutrition planning."
+    "name": "Nutrition Planning",
+    "description": "Use this skill when creating structured meal plans, calorie targets, macro calculations, meal timing, or goal-specific nutrition plans."
   },
   {
     "name": "Distributed Tracing",
@@ -736,7 +736,7 @@
     "description": "Use this skill when writing or improving technical documentation, including READMEs, API references, tutorials, user guides, conceptual docs, examples, and developer-facing explanations."
   },
   {
-    "name": "Templates",
+    "name": "Template Governance",
     "description": "Use this skill when creating or maintaining reusable infrastructure, CI/CD, service, or pipeline templates with governance, versioning, rollout consistency, and environment provisioning."
   },
   {
@@ -756,7 +756,7 @@
     "description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings."
   },
   {
-    "name": "Triggers",
+    "name": "Automation Triggers",
     "description": "Use this skill when designing, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."
   },
   {
@@ -792,12 +792,8 @@
     "description": "Use this skill when turning messy workout information into clear logs, comparing user-provided sessions, surfacing trends or likely PRs, and suggesting realistic next-session steps."
   },
   {
-    "name": "Write Script MySQL",
-    "description": "Use this skill when drafting or reviewing MySQL SQL scripts in a way that makes engine behavior, locking risk, compatibility, rollout sequencing, and reviewability visible."
-  },
-  {
-    "name": "Write Script PostgreSQL",
-    "description": "Use this skill when drafting or reviewing PostgreSQL SQL scripts with PostgreSQL-aware syntax, safe sequencing, transactional expectations, migration logic, and reviewable rollout risk."
+    "name": "SQL Migration Scripts",
+    "description": "Use this skill when drafting or reviewing MySQL or PostgreSQL migration scripts, schema changes, data backfills, index changes, permission updates, or operational SQL where locking, transactions, compatibility, rollout sequencing, validation, and rollback risk matter."
   },
   {
     "name": "Write Tbp",

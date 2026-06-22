@@ -1,0 +1,4 @@
+interface:
+  display_name: "SQL Migration Scripts"
+  short_description: "Draft or review MySQL and PostgreSQL migration scripts with locking, transactions, compatibility, rollout sequencing, validation, and rollback risk visible."
+  default_prompt: "Draft or review a MySQL or PostgreSQL migration script with locking, transactions, compatibility, rollout sequencing, validation, and rollback risk visible."

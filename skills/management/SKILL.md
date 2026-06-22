@@ -2,7 +2,7 @@
 id: management
 name: Management
 description: Use this skill when giving management guidance on team leadership, operating cadence, delegation, feedback, planning, organizational effectiveness, or manager decision-making.
-category: Lifestyle
+category: Business
 ---
 
 ## For Individual Contributors: Navigating Upward

@@ -1,4 +1,0 @@
-interface:
-  display_name: "Deployment Patterns"
-  short_description: "Deploying data or AI systems to production, including artifact promotion, environment parity, model/data dependencies, rollback, monitoring, and release safety."
-  default_prompt: "Deploy data or AI systems to production, including artifact promotion, environment parity, model/data dependencies, rollback, monitoring, and release safety."
