@@ -1,0 +1,4 @@
+interface:
+  display_name: "Chief of Staff"
+  short_description: "Executive ops plans, decisions, cadences, and follow-through."
+  default_prompt: "Turn competing priorities into an executive brief, action tracker, decision log, and operating cadence."

@@ -104,6 +104,10 @@
     "description": "Use this skill when generating or maintaining release changelogs from merged work, including version scope, grouped changes, breaking-change notes, formatting consistency, and verification checks."
   },
   {
+    "name": "Chief of Staff",
+    "description": "Use this skill when turning goals, priorities, and meeting notes into executive operating plans with owners, dates, metrics, decisions, cadences, and follow-through artifacts."
+  },
+  {
     "name": "CI Monitor",
     "description": "Use this skill when monitoring CI pipelines for failures, regressions, instability, flaky jobs, and ownership signals, then prioritizing fixes with clear evidence and next actions."
   },
