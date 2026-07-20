@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creatiads"
+  short_description: "TikTok MCP-first ads orchestration, reporting, diagnostics, and guarded operations"
+  default_prompt: "Use $creatiads to initialize the required TikTok MCP server first. For reports, perform fresh MCP pulls unless the user explicitly asks for cached inspection, produce user_type.json before metric preset/probe, insights interpretation, analysis_brief.json, or HTML, then route diagnostics through operation maps, vertical metric playbooks, audience/creative/landing/budget/measurement references, validation/rebuild rules, and report runner. For formal reports, materialize sources, write validation_summary.json, run scripts/audit_creatiads_report.py, and return the HTML path plus audit status."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audience Mining External"
+  short_description: "TikTok Shop remarketing audience mining from reach, audience insight, and DMP metadata."
+  default_prompt: "Identify high-potential TikTok Shop remarketing audiences from delivery reach, audience insight, and existing DMP audience metadata."

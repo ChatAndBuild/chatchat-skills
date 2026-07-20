@@ -1,0 +1,4 @@
+interface:
+  display_name: "TT4B Account Benchmark"
+  short_description: "Same-account TikTok performance benchmarks for campaigns, ad groups, ads, and creatives."
+  default_prompt: "Benchmark TikTok performance against comparable same-account objects and explain whether the result is strong, weak, or noisy."

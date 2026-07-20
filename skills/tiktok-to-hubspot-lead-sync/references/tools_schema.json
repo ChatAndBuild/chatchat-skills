@@ -1,0 +1,128 @@
+{
+  "tools": [
+    {
+      "name": "auth_advertiser_get",
+      "mcp_tool": "mcp__tiktok-ads__auth_advertiser_get",
+      "source": "tiktok-ads",
+      "description": "Get all authorized TikTok advertiser account IDs for the authenticated user. No parameters required. Called first to get IDs for advertiser_info_get.",
+      "required_arguments": [],
+      "optional_arguments": []
+    },
+    {
+      "name": "advertiser_info_get",
+      "mcp_tool": "mcp__tiktok-ads__advertiser_info_get",
+      "source": "tiktok-ads",
+      "description": "Get name and status for one or more TikTok advertiser accounts by ID.",
+      "required_arguments": ["advertiser_ids"],
+      "optional_arguments": ["fields"]
+    },
+    {
+      "name": "page_get",
+      "mcp_tool": "mcp__tiktok-ads__page_get",
+      "source": "tiktok-ads",
+      "description": "List Instant Form pages for a TikTok ad account. Filter by business_type=LEAD_GEN. Do not filter by status. Forms in EDITED (draft) state may still have leads from when they were live.",
+      "required_arguments": [],
+      "optional_arguments": ["advertiser_id", "business_type", "status", "page", "page_size"]
+    },
+    {
+      "name": "page_field_get",
+      "mcp_tool": "mcp__tiktok-ads__page_field_get",
+      "source": "tiktok-ads",
+      "description": "Get field definitions for a specific Instant Form. Used to display available fields and support custom mapping guidance.",
+      "required_arguments": ["advertiser_id", "page_id"],
+      "optional_arguments": []
+    },
+    {
+      "name": "page_lead_task_create",
+      "mcp_tool": "mcp__tiktok-ads__page_lead_task_create",
+      "source": "tiktok-ads",
+      "description": "Create an async lead export task for an Instant Form (omit task_id), or poll an existing task's status (include task_id). Returns task_id on create; returns status=SUCCEED when complete.",
+      "required_arguments": ["advertiser_id"],
+      "optional_arguments": ["page_id", "task_id"],
+      "notes": [
+        "Pass page_id (no task_id) to create a new export task",
+        "Pass task_id (no page_id) to poll task status",
+        "Regional routing required: use x-lead-region header for EEA/CH/UK (eu) or US (us)",
+        "Generated file expires 10 minutes after creation. Download immediately after status reaches SUCCEED."
+      ]
+    },
+    {
+      "name": "page_lead_task_download",
+      "mcp_tool": "mcp__tiktok-ads__page_lead_task_download",
+      "source": "tiktok-ads",
+      "description": "Download completed lead export as CSV (<=10MB) or ZIP (>10MB). Task must have status=SUCCEED before calling.",
+      "required_arguments": ["task_id"],
+      "optional_arguments": ["advertiser_id", "library_id"],
+      "notes": [
+        "KNOWN LIMITATION: Only supports regions outside EEA, CH, UK, and US. TikTok has confirmed this is a current gap and expects to resolve it in Q3 2026 (possibly July). Surface this clearly to users in affected markets."
+      ]
+    },
+    {
+      "name": "get_organization_details",
+      "mcp_tool": "mcp__hubspot__get_organization_details",
+      "source": "hubspot",
+      "description": "Verify HubSpot MCP is reachable during onboarding check.",
+      "required_arguments": [],
+      "optional_arguments": ["include"]
+    },
+    {
+      "name": "get_user_details",
+      "mcp_tool": "mcp__hubspot__get_user_details",
+      "source": "hubspot",
+      "description": "Verify the user has write access to contacts before starting the sync. Use include: [TOOL_INFORMATION] to check contact write permissions.",
+      "required_arguments": [],
+      "optional_arguments": ["include"]
+    },
+    {
+      "name": "query_crm_data",
+      "mcp_tool": "mcp__hubspot__query_crm_data",
+      "source": "hubspot",
+      "description": "SQL query to find the most recently created TikTok-sourced contact, used to suggest a smart sync time window default.",
+      "required_arguments": ["sql"],
+      "optional_arguments": ["verbosityLevel"],
+      "example": {
+        "sql": "SELECT createdate FROM CONTACT WHERE hs_analytics_source_data_1 = 'tiktok' ORDER BY createdate DESC LIMIT 1"
+      }
+    },
+    {
+      "name": "search_properties",
+      "mcp_tool": "mcp__hubspot__search_properties",
+      "source": "hubspot",
+      "description": "Find matching HubSpot contact properties for custom TikTok form fields using keyword search.",
+      "required_arguments": ["objectType"],
+      "optional_arguments": ["keywords"]
+    },
+    {
+      "name": "search_crm_objects",
+      "mcp_tool": "mcp__hubspot__search_crm_objects",
+      "source": "hubspot",
+      "description": "Search HubSpot contacts by email for deduplication, and by name/phone for fuzzy duplicate detection.",
+      "required_arguments": ["objectType"],
+      "optional_arguments": ["filterGroups", "properties"],
+      "example": {
+        "objectType": "contacts",
+        "filterGroups": [{"filters": [{"propertyName": "email", "operator": "EQ", "value": "<email>"}]}],
+        "properties": ["email", "firstname", "lastname", "phone"]
+      }
+    },
+    {
+      "name": "manage_crm_objects",
+      "mcp_tool": "mcp__hubspot__manage_crm_objects",
+      "source": "hubspot",
+      "description": "Create or update HubSpot contacts with mapped lead field values. Also used post-sync to assign contacts to a HubSpot owner.",
+      "required_arguments": ["confirmationStatus"],
+      "optional_arguments": ["createRequest", "updateRequest"],
+      "notes": [
+        "Requires user confirmation before writing. Obtain session-level approval upfront when syncing multiple leads."
+      ]
+    },
+    {
+      "name": "search_owners",
+      "mcp_tool": "mcp__hubspot__search_owners",
+      "source": "hubspot",
+      "description": "List active HubSpot owners for post-sync contact assignment. Returns owner IDs and names.",
+      "required_arguments": [],
+      "optional_arguments": ["searchQuery", "ownerIds", "limit", "offset"]
+    }
+  ]
+}

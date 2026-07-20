@@ -1,0 +1,4 @@
+interface:
+  display_name: "TikTok to HubSpot Lead Sync"
+  short_description: "TikTok Instant Forms to HubSpot contact sync with field mapping and email deduplication guidance."
+  default_prompt: "Plan or inspect a TikTok lead sync into HubSpot, including ad account discovery, time window selection, field mapping, and deduplication."

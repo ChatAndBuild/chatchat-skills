@@ -1,0 +1,153 @@
+{
+  "tools": [
+    {
+      "name": "tiktok_list_campaigns",
+      "description": "List TikTok Ads campaigns for an advertiser account. Use this to discover campaign IDs when the user does not know them. Supports filtering by campaign status.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "advertiser_id": {
+            "type": "string",
+            "description": "The TikTok Ads advertiser account ID."
+          },
+          "status": {
+            "type": "string",
+            "enum": ["ACTIVE", "PAUSED", "ALL"],
+            "description": "Filter campaigns by status. Defaults to ACTIVE.",
+            "default": "ACTIVE"
+          },
+          "page": {
+            "type": "integer",
+            "description": "Page number for paginated results. Defaults to 1.",
+            "default": 1
+          },
+          "page_size": {
+            "type": "integer",
+            "description": "Number of results per page (max 100). Defaults to 20.",
+            "default": 20
+          }
+        },
+        "required": ["advertiser_id"]
+      }
+    },
+    {
+      "name": "tiktok_get_reporting",
+      "description": "Retrieve performance metrics for a TikTok Ads campaign at campaign, ad group, or ad level. Returns spend, impressions, reach, frequency, CTR, CPM, video engagement metrics, and conversions for the specified date range.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "advertiser_id": {
+            "type": "string",
+            "description": "The TikTok Ads advertiser account ID."
+          },
+          "campaign_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more campaign IDs to report on."
+          },
+          "level": {
+            "type": "string",
+            "enum": ["CAMPAIGN", "ADGROUP", "AD"],
+            "description": "Aggregation level for the report."
+          },
+          "start_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Report start date in YYYY-MM-DD format."
+          },
+          "end_date": {
+            "type": "string",
+            "format": "date",
+            "description": "Report end date in YYYY-MM-DD format (typically today)."
+          },
+          "metrics": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "List of metric field names to retrieve.",
+            "default": [
+              "spend", "budget", "impressions", "reach", "frequency",
+              "clicks", "ctr", "cpm", "cpc", "cpv",
+              "video_play_actions", "video_watched_2s", "video_watched_6s",
+              "video_views_p25", "video_views_p50", "video_views_p75", "video_views_p100",
+              "conversions", "cost_per_conversion", "conversion_rate",
+              "likes", "comments", "shares", "follows"
+            ]
+          }
+        },
+        "required": ["advertiser_id", "campaign_ids", "level", "start_date", "end_date"]
+      }
+    },
+    {
+      "name": "tiktok_get_campaign_details",
+      "description": "Retrieve campaign-level configuration and settings for one or more TikTok Ads campaigns. Returns objective, budget type, daily/total budget, bid strategy, campaign status, and Smart Creative settings.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "advertiser_id": {
+            "type": "string",
+            "description": "The TikTok Ads advertiser account ID."
+          },
+          "campaign_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more campaign IDs to retrieve details for."
+          }
+        },
+        "required": ["advertiser_id", "campaign_ids"]
+      }
+    },
+    {
+      "name": "tiktok_get_adgroup_details",
+      "description": "Retrieve ad group-level configuration for all ad groups within one or more campaigns. Returns targeting settings (audience, demographics, interests, behaviors), bid strategy, daily budget, optimization goal, placement, and scheduling.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "advertiser_id": {
+            "type": "string",
+            "description": "The TikTok Ads advertiser account ID."
+          },
+          "campaign_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more campaign IDs whose ad groups to retrieve."
+          },
+          "adgroup_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional. Specific ad group IDs to retrieve (filters within the provided campaigns)."
+          }
+        },
+        "required": ["advertiser_id", "campaign_ids"]
+      }
+    },
+    {
+      "name": "tiktok_get_ad_details",
+      "description": "Retrieve ad and creative configuration for all ads within one or more campaigns. Returns ad format, video specs (resolution, aspect ratio, duration), call-to-action, destination URL, UTM parameters, Spark Ads status, and ad status.",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "advertiser_id": {
+            "type": "string",
+            "description": "The TikTok Ads advertiser account ID."
+          },
+          "campaign_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "One or more campaign IDs whose ads to retrieve."
+          },
+          "adgroup_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional. Filter ads to specific ad groups."
+          },
+          "ad_ids": {
+            "type": "array",
+            "items": { "type": "string" },
+            "description": "Optional. Retrieve specific ad IDs only."
+          }
+        },
+        "required": ["advertiser_id", "campaign_ids"]
+      }
+    }
+  ]
+}

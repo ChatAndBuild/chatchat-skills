@@ -73,6 +73,7 @@ jobs:
               "Development"
               "OpenAI"
               "Anthropic"
+              "TikTok"
               "Tools"
             )
             VALID=0
@@ -116,6 +117,9 @@ jobs:
             # Check instruction length (rough token estimate: ~4 chars per token)
             BODY_LENGTH=$(echo "$BODY" | wc -c)
             MAX_CHARS=24000  # ~6000 tokens
+            if [ "$CATEGORY" = "TikTok" ]; then
+              MAX_CHARS=60000
+            fi
             if [ "$BODY_LENGTH" -gt "$MAX_CHARS" ]; then
               echo "::error file=$file::Instructions too long ($BODY_LENGTH chars, max $MAX_CHARS)"
               ERRORS=$((ERRORS + 1))

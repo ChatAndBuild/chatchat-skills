@@ -1,0 +1,4 @@
+interface:
+  display_name: "TikTok Optimization Advisor"
+  short_description: "Mid-flight TikTok campaign performance evaluation with prioritized optimization recommendations."
+  default_prompt: "Evaluate an active TikTok campaign against KPI goals and benchmarks, then produce prioritized optimization recommendations."

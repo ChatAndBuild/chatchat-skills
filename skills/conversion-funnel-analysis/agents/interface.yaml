@@ -1,0 +1,4 @@
+interface:
+  display_name: "Conversion Funnel Analysis"
+  short_description: "TikTok conversion funnel mapping, drop-off analysis, segmentation, and optimization recommendations."
+  default_prompt: "Analyze a TikTok conversion funnel from impressions through conversion, identify leak points, and recommend improvements."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Creative Fatigue Rotation Planner"
+  short_description: "Read-only TikTok creative fatigue detection with Retire, Scale, and Watch rotation plans."
+  default_prompt: "Analyze TikTok ad creative fatigue and produce a read-only Retire, Scale, and Watch rotation plan with spend-at-risk context."

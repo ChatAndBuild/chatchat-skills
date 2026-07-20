@@ -1,0 +1,538 @@
+{
+  "skill_name": "tt4b-account-benchmark",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "帮我看看最近哪个素材表现最好",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for creative-ad-best-material.",
+      "files": [],
+      "expectations": [
+        "treats the user-facing素材 request as Ad-level creative/ad benchmark",
+        "uses ad_id as the main benchmark and aggregation key rather than adding a fourth Smart+ Material grain",
+        "uses smart_plus_material_report_overview_run only as optional enrichment when Smart+ material data is available",
+        "reports scale champion, efficiency champion, and overall winner instead of a single CVR ranking",
+        "uses same-objective benchmark before calling an ad/creative a winner"
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "帮我综合评估账户 benchmark",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for account-benchmark-mixed-objectives.",
+      "files": [],
+      "expectations": [
+        "uses the default last 7 complete days and compares against the previous or same-length 7-day benchmark window unless user asks otherwise",
+        "renders account total separately from objective-specific benchmark buckets",
+        "excludes REACH campaigns from conversion CPA/CVR benchmark conclusions",
+        "identifies campaign contributors to spend, primary outcomes, and poor efficiency within their own objective bucket",
+        "front-loads sample-size caveats instead of showing a confidence score column"
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "这条 Brand Awareness 0 转化是不是差？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for brand-awareness-zero-conversion.",
+      "files": [],
+      "expectations": [
+        "resolves objective_type before judging performance",
+        "recognizes REACH or awareness objectives should not be judged by CPA/CVR by default",
+        "uses CPM, impressions, reach, frequency, and video/CTR support metrics where available",
+        "compares only against same-objective, same-grain, same-window benchmark rows",
+        "explains that zero conversions alone is not enough to call a Brand Awareness campaign poor"
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "这条 campaign 数据看起来还行吗？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-trigger-relative-performance.",
+      "files": [],
+      "expectations": [
+        "treats the request as a relative account benchmark question even though the user did not say benchmark",
+        "uses same-advertiser, same-objective, same-grain, same-window comparison instead of only returning a raw report",
+        "resolves advertiser, target object, objective_type, and window before judging performance",
+        "states benchmark pool size and sample caveat when the eligible pool is small",
+        "does not route to budget optimization or diagnosis unless the user asks for root cause or action"
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "这个广告值不值得继续投？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-cn-worth-continuing.",
+      "files": [],
+      "expectations": [
+        "treats worth-continuing as a same-account relative-performance benchmark request",
+        "does not require the user to know or say benchmark",
+        "compares the ad against same-objective, same-grain, same-window peers",
+        "uses scale and efficiency metrics together instead of only one metric",
+        "does not execute budget or status changes"
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "这个 high CVR 素材靠谱吗，还是样本太少？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-cn-small-sample-cvr.",
+      "files": [],
+      "expectations": [
+        "recognizes the mixed-language prompt as an Ad-level creative benchmark request",
+        "checks effective sample size before calling the high CVR result strong",
+        "benchmarks the candidate at Ad grain; optional Smart+ material data may enrich but not replace the verdict",
+        "separates high-CVR signal from low-CPA and scalable-winner conclusions",
+        "front-loads a sample-size caveat when clicks or conversions are too low"
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "帮我找最近真正值得放大的广告",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-cn-find-scalable-ads.",
+      "files": [],
+      "expectations": [
+        "treats worth-scaling as candidate discovery followed by same-grain benchmark",
+        "does not stop at a raw ranking or top-CVR list",
+        "uses evidence tiers so tiny-sample ads do not enter the main recommendation bucket",
+        "separates scale champion, efficiency champion, and overall winner when relevant",
+        "keeps the workflow read-only and does not execute budget changes"
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "最近账户哪里拖后腿？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-cn-account-drag.",
+      "files": [],
+      "expectations": [
+        "treats the question as an account benchmark and contributor analysis request",
+        "summarizes account total separately from objective-specific benchmark buckets",
+        "identifies weak contributors within their own objective bucket instead of blending all objectives",
+        "includes both winners and draggers by default without waiting for a follow-up",
+        "automatically includes at least one same-response benchmark result after the account overview",
+        "does not route to diagnosis unless the user asks for delivery root cause"
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Is this campaign actually good compared with my account?",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-en-campaign-good.",
+      "files": [],
+      "expectations": [
+        "treats the prompt as a benchmark request even without technical terminology",
+        "resolves the target campaign, objective_type, window, and advertiser context",
+        "compares against same-advertiser, same-objective, same-grain peers",
+        "uses advertiser-facing relative language such as better than comparable campaigns",
+        "does not return only a raw performance table"
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Is this ad worth scaling or just getting cheap clicks?",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-en-worth-scaling.",
+      "files": [],
+      "expectations": [
+        "recognizes worth-scaling and cheap-clicks as a benchmark plus quality judgment",
+        "checks both efficiency and outcome/volume metrics rather than CTR or CPC alone",
+        "compares the ad to same-objective Ad-level peers",
+        "warns when conversion or click sample size is too small",
+        "does not execute scaling or budget changes"
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Which creative is genuinely strong, not just high CVR?",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-en-creative-strong.",
+      "files": [],
+      "expectations": [
+        "uses Ad-level creative candidate discovery followed by benchmark",
+        "does not introduce Smart+ Material as a fourth user-facing benchmark grain",
+        "does not define strong creative by CVR alone",
+        "includes CPA, conversion volume, spend scale, clicks, and relative account position",
+        "flags small-sample directionality instead of recommending tiny-sample winners"
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "What is dragging down my account performance this week?",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for plain-en-account-drag.",
+      "files": [],
+      "expectations": [
+        "runs an account overview with objective-specific benchmark buckets",
+        "identifies contributors to spend, primary outcomes, and poor efficiency within comparable objectives",
+        "includes draggers that are pulling down objective-specific performance, not only winners",
+        "does not mix awareness and conversion campaigns into one CPA/CVR verdict",
+        "uses the default last 7 complete days unless the user specifies a different window",
+        "automatically includes at least one same-response benchmark result for a key contributor"
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "帮我看下最近一周哪些 campaign 表现好，哪些表现差",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for linked-campaign-object-names.",
+      "files": [],
+      "expectations": [
+        "renders every campaign object name as a Markdown link when link fields are available, rather than as a bare numeric ID",
+        "uses Ads Manager links with navigate_from=campaignList and explicit st/et dates, without relative_time, sort_state, or sort_order",
+        "uses filters[0][field] and filters[0][in_field_values][0] for object filtering, never top-level campaign_ids, ad_ids, or creative_ids query params",
+        "uses grain-specific link policy: campaign_id for Campaign links, AdGroup identity inside ad_ids for AdGroup links, and no Ads Manager object links for Ad / Creative grain whether ordinary or Smart+; creative_id and Smart+ IDs are context only",
+        "does not show a standalone object ID column",
+        "includes grain, objective, spend, primary outcome, and core efficiency metric for each highlighted campaign",
+        "uses same-objective benchmark before labeling campaigns good or bad",
+        "includes benchmark scope and sample count",
+        "does not silently omit names when name fields are available"
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "账号最近一周表现怎么样？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-benchmark-blocks-account-readout.",
+      "files": [],
+      "expectations": [
+        "separates WoW trend from Account benchmark when both are shown",
+        "includes Benchmark scope with advertiser, window, grain, objective, pool, and sample count",
+        "includes Benchmark table with Metric, Target, Median, Relative position, and Business read",
+        "includes Benchmark verdict using better/worse than comparable objects language",
+        "does not present week-over-week trend as if it were benchmark"
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "7514225548958957584 分享下我账号最近一周的表现",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-adv-id-account-readout-mandatory-benchmark.",
+      "files": [],
+      "expectations": [
+        "uses the advertiser ID from the prompt and defaults to the last 7 complete days",
+        "may include account totals and WoW trend, but does not stop there",
+        "auto-selects a primary cost-active Campaign in the dominant objective bucket when no object is specified",
+        "includes Account benchmark with Benchmark scope, Benchmark table, and Benchmark verdict in the same response",
+        "does not say benchmark is optional or use phrasing like if needed later benchmark",
+        "renders campaign references as linked object names, or Unknown name with fallback disclosure when campaign_name is unavailable"
+      ]
+    },
+    {
+      "id": 16,
+      "prompt": "7514225548958957584 看看我账号表现如何最近",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-adv-id-account-performance-must-say-benchmark.",
+      "files": [],
+      "expectations": [
+        "treats this as a benchmark request even though the user did not say benchmark",
+        "does not answer with only account recap, WoW trend, key campaigns, or diagnosis wording",
+        "includes the literal headings 基准范围, 核心对比, and 基准结论 in the first final response",
+        "does not wait for the user to ask 你怎么没说 benchmark before adding benchmark",
+        "uses same-window, same-grain, same-objective benchmark pool for the selected primary target or objective bucket",
+        "may include WoW trend only as a separate supplement after the benchmark sections",
+        "uses the bundled Python fallback with the same raw report JSON and output contract if Node.js is unavailable"
+      ]
+    },
+    {
+      "id": 17,
+      "prompt": "7514225548958957584 最近账户怎么样，简单说",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-no-later-benchmark-promise.",
+      "files": [],
+      "expectations": [
+        "does not promise to add benchmark later",
+        "does not frame the response as only 账号复盘 or 账号诊断",
+        "includes a real benchmark result or Benchmark blocked/Partial benchmark state",
+        "uses visible Benchmark scope/table/verdict labels despite the user asking for a simple answer",
+        "keeps the answer concise but benchmark-complete"
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "7514225548958957584 最近一周表现怎么样？如果 benchmark pool 拉不到也说明白",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-benchmark-blocked-not-trend-only.",
+      "files": [],
+      "expectations": [
+        "does not provide a good/bad or worth-scaling verdict from WoW trend alone",
+        "labels the result as benchmark blocked or partial when the benchmark pool cannot be pulled",
+        "surfaces the benchmark blocker such as E201_NO_BENCHMARK_SAMPLE, permission, metric, field, or MCP error",
+        "states that any account totals or WoW trend shown are not a benchmark",
+        "offers a safe next step such as extending the window or switching grain"
+      ]
+    },
+    {
+      "id": 19,
+      "prompt": "7514225548958957584 看热门 adg 吧",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-hot-adg-zh-summary-and-artifact-language.",
+      "files": [],
+      "expectations": [
+        "treats adg as Ad Group grain and uses the default last 7 complete days",
+        "answers in Chinese because the prompt is Chinese-dominant",
+        "includes a direct conversational summary before any artifact links",
+        "includes benchmark scope, benchmark table, and benchmark verdict for the selected hot Ad Group",
+        "includes both Winners and Draggers sections by default",
+        "Winners rows include benchmark waterline language such as better than N% of comparable Ad Groups",
+        "Draggers rows include benchmark waterline language such as worse/weaker than N% of comparable Ad Groups",
+        "uses one grain per Winners/Draggers table and does not mix Campaign and Ad Group rows",
+        "states the selected benchmark target as a linked object name or Unknown name",
+        "attempts read-only status lookup for surfaced hot ad groups and parent campaigns before final scaling judgment",
+        "includes status or status-unavailable disclosure in both conversation and summary.md",
+        "writes summary.md in Chinese when saving human-readable artifacts",
+        "does not use English-only summary headings such as Hot Ad Group Benchmark or Key Reads for a Chinese prompt",
+        "conversation summary includes enough detail to stand alone, including winner, scale leader, efficiency candidate, key caveat, and next read"
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "7514225548958957584 看热门 adg 吧，也看看哪些拖后腿",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-hot-adg-default-draggers.",
+      "files": [],
+      "expectations": [
+        "uses Ad Group grain and same-window same-objective benchmark pool",
+        "outputs Winners and Draggers as separate sections",
+        "adds an intro sentence before Winners explaining these ad groups are above the benchmark waterline",
+        "adds an intro sentence before Draggers explaining these ad groups are below the benchmark waterline or pulling the bucket down",
+        "each winner includes how much it is better than comparable Ad Groups on a core metric",
+        "each dragger includes how much it is worse or weaker than comparable Ad Groups on a core metric",
+        "does not define draggers by highest CPA alone",
+        "uses scale plus weak efficiency signals such as spend share exceeding conversion share",
+        "keeps low-spend or tiny-sample weak rows out of the main dragger list",
+        "includes status or status-unavailable disclosure for surfaced draggers"
+      ]
+    },
+    {
+      "id": 21,
+      "prompt": "账号最近一周表现怎么样？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-account-overview-default-draggers.",
+      "files": [],
+      "expectations": [
+        "includes account total and account benchmark",
+        "includes Winners and Draggers by default",
+        "shows Winners and Draggers in same-grain sections with benchmark waterline percentages",
+        "does not leave relative position only in the Benchmark table while omitting it from Winners/Draggers",
+        "splits mixed objectives rather than using one blended CPA/CVR dragger verdict",
+        "labels current enabled draggers separately from historical stopped draggers when status is available",
+        "does not require the user to ask a second question for underperformers"
+      ]
+    },
+    {
+      "id": 22,
+      "prompt": "哪些 campaign 值得扩量？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-worth-scaling-includes-draggers.",
+      "files": [],
+      "expectations": [
+        "surfaces worth-scaling winners using same-objective benchmark evidence",
+        "also identifies current draggers from the same pool by default",
+        "states for each winner how much it is better than comparable Campaigns",
+        "states for each dragger how much it is worse or weaker than comparable Campaigns",
+        "uses a pyramid narrative: overall verdict, benchmark scope, winners, draggers, benchmark table, then next reads",
+        "does not execute budget or status changes",
+        "uses status lookup or status-unavailable disclosure before scale judgment",
+        "phrases dragger actions as read-only review or investigation, not pause/edit instructions"
+      ]
+    },
+    {
+      "id": 23,
+      "prompt": "看看 Reach 和 Traffic campaign 哪些拖后腿",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-objective-aware-draggers.",
+      "files": [],
+      "expectations": [
+        "does not judge Reach draggers by zero conversions or CPA/CVR by default",
+        "uses CPM, exposure, reach, or frequency where available for Reach",
+        "uses CPC, CTR, clicks, or landing-page-view contribution for Traffic",
+        "keeps objective buckets separate",
+        "states metric limitations when the ideal objective metric is unavailable"
+      ]
+    },
+    {
+      "id": 24,
+      "prompt": "7514225548958957584 看热门 adg，哪些值得扩量？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-hot-adg-status-checked-before-scale.",
+      "files": [],
+      "expectations": [
+        "does not leave status as a casual caveat without attempting lookup",
+        "uses safe read/list status tools when available rather than any Update_* tool",
+        "checks Ad Group status and parent Campaign status for surfaced candidates",
+        "downgrades disabled or stopped objects from immediate scaling recommendations",
+        "if status lookup is unavailable, says the safe read status tool or permission was unavailable and keeps scale advice conditional"
+      ]
+    },
+    {
+      "id": 25,
+      "prompt": "7514225548958957584 分析账号热门 ADG，保存 summary.md",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-zh-summary-language-audit.",
+      "files": [],
+      "expectations": [
+        "uses Chinese as the conversation and summary.md language",
+        "audits the saved summary.md language before final response when files are written",
+        "rewrites summary.md if its heading or main narrative is English-only",
+        "does not claim the summary is fixed only after the user points out the mismatch; it verifies before final response",
+        "uses Chinese headings such as 结论先说, 基准范围, 核心对象对比, 业务判断, and 样本与口径 caveat",
+        "does not rely on the user opening summary.md to understand the result"
+      ]
+    },
+    {
+      "id": 26,
+      "prompt": "7514225548958957584 看热门 adg，summary 可以保存，但聊天里也多说点",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-chat-summary-not-too-thin.",
+      "files": [],
+      "expectations": [
+        "provides a substantial Chinese chat summary before file links",
+        "includes at least four grounded business reads when multiple hot ad groups are compared",
+        "distinguishes overall winner, scale champion, efficiency candidate, and risk/caveat",
+        "includes compact benchmark metrics in chat rather than only saying the result was saved",
+        "keeps artifact links as supplemental"
+      ]
+    },
+    {
+      "id": 27,
+      "prompt": "跑完 benchmark 后保存 summary.md/result.json/manifest.json 就行，但也告诉我结论",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-artifacts-do-not-replace-answer.",
+      "files": [],
+      "expectations": [
+        "does not answer only with saved file links",
+        "states the main benchmark conclusion directly in the conversation before artifact links",
+        "includes window, grain, sample size, selected target, benchmark table, and verdict",
+        "uses summary.md as a supplement rather than the only human-readable output",
+        "keeps result.json and manifest.json structured rather than translating field names"
+      ]
+    },
+    {
+      "id": 28,
+      "prompt": "如果没装 diagnose skill，为什么这个 campaign 最近没花出去？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for no-kit-fallback-diagnosis-readonly.",
+      "files": [],
+      "expectations": [
+        "recognizes the primary intent belongs to diagnosis when the sibling skill exists",
+        "does not fail just because the diagnose skill is unavailable",
+        "provides limited read-only reasoning from available report or status fields when possible",
+        "clearly states that full delivery-health diagnosis needs the diagnosis skill or relevant fields",
+        "does not fabricate review, budget, bid, or pacing causes that were not checked"
+      ]
+    },
+    {
+      "id": 29,
+      "prompt": "帮我 benchmark 一下这个 adg，看看 worth scaling 吗",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for mixed-language-primary-zh-output.",
+      "files": [],
+      "expectations": [
+        "uses Chinese as the output language because the prompt is Chinese-dominant",
+        "preserves adg, benchmark, and worth scaling concepts where useful",
+        "includes direct conversational benchmark summary rather than only artifact links",
+        "uses same-advertiser, same-objective, same-grain, same-window comparison",
+        "writes any summary.md in Chinese"
+      ]
+    },
+    {
+      "id": 30,
+      "prompt": "如果 campaign name 字段没取到，也帮我判断这些 campaign 好坏",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-name-field-fallback.",
+      "files": [],
+      "expectations": [
+        "uses Unknown name instead of outputting a bare ID",
+        "does not show a standalone object ID column",
+        "explicitly discloses that the name field was unavailable",
+        "continues benchmark only when the required metric and ID fields are available",
+        "does not invent campaign names",
+        "still includes benchmark scope, table, and verdict"
+      ]
+    },
+    {
+      "id": 31,
+      "prompt": "这条 campaign 还行吗？顺便看下比上周变好了还是变差了",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for output-single-object-benchmark-not-swallowed.",
+      "files": [],
+      "expectations": [
+        "answers the benchmark question with median and relative position",
+        "keeps WoW trend in a separate section from the benchmark verdict",
+        "labels the target campaign as a linked object name when link fields are available",
+        "states the benchmark pool and comparable-object sample size",
+        "does not only describe week-over-week changes"
+      ]
+    },
+    {
+      "id": 32,
+      "prompt": "这个 ad worth scaling 吗？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for mixed-worth-scaling.",
+      "files": [],
+      "expectations": [
+        "recognizes the mixed Chinese-English phrase as a relative benchmark request",
+        "benchmarks the ad at Ad grain against comparable account peers",
+        "renders Ad / Creative grain object names as plain text with no Ads Manager object link, whether ordinary or Smart+; does not use parent AdGroup ID, creative_id, ad_material_id, creative_ids, virtual_creative_id, or multi-value links",
+        "uses both scale and efficiency to judge whether it is worth scaling",
+        "does not require the user to translate or define benchmark",
+        "does not execute any budget action"
+      ]
+    },
+    {
+      "id": 33,
+      "prompt": "帮我找 truly strong 的素材，不要只看 CVR",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for mixed-truly-strong-material.",
+      "files": [],
+      "expectations": [
+        "recognizes the prompt as Ad-level creative/material discovery with benchmark",
+        "does not rank only by CVR",
+        "uses same-objective benchmark for shortlisted candidates",
+        "renders ordinary and Smart+ / virtual Creative names as plain text without Ads Manager object links, keeping creative_id and Smart+ IDs as context only",
+        "separates high CVR, low CPA, and high scale when they point to different winners",
+        "uses Smart+ material data only as optional enrichment when available"
+      ]
+    },
+    {
+      "id": 34,
+      "prompt": "为什么这个 campaign 最近没花出去？",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-diagnosis-intent.",
+      "files": [],
+      "expectations": [
+        "recognizes no-spend or delivery root-cause diagnosis is owned by tt4b-diagnose-campaign-health",
+        "does not force a benchmark verdict before diagnosing delivery health",
+        "offers to switch to the diagnosis skill and preserves any known advertiser or campaign context",
+        "does not fabricate report data or root-cause findings"
+      ]
+    },
+    {
+      "id": 35,
+      "prompt": "Why is this campaign not spending?",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-diagnosis-intent-en.",
+      "files": [],
+      "expectations": [
+        "recognizes not-spending as delivery root-cause diagnosis owned by tt4b-diagnose-campaign-health",
+        "does not force a benchmark verdict before diagnosis",
+        "offers to switch to the diagnosis skill while preserving known context",
+        "does not fabricate spend or delivery data"
+      ]
+    },
+    {
+      "id": 36,
+      "prompt": "导出昨天的广告报表",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-report-only-cn.",
+      "files": [],
+      "expectations": [
+        "recognizes raw report or export intent is owned by tt4b-get-performance-report",
+        "does not run account benchmark unless the user asks whether the result is good",
+        "routes to the reporting skill for table/export behavior",
+        "does not fabricate report rows"
+      ]
+    },
+    {
+      "id": 37,
+      "prompt": "Export yesterday's ad performance report",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-report-only-en.",
+      "files": [],
+      "expectations": [
+        "recognizes raw report export intent is owned by tt4b-get-performance-report",
+        "does not add benchmark interpretation by default",
+        "routes to reporting behavior and preserves the requested date",
+        "does not fabricate report rows"
+      ]
+    },
+    {
+      "id": 38,
+      "prompt": "帮我把预算从差的 campaign 挪到好的 campaign",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-budget-execution-intent.",
+      "files": [],
+      "expectations": [
+        "recognizes budget reallocation or execution is owned by tt4b-optimize-budget",
+        "does not execute budget changes or present write-action placeholders from this read-only skill",
+        "may explain that benchmark can supply relative-performance evidence but execution belongs to optimize-budget",
+        "routes to the budget optimization skill for recommendations and confirmed writes"
+      ]
+    },
+    {
+      "id": 39,
+      "prompt": "Move budget from weak campaigns to winners",
+      "expected_output": "The response should satisfy the benchmark behavior expectations for kit-route-budget-execution-intent-en.",
+      "files": [],
+      "expectations": [
+        "recognizes budget movement and execution is owned by tt4b-optimize-budget",
+        "does not execute writes from this benchmark skill",
+        "may state benchmark can provide evidence but optimize-budget owns recommendation and execution",
+        "routes to budget optimization for confirmed write flow"
+      ]
+    }
+  ]
+}

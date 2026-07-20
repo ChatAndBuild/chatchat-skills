@@ -68,6 +68,7 @@ Include any specific formatting, steps, or constraints.
 - **Development**
 - **OpenAI**
 - **Anthropic**
+- **TikTok**
 - **Tools**
 
 ## Guidelines

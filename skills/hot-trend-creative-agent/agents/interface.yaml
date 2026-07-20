@@ -1,0 +1,4 @@
+interface:
+  display_name: "Hot Trend Creative Agent"
+  short_description: "TikTok trend-aware creative recommendations and video directions for campaign refreshes."
+  default_prompt: "Recommend TikTok creative directions using current trend, advertiser status, campaign history, and possible fatigue signals."

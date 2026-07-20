@@ -1,0 +1,4 @@
+interface:
+  display_name: "Budget Pacing Monitor"
+  short_description: "TikTok budget pacing surveillance, forecasting, variance diagnosis, and adjustment recommendations."
+  default_prompt: "Monitor TikTok campaign or ad group budget pacing, forecast spend risk, diagnose delivery causes, and recommend corrective actions."

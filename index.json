@@ -28,6 +28,10 @@
     "description": "Use this skill when keeping analytics instrumentation accurate, consistent, and release-ready across event definitions, tracking plans, schemas, implementation, QA, and governance."
   },
   {
+    "name": "audience-mining-external",
+    "description": "For TikTok Shop advertisers, identify high-potential remarketing audiences from real reach, audience insight, and existing DMP audience metadata."
+  },
+  {
     "name": "Automation Triggers",
     "description": "Use this skill when designing, reviewing, or validating event triggers, schedule triggers, automation jobs, CI/CD pipeline triggers, deployment workflows, and their edge cases."
   },
@@ -92,8 +96,16 @@
     "description": "Use this skill when building or reviewing browser extensions that need extension-specific guidance for runtime boundaries, permissions, content scripts, background scripts, messaging, storage, security, or distribution."
   },
   {
+    "name": "budget-pacing-monitor",
+    "description": "The Budget Pacing Monitor is a real-time budget tracking and forecasting agent that monitors budget consumption, identifies pacing issues, and recommends or implements budget adjustments to ensure optimal delivery. This skill provides continuous surveillance of daily and lifetime budgets across campaigns and ad groups, calculating pacing variance, forecasting budget exhaustion dates, and alerting marketers to critical over-pacing or under-delivery scenarios. It goes beyond simple spend tracking by diagnosing root causes (low bids, narrow targeting, learning phase issues) and providing corrective actions with forecasted delivery impact."
+  },
+  {
     "name": "Cairo Vulnerability Scanner",
     "description": "Use this skill when scanning Cairo or StarkNet smart contracts for StarkNet-specific vulnerabilities such as felt252 arithmetic overflow, L1-L2 messaging flaws, address conversion bugs, or signature replay."
+  },
+  {
+    "name": "campaign-health-auditor",
+    "description": "The Campaign Health Auditor is a comprehensive diagnostic agent that conducts multi-layered health checks across campaigns, identifying issues, opportunities, and providing prioritized recommendations. This skill performs end-to-end campaign analysis—from account structure and approval status to creative fatigue, delivery diagnostics, and performance benchmarking. It generates a quantified health score (0-100), categorizes findings into Critical Issues, Warnings, and Opportunities, and delivers actionable next steps prioritized by impact and effort. Perfect for regular campaign reviews, client reporting, or pre-flight checks before major launches."
   },
   {
     "name": "canvas-design",
@@ -132,8 +144,20 @@
     "description": "Use this skill when reviewing contracts against an organization-specific negotiation playbook, flagging deviations, summarizing risk, and drafting redline or fallback language."
   },
   {
+    "name": "conversion-funnel-analysis",
+    "description": "The Conversion Funnel Analyst is a sophisticated funnel optimization agent that helps users understand their conversion funnel, identify where users drop off, and recommend optimizations to improve conversion rates. This skill maps multi-stage funnels from impression to conversion, calculates drop-off rates at each stage, benchmarks performance against industry standards, and segments analysis by device, placement, audience, and creative type. It goes beyond reporting by diagnosing root causes for leak points—whether due to ad-to-page mismatch, pricing friction, or checkout complexity—and forecasts the impact of proposed optimizations on overall conversion volume and CPA."
+  },
+  {
     "name": "Create Pull Request",
     "description": "Use this skill when preparing GitHub pull requests with clear summaries, scoped changes, test plans, reviewer context, risk notes, and links to relevant issues or evidence."
+  },
+  {
+    "name": "creatiads",
+    "description": "TikTok MCP-first advertising orchestrator with 8-step analysis workflow. Use when the user asks colloquially to list/查看广告账户或campaign (\"我有哪些广告账户\", \"列出campaign\", \"看看我的广告\", \"有哪些账户\"), find top/worst performers (\"哪个广告效果最好\", \"表现最好的campaign\", \"最差的广告\", \"浪费预算的广告\", \"best/worst performing ads\", \"top campaigns\"), or wants to inspect, plan, launch, diagnose, report, or optimize — including daily pulse/日报/weekly report/周报, vertical/user type classification/垂类诊断, creative fatigue analysis/创意素材分析, audience optimization/受众分析, landing page & W2A path/落地页分析, budget & bid/预算出价优化, measurement & SKAN attribution/归因分析, activity changelog/操作记录, cross-account rebuild/账户迁移, error & review handling/审核报错诊断, or generate HTML reports/出报告/生成报告. Also use for any of 13 verticals: ecommerce, short_drama/短剧, utility_or_w2a/工具, casual_game/休闲游戏, midcore_or_hardcore_game/中重度游戏, novel/小说, social/社交, entertainment/泛娱乐, financial_leads/金融借贷, search_arbitrage/搜索套利, earnings_or_offerwall, regulated_high_risk, agency_or_mixed/代理商. Covers TikTok, Smart+, TikTok One, GMV Max/Product GMV Max/TikTok Shop reports, Pangle, Spark Ads, carousel ads, catalog/shop ads, creative previews, product catalogs, pixels, audiences, and campaign performance. Uses L1 dispatcher for 80%+ tools; scripts are compute-only. Must initialize the remote MCP server before any platform API operation and use MCP tools as the default data plane."
+  },
+  {
+    "name": "creative-fatigue-rotation-planner",
+    "description": "Read-only TikTok creative fatigue detector + rotation plan — compares each running ad's recent click-rate (and, for conversion ads, conversion-rate) against its own 30-day baseline to catch decaying creatives, then returns a ranked Retire / Scale / Watch plan with the size of the drop, the spend at risk, and an optional shortlist of fresh library assets to swap in. Triggers: creative fatigue, are my ads fatiguing, which creatives to refresh, ad fatigue, creatives getting tired, CTR dropping, rotate my creatives, which ads to retire, refresh ads, declining ad performance, creative rotation plan, spend at risk on old creatives. ❌ Do NOT use this skill for: actually swapping, uploading, pausing, or appealing a creative (use manage-creative); a full multi-dimensional performance report (use get-performance-report); whole-campaign delivery diagnosis like rejections / budget / bids (use diagnose-campaign-health); cross-campaign budget reallocation (use optimize-budget). This skill never writes — it plans and routes."
   },
   {
     "name": "Dependency Upgrade",
@@ -234,6 +258,10 @@
   {
     "name": "Golang Patterns",
     "description": "Use this skill when implementing or reviewing Go code that needs idiomatic concurrency, error handling, interface design, package structure, service patterns, readability, correctness, or maintainability."
+  },
+  {
+    "name": "hot-trend-creative-agent",
+    "description": "Produces natural-language creative recommendations and 2-3 video directions for the Hot Trend Creative Agent. Use when the user asks what creative direction may work now, what trends to use, how to refresh an active campaign, or how to restart an inactive advertiser based on advertiser status, historical creative signals, hot trends, or possible creative fatigue."
   },
   {
     "name": "Hybrid Cloud Networking",
@@ -436,12 +464,28 @@
     "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly."
   },
   {
+    "name": "tiktok-ad-creative-agent",
+    "description": "Use when a TikTok advertiser, media buyer, creative strategist, brand operator, or growth team wants an AI agent to turn a product, Amazon page, ecommerce URL, landing page, offer, or ad brief into TikTok-ready ad concepts, hooks, storyboards, voiceover copy, AI image/video prompts, editing briefs, compliance review, delivery checklists, or a confirmed finished ad production workflow."
+  },
+  {
+    "name": "tiktok-optimization-advisor",
+    "description": "Use this skill when a user wants to evaluate the performance of an active TikTok campaign and get prioritized recommendations for how to optimize it. This is a mid-flight evaluation tool for enterprise activators — it pulls live campaign data, assesses performance against KPI goals and vertical benchmarks, and produces an ordered list of optimization actions the activator (or the TikTok MCP) can execute immediately. Trigger phrases include: \"evaluate the campaign\", \"evaluate campaign performance\", \"optimize my campaign\", \"optimization recommendations\", \"why is my campaign underperforming\", \"how should I optimize\", \"what changes should I make\", \"mid-flight evaluation\", \"what's wrong with my campaign\", \"campaign health check\", \"TikTok optimization\", \"how do I improve performance\", \"campaign isn't hitting goal\", \"too expensive\", \"low CTR\", \"low delivery\", \"creative fatigue\", \"vertical benchmarks for TikTok\", or any request combining campaign performance review with recommended actions."
+  },
+  {
+    "name": "tiktok-to-hubspot-lead-sync",
+    "description": "Syncs leads from TikTok Instant Forms into HubSpot CRM contacts. Covers ad account discovery, time window selection, standard field mapping, and email-based deduplication. Also guides users toward the native HubSpot Ads integration for ongoing automated sync. Use when the user wants to sync TikTok leads to HubSpot, mentions TikTok lead gen forms, wants to get TikTok leads into their CRM, asks about a historical lead backfill, asks whether they have received any TikTok leads, asks what leads came from TikTok ads, or asks about the status of their TikTok lead gen forms."
+  },
+  {
     "name": "Trading Signal",
     "description": "Use this skill when retrieving or interpreting on-chain smart-money trading signals, including buy or sell direction, trigger price, current price, max gain, exit rate, and token tags."
   },
   {
     "name": "transcribe",
     "description": "Transcribe audio files to text with optional diarization and known-speaker hints. Use when a user asks to transcribe speech from audio/video, extract text from recordings, or label speakers in interviews or meetings."
+  },
+  {
+    "name": "tt4b-account-benchmark",
+    "description": "Platform-neutral TikTok account benchmark workflow. Use whenever the user asks whether a Campaign, Ad Group, Ad/Creative, or account result is good, strong, weak, worth scaling, better/worse than their account, above/below account baseline, or needs same-account relative performance context — even if they do not say \"benchmark\". Triggers: account baseline, relative performance, is this good, small sample noise, which one is stronger, 同账户对比, 账户基准, 表现好不好, 还行吗, 值不值得继续投, 哪个更靠谱, 是不是小样本假象, 高 CVR 是否可信. This read-only skill fetches TikTok reports through tt-ads MCP and computes deterministic same-advertiser, same-objective, same-grain benchmark statistics locally. Do NOT use for raw report pulls only (route to tt4b-get-performance-report), delivery/root-cause diagnosis such as no spend or rejection (route to tt4b-diagnose-campaign-health), or budget reallocation/execution (route to tt4b-optimize-budget)."
   },
   {
     "name": "Turborepo Caching",

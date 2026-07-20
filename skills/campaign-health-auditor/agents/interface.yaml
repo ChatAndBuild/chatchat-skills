@@ -1,0 +1,4 @@
+interface:
+  display_name: "Campaign Health Auditor"
+  short_description: "TikTok campaign health audits across structure, delivery, approval, performance, and creative signals."
+  default_prompt: "Audit a TikTok campaign and produce a health score, critical issues, warnings, opportunities, and prioritized action items."

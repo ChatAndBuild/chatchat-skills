@@ -1,0 +1,4 @@
+interface:
+  display_name: "TikTok Ad Creative Agent"
+  short_description: "TikTok-ready ad concepts, hooks, storyboards, prompts, editing briefs, and production checklists."
+  default_prompt: "Turn a product, ecommerce URL, landing page, offer, or brief into TikTok-ready ad concepts, hooks, storyboards, and production guidance."
