@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airwallex Contract to Billing"
+  short_description: "Turn a purchase order, contract, or quote into Airwallex invoices or subscriptions — extracting line items and matching existing customers, products, and prices."
+  default_prompt: "Create an Airwallex invoice from this document: extract the billing details, match existing customers and products, and set up the invoice or subscription."

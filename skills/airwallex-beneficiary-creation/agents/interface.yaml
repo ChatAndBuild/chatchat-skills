@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airwallex Beneficiary Creation"
+  short_description: "Onboard suppliers and vendors in Airwallex — extract bank details from documents, validate per-country requirements, and create beneficiaries."
+  default_prompt: "Set up this supplier as an Airwallex beneficiary: extract the bank details, validate them against the country's requirements, and create the beneficiary."

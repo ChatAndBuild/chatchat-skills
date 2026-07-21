@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airwallex Card Provisioning"
+  short_description: "Provision virtual or physical corporate cards in Airwallex Issuing — create cardholders, issue cards with spend limits, and manage card spend."
+  default_prompt: "Provision an Airwallex corporate card: set up the cardholder, issue the card with a spend limit, and confirm the details."

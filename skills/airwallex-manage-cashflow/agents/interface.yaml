@@ -1,0 +1,4 @@
+interface:
+  display_name: "Airwallex Manage Cashflow"
+  short_description: "Multi-currency cash management in Airwallex — balances, receivables, obligations, FX exposure, runway, and indicative FX rates. Read-only for money movement."
+  default_prompt: "Give me my Airwallex cash health: balances, what's coming in, what's going out, and where I need to pay attention."

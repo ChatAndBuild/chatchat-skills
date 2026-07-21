@@ -69,6 +69,7 @@ Include any specific formatting, steps, or constraints.
 - **OpenAI**
 - **Anthropic**
 - **TikTok**
+- **Airwallex**
 - **Tools**
 
 ## Guidelines
