@@ -20,6 +20,22 @@
     "description": "Use this skill when designing or reviewing Apache Airflow DAGs for scheduling, retries, task dependencies, idempotency, backfills, sensors, and production reliability."
   },
   {
+    "name": "Airwallex Beneficiary Creation",
+    "description": "Use this skill when onboarding suppliers or vendors in Airwallex — extract bank details from invoices/documents, validate per-country requirements, and create beneficiaries. Not for money transfers."
+  },
+  {
+    "name": "Airwallex Card Provisioning",
+    "description": "Use this skill when provisioning virtual or physical corporate cards in Airwallex Issuing — create cardholders, issue cards with spend limits, and manage card spending. Not for transfers or invoices."
+  },
+  {
+    "name": "Airwallex Contract to Billing",
+    "description": "Use this skill when creating Airwallex invoices or subscriptions from a purchase order, contract, or quote — extract line items and match existing customers, products, and prices."
+  },
+  {
+    "name": "Airwallex Manage Cashflow",
+    "description": "Use this skill when asked about Airwallex cash position — balances, receivables, obligations, FX exposure, runway, indicative FX rates — or to correctly refuse a money-movement request."
+  },
+  {
     "name": "algorithmic-art",
     "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations."
   },
