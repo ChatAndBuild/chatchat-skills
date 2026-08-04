@@ -4,7 +4,7 @@ name: BAP-578 On-Chain Scanner
 description: Use this skill when reading, verifying, scanning, querying, indexing, or monitoring BAP-578 agent data directly from BNB Chain, including metadata, event history, vault integrity, and bulk RPC workflows.
 category: Blockchain
 author: community
-version: 1.0.0
+version: 1.1.0
 ---
 
 # BAP-578 On-Chain Scanner
@@ -46,7 +46,7 @@ This is the authoritative identity. Any off-chain representation should match th
 The scanner can reconstruct the complete history of an agent by querying on-chain events:
 
 - **AgentCreated** — when and how the agent was born (minter, initial metadata)
-- **AgentFunded** — every BNB deposit with amount and sender
+- **AgentFunded** — every BNB deposit with amount
 - **AgentWithdraw** — every withdrawal with amount
 - **AgentStatusChanged** — every active/inactive toggle
 - **MetadataUpdated** — every identity change (new persona, vault, etc.)
@@ -84,7 +84,7 @@ Scanner results come directly from the blockchain via RPC calls. Trust is establ
 
 ```
 getAgentState(tokenId)     → (balance, active, logicAddress, createdAt, owner)
-getAgentMetadata(tokenId)  → (persona, experience, voiceHash, animationURI, vaultURI, vaultHash)
+getAgentMetadata(tokenId)  → (AgentMetadata metadata, string metadataURI)   // metadata: persona, experience, voiceHash, animationURI, vaultURI, vaultHash
 tokensOfOwner(address)     → uint256[]
 getTotalSupply()           → uint256
 getFreeMints(user)         → uint256
@@ -97,12 +97,68 @@ ownerOf(tokenId)           → address
 
 ```
 AgentCreated(tokenId, owner, logicAddress, metadataURI)
-AgentFunded(tokenId, funder, amount)
-AgentWithdraw(tokenId, owner, amount)
+AgentFunded(tokenId, amount)
+AgentWithdraw(tokenId, amount)
 AgentStatusChanged(tokenId, active)
-MetadataUpdated(tokenId, newURI)
+LogicAddressUpdated(tokenId, newLogicAddress)
+MetadataUpdated(tokenId)
 Transfer(from, to, tokenId)  // ERC-721 standard
 ```
+
+## Deployment compatibility (spec vs reference)
+
+The signatures above match the ChatAndBuild reference implementation
+(`getAgentState`, `AgentStatusChanged(tokenId, bool active)`). Some
+production deployments implement the **BAP-578 spec** shape instead, which
+is not call-compatible:
+
+```solidity
+enum Status { Active, Paused, Terminated }
+struct State {
+    uint256 balance;
+    Status  status;
+    address owner;
+    address logicAddress;
+    uint256 lastActionTimestamp;
+}
+function getState(uint256 tokenId) external view returns (State memory);
+event StatusChanged(address indexed agent, Status newStatus);
+```
+
+Try `getState` first and fall back to
+`getAgentState`, so it works against both shapes:
+
+```js
+async function readState(contract, tokenId) {
+  try {
+    const s = await contract.getState(tokenId); // spec shape
+    return {
+      balance: s.balance,
+      owner: s.owner,
+      logicAddress: s.logicAddress,
+      status: s.status,
+      lastActionTimestamp: s.lastActionTimestamp,
+      shape: "spec",
+    };
+  } catch {
+    const s = await contract.getAgentState(tokenId); // reference shape
+    return {
+      balance: s.balance,
+      active: s.active,
+      owner: s.owner,
+      logicAddress: s.logicAddress,
+      createdAt: s.createdAt,
+      shape: "reference",
+    };
+  }
+}
+```
+
+**Status enum ordinal is deployment-specific.** The spec declares
+`Active = 0`, but a deployment may differ (for example a live collection
+that ships `Paused = 0, Active = 1, Terminated = 2`). This is fixed at
+deploy time and cannot change for already-minted agents, so always map the
+integer using the target deployment's verified enum, never a hard-coded array.
 
 ---
 
@@ -124,9 +180,8 @@ const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 
 ```js
 async function scanAgent(tokenId) {
-  const state = await contract.getAgentState(tokenId);
-  const metadata = await contract.getAgentMetadata(tokenId);
-  const uri = await contract.tokenURI(tokenId);
+  const state = await contract.getAgentState(tokenId); // spec-shape deployments: use readState() from "Deployment compatibility"
+  const [metadata, metadataURI] = await contract.getAgentMetadata(tokenId);
   const freeMint = await contract.isFreeMint(tokenId);
 
   return {
@@ -142,7 +197,7 @@ async function scanAgent(tokenId) {
     animationURI: metadata.animationURI,
     vaultURI: metadata.vaultURI,
     vaultHash: metadata.vaultHash,
-    tokenURI: uri,
+    tokenURI: metadataURI,
     isFreeMint: freeMint,
   };
 }
@@ -358,13 +413,13 @@ function watchAgentEvents() {
     console.log(`New agent #${tokenId} minted by ${owner}`);
   });
 
-  contract.on("AgentFunded", (tokenId, funder, amount) => {
+  contract.on("AgentFunded", (tokenId, amount) => {
     console.log(
-      `Agent #${tokenId} funded ${ethers.formatEther(amount)} BNB by ${funder}`
+      `Agent #${tokenId} funded ${ethers.formatEther(amount)} BNB`
     );
   });
 
-  contract.on("AgentWithdraw", (tokenId, owner, amount) => {
+  contract.on("AgentWithdraw", (tokenId, amount) => {
     console.log(
       `Agent #${tokenId} withdrew ${ethers.formatEther(amount)} BNB`
     );
@@ -374,8 +429,8 @@ function watchAgentEvents() {
     console.log(`Agent #${tokenId} status → ${active ? "active" : "inactive"}`);
   });
 
-  contract.on("MetadataUpdated", (tokenId, newURI) => {
-    console.log(`Agent #${tokenId} metadata updated → ${newURI}`);
+  contract.on("MetadataUpdated", (tokenId) => {
+    console.log(`Agent #${tokenId} metadata updated`);
   });
 }
 ```
@@ -460,7 +515,7 @@ When asked for scanning help, respond with:
   "history": [
     {"event": "AgentCreated", "block": 12345, "tx": "0x...", "timestamp": "2026-03-01T10:00:00Z"},
     {"event": "AgentFunded", "block": 12400, "tx": "0x...", "amount": "1.0 BNB"},
-    {"event": "MetadataUpdated", "block": 12500, "tx": "0x...", "newURI": "ipfs://QmNew..."}
+    {"event": "MetadataUpdated", "block": 12500, "tx": "0x..."}
   ]
 }
 ```
