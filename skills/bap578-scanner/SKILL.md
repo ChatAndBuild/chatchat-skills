@@ -83,12 +83,12 @@ Scanner results come directly from the blockchain via RPC calls. Trust is establ
 ### View Functions Used
 
 ```
-getAgentState(tokenId)     → (balance, active, logicAddress, createdAt, owner)
-getAgentMetadata(tokenId)  → (AgentMetadata metadata, string metadataURI)   // metadata: persona, experience, voiceHash, animationURI, vaultURI, vaultHash
-tokensOfOwner(address)     → uint256[]
-getTotalSupply()           → uint256
-getFreeMints(user)         → uint256
-isFreeMint(tokenId)        → bool
+getAgentState(tokenId)     → (balance, active, logicAddress, createdAt, owner)   // reference-only, spec uses getState
+getAgentMetadata(tokenId)  → (AgentMetadata metadata, string metadataURI)        // spec returns the tuple alone
+tokensOfOwner(address)     → uint256[]                                           // reference-only
+getTotalSupply()           → uint256                                             // reference-only
+getFreeMints(user)         → uint256                                             // reference-only
+isFreeMint(tokenId)        → bool                                                // reference-only
 tokenURI(tokenId)          → string
 ownerOf(tokenId)           → address
 ```
@@ -125,20 +125,14 @@ function getState(uint256 tokenId) external view returns (State memory);
 event StatusChanged(address indexed agent, Status newStatus);
 ```
 
-The contract instance must be built with an ABI that carries **both**
-getters. If the ABI only has the reference shape, `contract.getState` is
-undefined and the call throws before it ever reaches the chain, so add the
-spec fragments alongside the reference ones:
+The contract instance must carry both getters, which is what the Setup
+section does. An ABI with only the reference shape leaves
+`contract.getState` undefined, so the call throws before it reaches the
+chain and the fallback then reverts on a spec deployment. The same applies
+to the enumerable fragments the supply and portfolio fallbacks use.
 
-```js
-const BAP578_ABI = [
-  ...require("./abi/BAP578.json"), // reference shape
-  // spec shape
-  "function getState(uint256 tokenId) view returns (tuple(uint256 balance, uint8 status, address owner, address logicAddress, uint256 lastActionTimestamp))",
-];
-```
-
-Then try `getState` first and fall back to `getAgentState`:
+With that ABI in place, try `getState` first and fall back to
+`getAgentState`:
 
 ```js
 async function readState(contract, tokenId) {
@@ -231,7 +225,17 @@ const { ethers } = require("ethers");
 
 const provider = new ethers.JsonRpcProvider(process.env.BSC_RPC_URL);
 const BAP578_ADDRESS = process.env.BAP578_ADDRESS;
-const BAP578_ABI = require("./abi/BAP578.json");
+
+// The reference ABI plus every fragment the fallbacks call, so one contract
+// instance works against both deployment shapes. Without these the fallback
+// paths throw before reaching the chain. See Deployment compatibility.
+const BAP578_ABI = [
+  ...require("./abi/BAP578.json"), // reference shape
+  "function getState(uint256 tokenId) view returns (tuple(uint256 balance, uint8 status, address owner, address logicAddress, uint256 lastActionTimestamp))",
+  "function totalSupply() view returns (uint256)",
+  "function balanceOf(address owner) view returns (uint256)",
+  "function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)",
+];
 
 const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 ```
@@ -712,7 +716,7 @@ Track how metrics change over time by bucketing events:
 ```js
 function mintTimeSeries(events, interval = "day") {
   const buckets = {};
-  const created = events.filter(e => e.name === "AgentCreated");
+  const created = events.filter(e => e.eventName === "AgentCreated");
   
   for (const event of created) {
     const date = new Date(event.timestamp);
@@ -743,11 +747,11 @@ function fundingFlow(events) {
   const flows = {};
   
   for (const event of events) {
-    if (event.name === "AgentFunded") {
+    if (event.eventName === "AgentFunded") {
       const id = event.args.tokenId;
       flows[id] = flows[id] || { inflow: 0, outflow: 0 };
       flows[id].inflow += parseFloat(event.args.amount);
-    } else if (event.name === "AgentWithdraw") {
+    } else if (event.eventName === "AgentWithdraw") {
       const id = event.args.tokenId;
       flows[id] = flows[id] || { inflow: 0, outflow: 0 };
       flows[id].outflow += parseFloat(event.args.amount);
