@@ -4,7 +4,7 @@ name: BAP-578 On-Chain Scanner
 description: Use this skill when reading, verifying, scanning, querying, indexing, or monitoring BAP-578 agent data directly from BNB Chain, including metadata, event history, vault integrity, and bulk RPC workflows.
 category: Blockchain
 author: community
-version: 1.0.0
+version: 1.1.0
 ---
 
 # BAP-578 On-Chain Scanner
@@ -28,7 +28,7 @@ Use this skill to read, verify, and index BAP-578 agent data directly from the b
 
 ### 1) Who are you?
 
-The scanner reveals the full on-chain identity of any agent. By calling `getAgentState` and `getAgentMetadata`, you retrieve the complete profile:
+The scanner reveals the full on-chain identity of any agent. By reading the state and metadata getters (see Deployment compatibility for the two shapes), you retrieve the complete profile:
 
 - Token ID (the unique agent identifier)
 - Owner address (who controls this agent)
@@ -46,7 +46,7 @@ This is the authoritative identity. Any off-chain representation should match th
 The scanner can reconstruct the complete history of an agent by querying on-chain events:
 
 - **AgentCreated** — when and how the agent was born (minter, initial metadata)
-- **AgentFunded** — every BNB deposit with amount and sender
+- **AgentFunded** — every BNB deposit with amount
 - **AgentWithdraw** — every withdrawal with amount
 - **AgentStatusChanged** — every active/inactive toggle
 - **MetadataUpdated** — every identity change (new persona, vault, etc.)
@@ -83,12 +83,12 @@ Scanner results come directly from the blockchain via RPC calls. Trust is establ
 ### View Functions Used
 
 ```
-getAgentState(tokenId)     → (balance, active, logicAddress, createdAt, owner)
-getAgentMetadata(tokenId)  → (persona, experience, voiceHash, animationURI, vaultURI, vaultHash)
-tokensOfOwner(address)     → uint256[]
-getTotalSupply()           → uint256
-getFreeMints(user)         → uint256
-isFreeMint(tokenId)        → bool
+getAgentState(tokenId)     → (balance, active, logicAddress, createdAt, owner)   // reference-only, spec uses getState
+getAgentMetadata(tokenId)  → (AgentMetadata metadata, string metadataURI)        // spec returns the tuple alone
+tokensOfOwner(address)     → uint256[]                                           // reference-only
+getTotalSupply()           → uint256                                             // reference-only
+getFreeMints(user)         → uint256                                             // reference-only
+isFreeMint(tokenId)        → bool                                                // reference-only
 tokenURI(tokenId)          → string
 ownerOf(tokenId)           → address
 ```
@@ -97,12 +97,122 @@ ownerOf(tokenId)           → address
 
 ```
 AgentCreated(tokenId, owner, logicAddress, metadataURI)
-AgentFunded(tokenId, funder, amount)
-AgentWithdraw(tokenId, owner, amount)
+AgentFunded(tokenId, amount)
+AgentWithdraw(tokenId, amount)
 AgentStatusChanged(tokenId, active)
-MetadataUpdated(tokenId, newURI)
+LogicAddressUpdated(tokenId, newLogicAddress)
+MetadataUpdated(tokenId)
 Transfer(from, to, tokenId)  // ERC-721 standard
 ```
+
+## Deployment compatibility (spec vs reference)
+
+The signatures above match the ChatAndBuild reference implementation
+(`getAgentState`, `AgentStatusChanged(tokenId, bool active)`). Some
+production deployments implement the **BAP-578 spec** shape instead, which
+is not call-compatible:
+
+```solidity
+enum Status { Active, Paused, Terminated }
+struct State {
+    uint256 balance;
+    Status  status;
+    address owner;
+    address logicAddress;
+    uint256 lastActionTimestamp;
+}
+function getState(uint256 tokenId) external view returns (State memory);
+event StatusChanged(address indexed agent, Status newStatus);
+```
+
+The contract instance must carry both getters, which is what the Setup
+section does. An ABI with only the reference shape leaves
+`contract.getState` undefined, so the call throws before it reaches the
+chain and the fallback then reverts on a spec deployment. The same applies
+to the enumerable fragments the supply and portfolio fallbacks use.
+
+With that ABI in place, try `getState` first and fall back to
+`getAgentState`:
+
+```js
+async function readState(contract, tokenId) {
+  try {
+    const s = await contract.getState(tokenId); // spec shape
+    return {
+      balance: s.balance,
+      owner: s.owner,
+      logicAddress: s.logicAddress,
+      status: s.status,
+      lastActionTimestamp: s.lastActionTimestamp,
+      shape: "spec",
+    };
+  } catch {
+    const s = await contract.getAgentState(tokenId); // reference shape
+    return {
+      balance: s.balance,
+      active: s.active,
+      owner: s.owner,
+      logicAddress: s.logicAddress,
+      createdAt: s.createdAt,
+      shape: "reference",
+    };
+  }
+}
+```
+
+`getAgentMetadata` needs the same treatment, but it cannot be solved with an
+ABI entry: both shapes share the selector `getAgentMetadata(uint256)` and
+differ only in their return values, so decode the raw result explicitly.
+Decoding a spec return with the reference shape throws, and a bulk scan that
+catches per-token errors will silently drop those agents:
+
+```js
+const META =
+  "tuple(string persona, string experience, string voiceHash, string animationURI, string vaultURI, bytes32 vaultHash)";
+
+async function readMetadata(provider, address, tokenId) {
+  const iface = new ethers.Interface([
+    `function getAgentMetadata(uint256) view returns (${META} metadata, string metadataURI)`,
+  ]);
+  const raw = await provider.call({
+    to: address,
+    data: iface.encodeFunctionData("getAgentMetadata", [tokenId]),
+  });
+  const coder = ethers.AbiCoder.defaultAbiCoder();
+  try {
+    const [metadata, metadataURI] = coder.decode([META, "string"], raw); // reference
+    return { metadata, metadataURI, shape: "reference" };
+  } catch {
+    const [metadata] = coder.decode([META], raw); // spec
+    return { metadata, metadataURI: undefined, shape: "spec" };
+  }
+}
+```
+
+The two shapes also report liveness differently: reference has a boolean
+`active`, spec has a `status` enum whose ordinal is deployment-specific.
+Resolve it once and reuse it wherever agents are filtered or scored:
+
+```js
+// activeStatus is the integer this deployment uses for Active.
+function isActive(agent, activeStatus) {
+  return agent.shape === "spec"
+    ? Number(agent.status) === activeStatus
+    : agent.active;
+}
+```
+
+**Status enum ordinal is deployment-specific.** The spec declares
+`Active = 0`, but a deployment may differ (for example a live collection
+that ships `Paused = 0, Active = 1, Terminated = 2`). This is fixed at
+deploy time and cannot change for already-minted agents, so always map the
+integer using the target deployment's verified enum, never a hard-coded array.
+
+The viem example and the event-indexing sections below document the
+reference implementation only. Spec deployments emit different event
+signatures (`StatusChanged(address, Status)`, `AgentFunded(address, address,
+uint256)`) and no `AgentCreated`, so an indexer for a spec deployment needs
+its own event map taken from that deployment's verified ABI.
 
 ---
 
@@ -115,7 +225,17 @@ const { ethers } = require("ethers");
 
 const provider = new ethers.JsonRpcProvider(process.env.BSC_RPC_URL);
 const BAP578_ADDRESS = process.env.BAP578_ADDRESS;
-const BAP578_ABI = require("./abi/BAP578.json");
+
+// The reference ABI plus every fragment the fallbacks call, so one contract
+// instance works against both deployment shapes. Without these the fallback
+// paths throw before reaching the chain. See Deployment compatibility.
+const BAP578_ABI = [
+  ...require("./abi/BAP578.json"), // reference shape
+  "function getState(uint256 tokenId) view returns (tuple(uint256 balance, uint8 status, address owner, address logicAddress, uint256 lastActionTimestamp))",
+  "function totalSupply() view returns (uint256)",
+  "function balanceOf(address owner) view returns (uint256)",
+  "function tokenOfOwnerByIndex(address owner, uint256 index) view returns (uint256)",
+];
 
 const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 ```
@@ -124,25 +244,39 @@ const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 
 ```js
 async function scanAgent(tokenId) {
-  const state = await contract.getAgentState(tokenId);
-  const metadata = await contract.getAgentMetadata(tokenId);
-  const uri = await contract.tokenURI(tokenId);
-  const freeMint = await contract.isFreeMint(tokenId);
+  const state = await readState(contract, tokenId); // works on spec + reference shapes
+  const { metadata, metadataURI } = await readMetadata(
+    provider,
+    BAP578_ADDRESS,
+    tokenId,
+  ); // works on spec + reference shapes
+  // isFreeMint is reference-only; it reverts on spec-shape deployments.
+  let freeMint;
+  try {
+    freeMint = await contract.isFreeMint(tokenId);
+  } catch {
+    freeMint = undefined;
+  }
 
   return {
     tokenId,
+    shape: state.shape,
     owner: state.owner,
     balance: ethers.formatEther(state.balance),
-    active: state.active,
+    active: state.active, // reference shape
+    status: state.status, // spec shape
     logicAddress: state.logicAddress,
-    createdAt: new Date(Number(state.createdAt) * 1000).toISOString(),
+    createdAt: state.createdAt
+      ? new Date(Number(state.createdAt) * 1000).toISOString()
+      : undefined,
+    lastActionTimestamp: state.lastActionTimestamp, // spec shape
     persona: metadata.persona,
     experience: metadata.experience,
     voiceHash: metadata.voiceHash,
     animationURI: metadata.animationURI,
     vaultURI: metadata.vaultURI,
     vaultHash: metadata.vaultHash,
-    tokenURI: uri,
+    tokenURI: metadataURI,
     isFreeMint: freeMint,
   };
 }
@@ -152,7 +286,17 @@ async function scanAgent(tokenId) {
 
 ```js
 async function scanOwnerPortfolio(ownerAddress) {
-  const tokenIds = await contract.tokensOfOwner(ownerAddress);
+  // tokensOfOwner is reference-only; fall back to ERC-721 Enumerable.
+  let tokenIds;
+  try {
+    tokenIds = await contract.tokensOfOwner(ownerAddress);
+  } catch {
+    const count = Number(await contract.balanceOf(ownerAddress));
+    tokenIds = [];
+    for (let i = 0; i < count; i++) {
+      tokenIds.push(await contract.tokenOfOwnerByIndex(ownerAddress, i));
+    }
+  }
   const agents = [];
   for (const id of tokenIds) {
     agents.push(await scanAgent(id));
@@ -165,7 +309,14 @@ async function scanOwnerPortfolio(ownerAddress) {
 
 ```js
 async function scanAllAgents() {
-  const totalSupply = await contract.getTotalSupply();
+  // getTotalSupply is reference-only; spec deployments expose ERC-721
+  // Enumerable totalSupply instead.
+  let totalSupply;
+  try {
+    totalSupply = await contract.getTotalSupply();
+  } catch {
+    totalSupply = await contract.totalSupply();
+  }
   const agents = [];
   for (let i = 1; i <= Number(totalSupply); i++) {
     try {
@@ -181,10 +332,11 @@ async function scanAllAgents() {
 ### Aggregate metrics
 
 ```js
-async function computeMetrics() {
+async function computeMetrics(activeStatus) {
   const agents = await scanAllAgents();
   const totalSupply = agents.length;
-  const activeCount = agents.filter((a) => a.active).length;
+  // Pass the integer this deployment uses for Active (see isActive above).
+  const activeCount = agents.filter((a) => isActive(a, activeStatus)).length;
   const uniqueOwners = new Set(agents.map((a) => a.owner)).size;
   const totalBalance = agents.reduce(
     (sum, a) => sum + parseFloat(a.balance),
@@ -358,13 +510,13 @@ function watchAgentEvents() {
     console.log(`New agent #${tokenId} minted by ${owner}`);
   });
 
-  contract.on("AgentFunded", (tokenId, funder, amount) => {
+  contract.on("AgentFunded", (tokenId, amount) => {
     console.log(
-      `Agent #${tokenId} funded ${ethers.formatEther(amount)} BNB by ${funder}`
+      `Agent #${tokenId} funded ${ethers.formatEther(amount)} BNB`
     );
   });
 
-  contract.on("AgentWithdraw", (tokenId, owner, amount) => {
+  contract.on("AgentWithdraw", (tokenId, amount) => {
     console.log(
       `Agent #${tokenId} withdrew ${ethers.formatEther(amount)} BNB`
     );
@@ -374,8 +526,8 @@ function watchAgentEvents() {
     console.log(`Agent #${tokenId} status → ${active ? "active" : "inactive"}`);
   });
 
-  contract.on("MetadataUpdated", (tokenId, newURI) => {
-    console.log(`Agent #${tokenId} metadata updated → ${newURI}`);
+  contract.on("MetadataUpdated", (tokenId) => {
+    console.log(`Agent #${tokenId} metadata updated`);
   });
 }
 ```
@@ -408,7 +560,7 @@ const withLogic = agents.filter(
 
 ```js
 const atRisk = agents.filter(
-  (a) => !a.active && parseFloat(a.balance) > 0
+  (a) => !isActive(a, activeStatus) && parseFloat(a.balance) > 0,
 );
 ```
 
@@ -442,6 +594,7 @@ When asked for scanning help, respond with:
 ```json
 {
   "tokenId": 17,
+  "shape": "reference",
   "owner": "0xABC...",
   "balance": "1.5",
   "balanceUnit": "BNB",
@@ -460,7 +613,7 @@ When asked for scanning help, respond with:
   "history": [
     {"event": "AgentCreated", "block": 12345, "tx": "0x...", "timestamp": "2026-03-01T10:00:00Z"},
     {"event": "AgentFunded", "block": 12400, "tx": "0x...", "amount": "1.0 BNB"},
-    {"event": "MetadataUpdated", "block": 12500, "tx": "0x...", "newURI": "ipfs://QmNew..."}
+    {"event": "MetadataUpdated", "block": 12500, "tx": "0x..."}
   ]
 }
 ```
@@ -477,10 +630,10 @@ tokenId,owner,balance,active,logicAddress,createdAt,experience,isFreeMint
 ### Generating CSV from scan results
 
 ```js
-function toCSV(agents) {
+function toCSV(agents, activeStatus) {
   const header = "tokenId,owner,balance,active,logicAddress,createdAt,experience,isFreeMint";
   const rows = agents.map(a =>
-    `${a.tokenId},${a.owner},${a.balance},${a.active},${a.logicAddress},${a.createdAt},${a.experience.replace(/,/g, ";")},${a.isFreeMint}`
+    `${a.tokenId},${a.owner},${a.balance},${isActive(a, activeStatus)},${a.logicAddress},${a.createdAt ?? ""},${a.experience.replace(/,/g, ";")},${a.isFreeMint ?? ""}`
   );
   return [header, ...rows].join("\n");
 }
@@ -525,11 +678,11 @@ function analyzeConcentration(agents) {
 Assign a health score to each agent based on multiple factors:
 
 ```js
-function scoreAgentHealth(agent) {
+function scoreAgentHealth(agent, activeStatus) {
   let score = 0;
   
   // Active status (30 points)
-  if (agent.active) score += 30;
+  if (isActive(agent, activeStatus)) score += 30;
   
   // Has balance (20 points, scaled)
   const balance = parseFloat(agent.balance);
@@ -563,7 +716,7 @@ Track how metrics change over time by bucketing events:
 ```js
 function mintTimeSeries(events, interval = "day") {
   const buckets = {};
-  const created = events.filter(e => e.name === "AgentCreated");
+  const created = events.filter(e => e.eventName === "AgentCreated");
   
   for (const event of created) {
     const date = new Date(event.timestamp);
@@ -594,11 +747,11 @@ function fundingFlow(events) {
   const flows = {};
   
   for (const event of events) {
-    if (event.name === "AgentFunded") {
+    if (event.eventName === "AgentFunded") {
       const id = event.args.tokenId;
       flows[id] = flows[id] || { inflow: 0, outflow: 0 };
       flows[id].inflow += parseFloat(event.args.amount);
-    } else if (event.name === "AgentWithdraw") {
+    } else if (event.eventName === "AgentWithdraw") {
       const id = event.args.tokenId;
       flows[id] = flows[id] || { inflow: 0, outflow: 0 };
       flows[id].outflow += parseFloat(event.args.amount);
