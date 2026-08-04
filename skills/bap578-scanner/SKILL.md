@@ -125,8 +125,20 @@ function getState(uint256 tokenId) external view returns (State memory);
 event StatusChanged(address indexed agent, Status newStatus);
 ```
 
-Try `getState` first and fall back to
-`getAgentState`, so it works against both shapes:
+The contract instance must be built with an ABI that carries **both**
+getters. If the ABI only has the reference shape, `contract.getState` is
+undefined and the call throws before it ever reaches the chain, so add the
+spec fragments alongside the reference ones:
+
+```js
+const BAP578_ABI = [
+  ...require("./abi/BAP578.json"), // reference shape
+  // spec shape
+  "function getState(uint256 tokenId) view returns (tuple(uint256 balance, uint8 status, address owner, address logicAddress, uint256 lastActionTimestamp))",
+];
+```
+
+Then try `getState` first and fall back to `getAgentState`:
 
 ```js
 async function readState(contract, tokenId) {
