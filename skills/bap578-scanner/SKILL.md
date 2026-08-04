@@ -28,7 +28,7 @@ Use this skill to read, verify, and index BAP-578 agent data directly from the b
 
 ### 1) Who are you?
 
-The scanner reveals the full on-chain identity of any agent. By calling `getAgentState` and `getAgentMetadata`, you retrieve the complete profile:
+The scanner reveals the full on-chain identity of any agent. By reading the state and metadata getters (see Deployment compatibility for the two shapes), you retrieve the complete profile:
 
 - Token ID (the unique agent identifier)
 - Owner address (who controls this agent)
@@ -166,11 +166,59 @@ async function readState(contract, tokenId) {
 }
 ```
 
+`getAgentMetadata` needs the same treatment, but it cannot be solved with an
+ABI entry: both shapes share the selector `getAgentMetadata(uint256)` and
+differ only in their return values, so decode the raw result explicitly.
+Decoding a spec return with the reference shape throws, and a bulk scan that
+catches per-token errors will silently drop those agents:
+
+```js
+const META =
+  "tuple(string persona, string experience, string voiceHash, string animationURI, string vaultURI, bytes32 vaultHash)";
+
+async function readMetadata(provider, address, tokenId) {
+  const iface = new ethers.Interface([
+    `function getAgentMetadata(uint256) view returns (${META} metadata, string metadataURI)`,
+  ]);
+  const raw = await provider.call({
+    to: address,
+    data: iface.encodeFunctionData("getAgentMetadata", [tokenId]),
+  });
+  const coder = ethers.AbiCoder.defaultAbiCoder();
+  try {
+    const [metadata, metadataURI] = coder.decode([META, "string"], raw); // reference
+    return { metadata, metadataURI, shape: "reference" };
+  } catch {
+    const [metadata] = coder.decode([META], raw); // spec
+    return { metadata, metadataURI: undefined, shape: "spec" };
+  }
+}
+```
+
+The two shapes also report liveness differently: reference has a boolean
+`active`, spec has a `status` enum whose ordinal is deployment-specific.
+Resolve it once and reuse it wherever agents are filtered or scored:
+
+```js
+// activeStatus is the integer this deployment uses for Active.
+function isActive(agent, activeStatus) {
+  return agent.shape === "spec"
+    ? Number(agent.status) === activeStatus
+    : agent.active;
+}
+```
+
 **Status enum ordinal is deployment-specific.** The spec declares
 `Active = 0`, but a deployment may differ (for example a live collection
 that ships `Paused = 0, Active = 1, Terminated = 2`). This is fixed at
 deploy time and cannot change for already-minted agents, so always map the
 integer using the target deployment's verified enum, never a hard-coded array.
+
+The viem example and the event-indexing sections below document the
+reference implementation only. Spec deployments emit different event
+signatures (`StatusChanged(address, Status)`, `AgentFunded(address, address,
+uint256)`) and no `AgentCreated`, so an indexer for a spec deployment needs
+its own event map taken from that deployment's verified ABI.
 
 ---
 
@@ -193,7 +241,11 @@ const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 ```js
 async function scanAgent(tokenId) {
   const state = await readState(contract, tokenId); // works on spec + reference shapes
-  const [metadata, metadataURI] = await contract.getAgentMetadata(tokenId);
+  const { metadata, metadataURI } = await readMetadata(
+    provider,
+    BAP578_ADDRESS,
+    tokenId,
+  ); // works on spec + reference shapes
   // isFreeMint is reference-only; it reverts on spec-shape deployments.
   let freeMint;
   try {
@@ -230,7 +282,17 @@ async function scanAgent(tokenId) {
 
 ```js
 async function scanOwnerPortfolio(ownerAddress) {
-  const tokenIds = await contract.tokensOfOwner(ownerAddress);
+  // tokensOfOwner is reference-only; fall back to ERC-721 Enumerable.
+  let tokenIds;
+  try {
+    tokenIds = await contract.tokensOfOwner(ownerAddress);
+  } catch {
+    const count = Number(await contract.balanceOf(ownerAddress));
+    tokenIds = [];
+    for (let i = 0; i < count; i++) {
+      tokenIds.push(await contract.tokenOfOwnerByIndex(ownerAddress, i));
+    }
+  }
   const agents = [];
   for (const id of tokenIds) {
     agents.push(await scanAgent(id));
@@ -243,7 +305,14 @@ async function scanOwnerPortfolio(ownerAddress) {
 
 ```js
 async function scanAllAgents() {
-  const totalSupply = await contract.getTotalSupply();
+  // getTotalSupply is reference-only; spec deployments expose ERC-721
+  // Enumerable totalSupply instead.
+  let totalSupply;
+  try {
+    totalSupply = await contract.getTotalSupply();
+  } catch {
+    totalSupply = await contract.totalSupply();
+  }
   const agents = [];
   for (let i = 1; i <= Number(totalSupply); i++) {
     try {
@@ -259,10 +328,11 @@ async function scanAllAgents() {
 ### Aggregate metrics
 
 ```js
-async function computeMetrics() {
+async function computeMetrics(activeStatus) {
   const agents = await scanAllAgents();
   const totalSupply = agents.length;
-  const activeCount = agents.filter((a) => a.active).length;
+  // Pass the integer this deployment uses for Active (see isActive above).
+  const activeCount = agents.filter((a) => isActive(a, activeStatus)).length;
   const uniqueOwners = new Set(agents.map((a) => a.owner)).size;
   const totalBalance = agents.reduce(
     (sum, a) => sum + parseFloat(a.balance),
@@ -486,7 +556,7 @@ const withLogic = agents.filter(
 
 ```js
 const atRisk = agents.filter(
-  (a) => !a.active && parseFloat(a.balance) > 0
+  (a) => !isActive(a, activeStatus) && parseFloat(a.balance) > 0,
 );
 ```
 
@@ -520,6 +590,7 @@ When asked for scanning help, respond with:
 ```json
 {
   "tokenId": 17,
+  "shape": "reference",
   "owner": "0xABC...",
   "balance": "1.5",
   "balanceUnit": "BNB",
@@ -555,10 +626,10 @@ tokenId,owner,balance,active,logicAddress,createdAt,experience,isFreeMint
 ### Generating CSV from scan results
 
 ```js
-function toCSV(agents) {
+function toCSV(agents, activeStatus) {
   const header = "tokenId,owner,balance,active,logicAddress,createdAt,experience,isFreeMint";
   const rows = agents.map(a =>
-    `${a.tokenId},${a.owner},${a.balance},${a.active},${a.logicAddress},${a.createdAt},${a.experience.replace(/,/g, ";")},${a.isFreeMint}`
+    `${a.tokenId},${a.owner},${a.balance},${isActive(a, activeStatus)},${a.logicAddress},${a.createdAt ?? ""},${a.experience.replace(/,/g, ";")},${a.isFreeMint ?? ""}`
   );
   return [header, ...rows].join("\n");
 }
@@ -603,11 +674,11 @@ function analyzeConcentration(agents) {
 Assign a health score to each agent based on multiple factors:
 
 ```js
-function scoreAgentHealth(agent) {
+function scoreAgentHealth(agent, activeStatus) {
   let score = 0;
   
   // Active status (30 points)
-  if (agent.active) score += 30;
+  if (isActive(agent, activeStatus)) score += 30;
   
   // Has balance (20 points, scaled)
   const balance = parseFloat(agent.balance);
