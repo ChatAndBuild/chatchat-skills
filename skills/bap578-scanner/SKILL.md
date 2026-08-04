@@ -180,17 +180,28 @@ const contract = new ethers.Contract(BAP578_ADDRESS, BAP578_ABI, provider);
 
 ```js
 async function scanAgent(tokenId) {
-  const state = await contract.getAgentState(tokenId); // spec-shape deployments: use readState() from "Deployment compatibility"
+  const state = await readState(contract, tokenId); // works on spec + reference shapes
   const [metadata, metadataURI] = await contract.getAgentMetadata(tokenId);
-  const freeMint = await contract.isFreeMint(tokenId);
+  // isFreeMint is reference-only; it reverts on spec-shape deployments.
+  let freeMint;
+  try {
+    freeMint = await contract.isFreeMint(tokenId);
+  } catch {
+    freeMint = undefined;
+  }
 
   return {
     tokenId,
+    shape: state.shape,
     owner: state.owner,
     balance: ethers.formatEther(state.balance),
-    active: state.active,
+    active: state.active, // reference shape
+    status: state.status, // spec shape
     logicAddress: state.logicAddress,
-    createdAt: new Date(Number(state.createdAt) * 1000).toISOString(),
+    createdAt: state.createdAt
+      ? new Date(Number(state.createdAt) * 1000).toISOString()
+      : undefined,
+    lastActionTimestamp: state.lastActionTimestamp, // spec shape
     persona: metadata.persona,
     experience: metadata.experience,
     voiceHash: metadata.voiceHash,
